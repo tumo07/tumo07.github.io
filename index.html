@@ -7,35 +7,15 @@
   <meta name="description" content="Portfolio of Alex Trinh (Trinh Dang Khoa) — Automotive Software Engineer Intern specializing in NXP S32K144, AUTOSAR Classic, distributed CAN 2.0B bus clusters, and bare-metal embedded systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
-          colors: {
-            surface: {
-              lowest: "var(--surface-lowest)",
-              DEFAULT: "var(--surface)",
-              low: "var(--surface-low)",
-              container: "var(--surface-container)",
-              high: "var(--surface-high)",
-            },
-            ink: {
-              primary: "var(--ink-primary)",
-              secondary: "var(--ink-secondary)",
-              muted: "var(--ink-muted)",
-              inverse: "var(--ink-inverse)",
-            },
-            line: {
-              subtle: "var(--line-subtle)",
-              DEFAULT: "var(--line-default)",
-              strong: "var(--line-strong)",
-            }
-          },
           fontFamily: {
-            sans: ["Geist", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
             mono: ["JetBrains Mono", "monospace"],
           }
         }
@@ -44,142 +24,223 @@
   </script>
   <style>
     :root {
-      --surface-lowest: #ffffff;
-      --surface: #faf9f6;
-      --surface-low: #f4f3ef;
-      --surface-container: #eae8e2;
-      --surface-high: #dedbd4;
-      --ink-primary: #121214;
-      --ink-secondary: #52525b;
-      --ink-muted: #71717a;
-      --ink-inverse: #faf9f6;
-      --line-subtle: rgba(0, 0, 0, 0.05);
-      --line-default: rgba(0, 0, 0, 0.09);
-      --line-strong: rgba(0, 0, 0, 0.18);
-
-      /* Pastel Tokens (Muted, Elegant, Zero Neon) */
-      --pastel-mint-text: #065f46;
-      --pastel-mint-bg: rgba(167, 243, 208, 0.35);
-      --pastel-mint-border: rgba(5, 150, 105, 0.25);
-
-      --pastel-sky-text: #075985;
-      --pastel-sky-bg: rgba(186, 230, 253, 0.40);
-      --pastel-sky-border: rgba(2, 132, 199, 0.25);
-
-      --pastel-lavender-text: #5b21b6;
-      --pastel-lavender-bg: rgba(221, 214, 254, 0.40);
-      --pastel-lavender-border: rgba(124, 58, 237, 0.25);
-
-      --pastel-peach-text: #9a3412;
-      --pastel-peach-bg: rgba(254, 215, 170, 0.45);
-      --pastel-peach-border: rgba(234, 88, 12, 0.25);
+      --bg: #0a0a0c;
+      --bg-surface: rgba(255, 255, 255, 0.04);
+      --bg-surface-hover: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.18);
+      --border-focus: rgba(255, 255, 255, 0.3);
+      --text: #f5f5f7;
+      --text-secondary: rgba(255, 255, 255, 0.65);
+      --text-muted: rgba(255, 255, 255, 0.45);
+      --green: #34c759;
+      --green-dim: rgba(52, 199, 89, 0.12);
+      --sky: #38bdf8;
+      --sky-dim: rgba(56, 189, 248, 0.12);
+      --purple: #c084fc;
+      --purple-dim: rgba(192, 132, 252, 0.12);
+      --amber: #fbbf24;
+      --amber-dim: rgba(251, 191, 36, 0.12);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --radius-pill: 9999px;
     }
 
-    .dark {
-      --surface-lowest: #07080a;
-      --surface: #0a0b0e;
-      --surface-low: #111216;
-      --surface-container: #17181e;
-      --surface-high: #20222a;
-      --ink-primary: #f4f4f5;
-      --ink-secondary: #a1a1aa;
-      --ink-muted: #71717a;
-      --ink-inverse: #0a0b0e;
-      --line-subtle: rgba(255, 255, 255, 0.05);
-      --line-default: rgba(255, 255, 255, 0.09);
-      --line-strong: rgba(255, 255, 255, 0.16);
-
-      /* Pastel Tokens (Dark: Soft Desaturated Luminous Tints, Zero Neon) */
-      --pastel-mint-text: #a7f3d0;
-      --pastel-mint-bg: rgba(167, 243, 208, 0.08);
-      --pastel-mint-border: rgba(167, 243, 208, 0.20);
-
-      --pastel-sky-text: #bae6fd;
-      --pastel-sky-bg: rgba(186, 230, 253, 0.08);
-      --pastel-sky-border: rgba(186, 230, 253, 0.20);
-
-      --pastel-lavender-text: #ddd6fe;
-      --pastel-lavender-bg: rgba(221, 214, 254, 0.08);
-      --pastel-lavender-border: rgba(221, 214, 254, 0.20);
-
-      --pastel-peach-text: #fed7aa;
-      --pastel-peach-bg: rgba(254, 215, 170, 0.08);
-      --pastel-peach-border: rgba(254, 215, 170, 0.20);
+    html:not(.dark) {
+      --bg: #f8f9fa;
+      --bg-surface: rgba(255, 255, 255, 0.7);
+      --bg-surface-hover: rgba(255, 255, 255, 0.9);
+      --border: rgba(0, 0, 0, 0.08);
+      --border-hover: rgba(0, 0, 0, 0.16);
+      --border-focus: rgba(0, 0, 0, 0.3);
+      --text: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #6b7280;
+      --green: #15803d;
+      --green-dim: rgba(21, 128, 61, 0.12);
+      --sky: #0369a1;
+      --sky-dim: rgba(3, 105, 161, 0.12);
+      --purple: #7e22ce;
+      --purple-dim: rgba(126, 34, 206, 0.12);
+      --amber: #b45309;
+      --amber-dim: rgba(180, 83, 9, 0.12);
     }
 
-    .pill-mint {
-      color: var(--pastel-mint-text);
-      background-color: var(--pastel-mint-bg);
-      border: 1px solid var(--pastel-mint-border);
-    }
-    .pill-sky {
-      color: var(--pastel-sky-text);
-      background-color: var(--pastel-sky-bg);
-      border: 1px solid var(--pastel-sky-border);
-    }
-    .pill-lavender {
-      color: var(--pastel-lavender-text);
-      background-color: var(--pastel-lavender-bg);
-      border: 1px solid var(--pastel-lavender-border);
-    }
-    .pill-peach {
-      color: var(--pastel-peach-text);
-      background-color: var(--pastel-peach-bg);
-      border: 1px solid var(--pastel-peach-border);
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Clean Card Hover */
-    .clean-card {
-      background-color: var(--surface-low);
-      border: 1px solid var(--line-default);
-      transition: border-color 0.2s ease, transform 0.2s ease;
+    /* Ambient atmospheric background matching tumo07.io.vn */
+    .bg-gradient-atm {
+      position: fixed;
+      inset: 0px;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.45) 0%, rgba(10, 10, 12, 0.95) 70%),
+                  linear-gradient(180deg, rgba(10, 10, 12, 0.6) 0%, #0a0a0c 100%);
     }
-    .clean-card:hover {
-      border-color: var(--line-strong);
+    html:not(.dark) .bg-gradient-atm {
+      background: radial-gradient(circle at 50% 0%, rgba(220, 230, 242, 0.7) 0%, rgba(248, 249, 250, 0.95) 70%),
+                  linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, #f8f9fa 100%);
+    }
+
+    /* Transparent Frosted Glass Classes (tumo07.io.vn) */
+    .glass {
+      background: var(--bg-surface);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid var(--border);
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.12), 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+    html:not(.dark) .glass {
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.8), 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(40px) saturate(200%);
+      -webkit-backdrop-filter: blur(40px) saturate(200%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.12), 0 4px 24px 0 rgba(0, 0, 0, 0.25);
+    }
+    html:not(.dark) .glass-nav {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.8), 0 4px 24px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .glass-card {
+      position: relative;
+      background: var(--bg-surface);
+      backdrop-filter: blur(30px) saturate(160%);
+      -webkit-backdrop-filter: blur(30px) saturate(160%);
+      border: 1px solid var(--border);
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.08), 0 8px 28px 0 rgba(0, 0, 0, 0.22);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+    html:not(.dark) .glass-card {
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 0px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    html:not(.dark) .glass-card::before {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 50%);
+    }
+
+    .glass-card:hover {
+      background: var(--bg-surface-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.16), 0 12px 36px 0 rgba(0, 0, 0, 0.32);
+    }
+    html:not(.dark) .glass-card:hover {
+      box-shadow: inset 0 0.5px 0 0 rgba(255, 255, 255, 0.9), 0 10px 28px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-title-gradient {
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.4) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    html:not(.dark) .hero-title-gradient {
+      background: linear-gradient(180deg, #09090b 0%, #52525b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Status pulse dot from tumo07.io.vn */
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulseBg 2s ease-in-out infinite alternate;
+    }
+    @keyframes pulseBg {
+      0% { box-shadow: 0 0 4px var(--green); }
+      100% { box-shadow: 0 0 12px var(--green), 0 0 20px var(--green); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+    }
+    html:not(.dark) ::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
     }
   </style>
 </head>
-<body class="bg-[var(--surface)] text-[var(--ink-primary)] selection:bg-zinc-700/50 selection:text-zinc-100 min-h-screen">
+<body class="min-h-screen relative selection:bg-white/20 selection:text-white">
+
+  <!-- Atmospheric Background Gradient -->
+  <div class="bg-gradient-atm"></div>
 
   <!-- ================================================================= -->
-  <!-- TOP NAVIGATION BAR                                               -->
+  <!-- FLOATING FROSTED GLASS NAV BAR (tumo07.io.vn style)              -->
   <!-- ================================================================= -->
-  <nav class="sticky top-0 z-40 w-full border-b border-[var(--line-default)] bg-[var(--surface)]/90 backdrop-blur-md">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
+  <nav class="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl px-4 sm:px-6 py-2.5 rounded-full glass-nav transition-all">
+    <div class="flex items-center justify-between gap-4">
       
-      <a href="#overview" onclick="switchToOverview()" class="flex items-center gap-3">
-        <div class="flex h-7 w-7 items-center justify-center rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-xs font-semibold font-mono text-[var(--ink-primary)]">
-          AT
-        </div>
-        <div>
-          <div class="text-xs font-semibold tracking-tight text-[var(--ink-primary)]">Alex Trinh</div>
-          <div class="text-[10px] text-[var(--ink-muted)]">Trinh Dang Khoa · Embedded &amp; Automotive</div>
+      <!-- Brand & Pulse Status -->
+      <a href="#overview" class="flex items-center gap-2.5 group shrink-0">
+        <span class="font-bold text-sm tracking-tight text-[var(--text)] group-hover:opacity-80 transition-opacity">
+          ALEX<span class="text-[var(--green)]">TRINH</span>
+        </span>
+        <div class="hidden md:flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[var(--green-dim)] border border-[var(--green)]/20 text-[10px] font-mono text-[var(--text)]">
+          <div class="pulse-dot"></div>
+          <span>AVAILABLE FOR ROLES</span>
         </div>
       </a>
 
-      <div class="hidden md:flex items-center gap-6 text-xs text-[var(--ink-secondary)]">
-        <a href="#overview" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Overview</a>
-        <a href="#projects" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Projects</a>
-        <a href="#workbench" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Interactive Bench</a>
-        <a href="javascript:void(0)" onclick="openDeepDive('s32k144')" class="hover:text-[var(--pastel-mint-text)] transition-colors">Deep-Dives</a>
-        <a href="#experience" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Experience</a>
-        <a href="#contact" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Contact</a>
+      <!-- Center Links -->
+      <div class="hidden lg:flex items-center gap-1 text-xs font-medium text-[var(--text-secondary)]">
+        <a href="#overview" class="px-3 py-1.5 rounded-full hover:text-[var(--text)] hover:bg-white/5 transition-colors">Overview</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-full hover:text-[var(--text)] hover:bg-white/5 transition-colors">Projects</a>
+        <a href="#workbench" class="px-3 py-1.5 rounded-full hover:text-[var(--text)] hover:bg-white/5 transition-colors">Hardware Bench</a>
+        <button onclick="openDeepDive('can')" class="px-3 py-1.5 rounded-full hover:text-[var(--text)] hover:bg-white/5 transition-colors">Dossier</button>
+        <a href="#experience" class="px-3 py-1.5 rounded-full hover:text-[var(--text)] hover:bg-white/5 transition-colors">Experience</a>
       </div>
 
-      <div class="flex items-center gap-2.5">
-        <button id="cmd-pal-btn" class="hidden sm:flex items-center gap-2 rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-xs text-[var(--ink-muted)] hover:border-[var(--line-strong)] hover:text-[var(--ink-primary)] transition-colors">
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2 shrink-0">
+        
+        <!-- Command Palette Trigger -->
+        <button id="cmd-pal-btn" class="flex items-center gap-2 rounded-full border border-[var(--border)] bg-white/5 px-3 py-1 text-xs text-[var(--text-secondary)] hover:border-[var(--border-hover)] hover:text-[var(--text)] transition-colors">
           <span>Search</span>
-          <kbd class="font-mono text-[10px] bg-[var(--surface-container)] px-1 py-0.5 rounded text-[var(--ink-secondary)]">Ctrl K</kbd>
+          <kbd class="font-mono text-[10px] bg-white/10 px-1.5 py-0.2 rounded text-[var(--text)]">Ctrl K</kbd>
         </button>
 
-        <button id="theme-toggle" aria-label="Toggle theme" class="flex h-7 w-7 items-center justify-center rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle theme" class="flex h-7 w-7 items-center justify-center rounded-full border border-[var(--border)] bg-white/5 text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
           <svg id="theme-icon-dark" class="hidden h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
           <svg id="theme-icon-light" class="hidden h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
 
-        <button onclick="openPdfModal('resume')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-3 py-1 text-xs font-medium text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+        <!-- Resume PDF Modal -->
+        <button onclick="openPdfModal('resume')" class="rounded-full border border-[var(--border-hover)] bg-white/10 px-3.5 py-1 text-xs font-medium text-[var(--text)] hover:bg-white/20 transition-colors shadow-sm">
           Resume PDF
         </button>
+
       </div>
 
     </div>
@@ -188,104 +249,101 @@
   <!-- ================================================================= -->
   <!-- MAIN SITE CONTAINER                                               -->
   <!-- ================================================================= -->
-  <main id="main-content" class="w-full">
+  <main id="main-content" class="w-full pt-20 sm:pt-24">
 
     <!-- =============================================================== -->
     <!-- HERO SECTION                                                    -->
     <!-- =============================================================== -->
-    <section id="overview" class="border-b border-[var(--line-default)] py-16 sm:py-20">
+    <section id="overview" class="py-16 sm:py-24">
       <div class="mx-auto max-w-6xl px-6">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <!-- Left: Narrative & Status (7 Cols) -->
+          <!-- Left: Hero Headline & Summary (7 Cols) -->
           <div class="lg:col-span-7 space-y-6">
             
-            <!-- Availability Pill -->
-            <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-mono pill-mint">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-              <span>Available for Roles · Sep 7 – Dec 14, 2026</span>
+            <div class="inline-flex items-center gap-2 rounded-full border border-[var(--green)]/25 bg-[var(--green-dim)] px-3 py-1 text-xs font-mono text-[var(--text)]">
+              <div class="pulse-dot"></div>
+              <span>Open for Roles · Sep 7 – Dec 14, 2026 (3+ Months Available)</span>
             </div>
 
-            <div class="space-y-3">
-              <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-[var(--ink-primary)] leading-tight">
-                Deterministic embedded software &amp; automotive systems.
-              </h1>
-              <p class="text-base text-[var(--ink-secondary)] leading-relaxed max-w-xl">
-                Alex Trinh (Trinh Dang Khoa) develops low-level microcontroller firmware, AUTOSAR Classic stacks, and fault-tolerant CAN 2.0B bus clusters on NXP S32K144 and ARM Cortex-M hardware.
-              </p>
-            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight hero-title-gradient">
+              Deterministic embedded software &amp; automotive systems.
+            </h1>
 
-            <!-- Engineering Role & Dual Degree Highlights -->
-            <div class="p-4 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)] text-xs text-[var(--ink-secondary)] space-y-2">
-              <div class="flex items-center gap-2 text-[var(--ink-primary)] font-medium">
-                <span class="h-1.5 w-1.5 rounded-full bg-[var(--pastel-sky-border)]"></span>
+            <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed max-w-xl">
+              Alex Trinh (Trinh Dang Khoa) develops bare-metal microcontroller firmware, AUTOSAR Classic stacks, and fault-tolerant CAN 2.0B bus clusters on NXP S32K144 and ARM Cortex-M hardware.
+            </p>
+
+            <!-- Verified Role Callout -->
+            <div class="p-4 rounded-xl glass border border-[var(--border)] space-y-1.5">
+              <div class="flex items-center gap-2 font-mono text-xs font-semibold text-[var(--text)]">
+                <span class="text-[var(--green)]">●</span>
                 <span>Automotive Software Engineer Intern at FPT Software (Automotive Division)</span>
               </div>
-              <div class="text-[11px] text-[var(--ink-muted)] pl-3.5">
-                Dual Degree: B.Sc. Automotive Software Engineering (FPT University, Year 3) &amp; Advanced Diploma (FPT Academy International · Cranes Program).
-              </div>
+              <p class="text-xs text-[var(--text-secondary)]">
+                Dual Track: B.Sc. in Automotive Software Engineering (FPT University, Year 3) &amp; Advanced Diploma (FPT Academy International - Cranes Program).
+              </p>
             </div>
 
             <!-- CTAs -->
             <div class="flex flex-wrap items-center gap-3 pt-2">
-              <a href="#projects" class="rounded border border-[var(--ink-primary)] bg-[var(--ink-primary)] px-4 py-2 text-xs font-medium text-[var(--ink-inverse)] hover:opacity-90 transition-opacity">
+              <a href="#projects" class="rounded-full bg-white text-zinc-950 px-5 py-2.5 text-xs font-semibold hover:bg-zinc-200 transition-colors shadow-lg">
                 View Selected Projects ↓
               </a>
-              <button onclick="openDeepDive('s32k144')" class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-4 py-2 text-xs font-medium text-[var(--ink-primary)] hover:border-[var(--line-strong)] transition-colors">
+              <button onclick="openDeepDive('can')" class="rounded-full glass px-5 py-2.5 text-xs font-medium text-[var(--text)] hover:border-[var(--border-hover)] transition-colors">
                 Explore Deep-Dive Reader →
               </button>
-              <button onclick="openPdfModal('resume')" class="rounded border border-[var(--line-default)] bg-transparent px-4 py-2 text-xs font-medium text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] transition-colors">
+              <button onclick="openPdfModal('resume')" class="rounded-full border border-[var(--border)] px-4 py-2 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
                 Open Verified CV (PDF)
               </button>
             </div>
 
           </div>
 
-          <!-- Right: Profile Card (5 Cols) -->
+          <!-- Right: Profile Glass Card (5 Cols) -->
           <div class="lg:col-span-5">
-            <div class="clean-card rounded-xl p-6 space-y-5">
+            <div class="glass-card rounded-2xl p-6 space-y-5">
               
-              <div class="flex items-center gap-4 pb-4 border-b border-[var(--line-subtle)]">
-                <div class="h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-[var(--line-default)] bg-[var(--surface-container)]">
+              <div class="flex items-center gap-4 pb-4 border-b border-[var(--border)]">
+                <div class="h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-[var(--border)] bg-zinc-800">
                   <img src="avatar.jpg" alt="Trinh Dang Khoa" class="h-full w-full object-cover object-top" onerror="this.onerror=null; this.src='avatar.png';" />
                 </div>
                 <div>
-                  <div class="text-sm font-semibold text-[var(--ink-primary)]">Trinh Dang Khoa</div>
-                  <div class="text-xs text-[var(--ink-muted)] font-mono">Alex Trinh · Ho Chi Minh City, Vietnam</div>
-                  <div class="flex items-center gap-2 mt-1.5 font-mono text-[10px]">
-                    <span class="px-2 py-0.5 rounded pill-mint">IELTS 7.0 (C1)</span>
-                    <span class="px-2 py-0.5 rounded pill-sky">NXP S32K144</span>
+                  <h3 class="text-base font-bold text-[var(--text)]">Trinh Dang Khoa</h3>
+                  <p class="text-xs text-[var(--text-secondary)]">Alex Trinh · Ho Chi Minh City, Vietnam</p>
+                  <div class="flex items-center gap-2 mt-2 font-mono text-[10px]">
+                    <span class="px-2 py-0.5 rounded-full bg-[var(--green-dim)] text-[var(--green)] border border-[var(--green)]/20 font-medium">IELTS 7.0 (C1)</span>
+                    <span class="px-2 py-0.5 rounded-full bg-[var(--sky-dim)] text-[var(--sky)] border border-[var(--sky)]/20 font-medium">NXP S32K144</span>
                   </div>
                 </div>
               </div>
 
               <!-- Quick Specs Table -->
-              <div class="space-y-3 text-xs">
+              <div class="space-y-3.5 text-xs">
                 <div>
-                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">CORE TOOLCHAIN</div>
-                  <div class="font-mono text-[11px] text-[var(--ink-primary)] mt-0.5">
-                    Embedded C/C++ · S32DS · Keil MDK · Vector CANoe · Logic Analyzers &amp; DSOs
-                  </div>
-                </div>
-
-                <div>
-                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">PROTOCOLS &amp; BUS ARCHITECTURES</div>
-                  <div class="font-mono text-[11px] text-[var(--ink-primary)] mt-0.5">
-                    CAN 2.0B (500 kbps) · I2C Fast-Mode · SPI · UART · AUTOSAR Classic (BSW/RTE)
-                  </div>
-                </div>
-
-                <div>
-                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">FLAGSHIP ARCHITECTURE &amp; LEADERSHIP</div>
-                  <div class="font-mono text-[11px] text-[var(--ink-primary)] font-medium mt-0.5">
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">FLAGSHIP ARCHITECTURE &amp; LEADERSHIP</div>
+                  <div class="font-mono text-[11px] text-[var(--text)] font-semibold mt-0.5">
                     System Architect &amp; Tech Lead — Smart Vehicle Dashboard Cluster (5-Node CAN Bus)
                   </div>
                 </div>
 
                 <div>
-                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">ACADEMIC FOUNDATION</div>
-                  <div class="text-[11px] text-[var(--ink-secondary)] mt-0.5">
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">CORE TOOLCHAIN</div>
+                  <div class="font-mono text-[11px] text-[var(--text)] mt-0.5">
+                    Embedded C/C++ · S32DS · Keil MDK · Vector CANoe · Logic Analyzers &amp; DSOs
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">PROTOCOLS &amp; BUS ARCHITECTURES</div>
+                  <div class="font-mono text-[11px] text-[var(--text)] mt-0.5">
+                    CAN 2.0B (500 kbps) · I2C Fast-Mode · SPI · UART · AUTOSAR Classic (BSW/RTE)
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">ACADEMIC FOUNDATION</div>
+                  <div class="text-[11px] text-[var(--text-secondary)] mt-0.5">
                     FPT University (B.Sc. Major in ASE) &amp; FAI Cranes (Automotive Diploma)
                   </div>
                 </div>
@@ -296,34 +354,34 @@
 
         </div>
 
-        <!-- Toolchain Badges Ribbon -->
-        <div class="mt-12 pt-6 border-t border-[var(--line-subtle)] flex flex-wrap items-center gap-2 text-xs font-mono">
-          <span class="text-[10px] uppercase text-[var(--ink-muted)] mr-2">VERIFIED TOOLS:</span>
-          <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">Embedded C / C++14</span>
-          <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">NXP S32K144 (Automotive)</span>
-          <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">STM32 (F407, F411, F103)</span>
-          <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">AUTOSAR Classic (BSW, MCAL)</span>
-          <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">CAN 2.0B / LIN / SPI / I2C</span>
-          <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">Oscilloscope Diagnostics</span>
+        <!-- Verified Tools Ribbon -->
+        <div class="mt-12 flex flex-wrap items-center gap-2 text-xs font-mono">
+          <span class="text-[11px] uppercase tracking-wider text-[var(--text-muted)] mr-2">VERIFIED TOOLS:</span>
+          <span class="rounded-full glass px-3 py-1 text-[var(--text-secondary)]">Embedded C / C++14</span>
+          <span class="rounded-full glass px-3 py-1 text-[var(--text-secondary)]">NXP S32K144 (Automotive)</span>
+          <span class="rounded-full glass px-3 py-1 text-[var(--text-secondary)]">STM32 (F407, F411, F103)</span>
+          <span class="rounded-full glass px-3 py-1 text-[var(--text-secondary)]">AUTOSAR Classic (BSW, MCAL)</span>
+          <span class="rounded-full glass px-3 py-1 text-[var(--text-secondary)]">CAN 2.0B / LIN / SPI / I2C</span>
+          <span class="rounded-full glass px-3 py-1 text-[var(--text-secondary)]">Oscilloscope Diagnostics</span>
         </div>
 
       </div>
     </section>
 
     <!-- =============================================================== -->
-    <!-- SELECTED ENGINEERING WORK (4 CORE SYSTEMS)                      -->
+    <!-- SELECTED ENGINEERING WORK (FLAGSHIP + CORE SYSTEMS)             -->
     <!-- =============================================================== -->
-    <section id="projects" class="border-b border-[var(--line-default)] py-16">
+    <section id="projects" class="py-16 sm:py-20 border-t border-[var(--border)]">
       <div class="mx-auto max-w-6xl px-6">
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <div class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)] mb-2">VERIFIED PROJECTS</div>
-            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--ink-primary)]">
+            <div class="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)] mb-2">VERIFIED PROJECTS</div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text)]">
               Selected Engineering Work
             </h2>
           </div>
-          <p class="text-xs text-[var(--ink-muted)] max-w-md">
+          <p class="text-xs text-[var(--text-secondary)] max-w-md">
             Click <strong>Read Case Study</strong> on any project to inspect its architecture diagrams, physical bench photos, and engineering decisions.
           </p>
         </div>
@@ -331,47 +389,47 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           <!-- PROJECT 1: Smart Vehicle Dashboard Cluster (FLAGSHIP LEADERSHIP PROJECT) -->
-          <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between border-2 border-[var(--line-strong)] md:col-span-2">
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between md:col-span-2 border border-white/15">
             <div class="grid grid-cols-1 md:grid-cols-12">
-              <div class="h-56 md:h-full md:col-span-5 overflow-hidden bg-[var(--surface-lowest)] border-b md:border-b-0 md:border-r border-[var(--line-subtle)]">
+              <div class="h-60 md:h-full md:col-span-5 overflow-hidden bg-black/40 border-b md:border-b-0 md:border-r border-[var(--border)]">
                 <img src="assets/images/stm32_can_pcb.jpg" alt="STM32 CAN Bus Hardware" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
               </div>
               <div class="p-6 md:p-8 md:col-span-7 flex flex-col justify-between space-y-5">
                 <div class="space-y-3">
                   <div class="flex flex-wrap items-center gap-2">
-                    <span class="text-[10px] font-mono text-[var(--ink-muted)]">IN-VEHICLE NETWORKING · 2025</span>
-                    <span class="rounded px-2.5 py-0.5 text-[10px] font-mono font-medium pill-mint border border-[var(--pastel-mint-border)]">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
-                    <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-sky">5-NODE MONOREPO · 500 KBPS CAN</span>
+                    <span class="text-[10px] font-mono text-[var(--text-muted)]">IN-VEHICLE NETWORKING · 2025</span>
+                    <span class="rounded-full px-2.5 py-0.5 text-[10px] font-mono font-medium bg-[var(--green-dim)] text-[var(--green)] border border-[var(--green)]/20">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
+                    <span class="rounded-full px-2 py-0.5 text-[10px] font-mono bg-[var(--sky-dim)] text-[var(--sky)] border border-[var(--sky)]/20">5-NODE MONOREPO · 500 KBPS CAN</span>
                   </div>
-                  <h3 class="text-xl sm:text-2xl font-bold text-[var(--ink-primary)] tracking-tight">
+                  <h3 class="text-xl sm:text-2xl font-bold text-[var(--text)] tracking-tight">
                     Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus
                   </h3>
-                  <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[var(--surface-container)] border border-[var(--line-default)] text-xs font-mono text-[var(--ink-primary)]">
-                    <span class="text-[var(--pastel-mint-text)] font-semibold">● Lead of 5-Engineer Team</span>
-                    <span class="text-[var(--ink-muted)]">|</span>
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs font-mono text-[var(--text)]">
+                    <span class="text-[var(--green)] font-semibold">● Lead of 5-Engineer Team</span>
+                    <span class="text-[var(--text-muted)]">|</span>
                     <span>Monorepo Architecture &amp; Protocol Arbitration</span>
                   </div>
-                  <p class="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-                    Directed the end-to-end architecture and firmware development of a distributed 5-node automotive network. Designed modular subsystem contracts (Central Sensor MCU STM32F407, Front BCM STM32F103, Rear BCM STM32F103, CAN-to-UART Bridge, and a 60 FPS Qt 6 / QML digital instrument cluster). Enforced monorepo ownership boundaries via <code class="text-[11px] font-mono text-[var(--ink-primary)]">.github/CODEOWNERS</code>, engineered priority-based CAN 2.0B arbitration (<code class="text-[11px] font-mono text-[var(--ink-primary)]">0x100</code>–<code class="text-[11px] font-mono text-[var(--ink-primary)]">0x720</code>), and implemented a fail-safe 500ms master blink tick lockstep protocol to eliminate phase drift across independent nodes.
+                  <p class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+                    Directed the end-to-end architecture and firmware development of a distributed 5-node automotive network. Designed modular subsystem contracts (Central Sensor MCU STM32F407, Front BCM STM32F103, Rear BCM STM32F103, CAN-to-UART Bridge, and a 60 FPS Qt 6 / QML digital instrument cluster). Enforced monorepo ownership boundaries via <code class="text-[11px] font-mono text-[var(--text)]">.github/CODEOWNERS</code>, engineered priority-based CAN 2.0B arbitration (<code class="text-[11px] font-mono text-[var(--text)]">0x100</code>–<code class="text-[11px] font-mono text-[var(--text)]">0x720</code>), and implemented a fail-safe 500ms master blink tick lockstep protocol to eliminate phase drift across independent nodes.
                   </p>
-                  <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-muted)] pt-1">
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5 text-[var(--ink-primary)] font-medium">System Architect &amp; Tech Lead</span>
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">5-Node Monorepo</span>
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32F407 + Dual F103</span>
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Qt 6 / QML Cluster</span>
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">CAN 2.0B (500 kbps)</span>
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">500ms Lockstep Sync</span>
-                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Fail-Safe DTCs</span>
+                  <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--text-muted)] pt-1">
+                    <span class="rounded-full glass px-2.5 py-0.5 text-[var(--text)] font-medium">System Architect &amp; Tech Lead</span>
+                    <span class="rounded-full glass px-2.5 py-0.5">5-Node Monorepo</span>
+                    <span class="rounded-full glass px-2.5 py-0.5">STM32F407 + Dual F103</span>
+                    <span class="rounded-full glass px-2.5 py-0.5">Qt 6 / QML Cluster</span>
+                    <span class="rounded-full glass px-2.5 py-0.5">CAN 2.0B (500 kbps)</span>
+                    <span class="rounded-full glass px-2.5 py-0.5">500ms Lockstep Sync</span>
+                    <span class="rounded-full glass px-2.5 py-0.5">Fail-Safe DTCs</span>
                   </div>
                 </div>
-                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-[var(--line-subtle)]">
-                  <button onclick="openDeepDive('can')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-4 py-2 text-xs font-semibold text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-[var(--border)]">
+                  <button onclick="openDeepDive('can')" class="rounded-full bg-white text-zinc-950 px-4 py-2 text-xs font-semibold hover:bg-zinc-200 transition-colors shadow">
                     Read Architecture Case Study →
                   </button>
-                  <button onclick="openWorkbenchTab('dso', 'can')" class="text-xs font-mono font-medium text-[var(--pastel-sky-text)] hover:underline">
+                  <button onclick="openWorkbenchTab('dso', 'can')" class="text-xs font-mono font-medium text-[var(--sky)] hover:underline">
                     Launch CAN DSO ↗
                   </button>
-                  <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[var(--ink-muted)] hover:text-[var(--ink-primary)] ml-auto">
+                  <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[var(--text-secondary)] hover:text-[var(--text)] ml-auto">
                     github.com/tumo07/vehicle-dashboard-cluster ↗
                   </a>
                 </div>
@@ -380,33 +438,33 @@
           </div>
 
           <!-- PROJECT 2: NXP S32K144 Automotive ECU -->
-          <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between">
-            <div class="h-48 w-full overflow-hidden bg-[var(--surface-lowest)] border-b border-[var(--line-subtle)]">
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div class="h-48 w-full overflow-hidden bg-black/40 border-b border-[var(--border)]">
               <img src="assets/images/ecu_hero.jpg" alt="NXP S32K144 Hardware Bench" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-mono text-[var(--ink-muted)]">AUTOMOTIVE ECU · 2025</span>
-                  <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-mint">NXP S32K144 · I2C</span>
+                  <span class="text-[10px] font-mono text-[var(--text-muted)]">AUTOMOTIVE ECU · 2025</span>
+                  <span class="rounded-full px-2 py-0.5 text-[10px] font-mono bg-[var(--green-dim)] text-[var(--green)] border border-[var(--green)]/20">NXP S32K144 · I2C</span>
                 </div>
-                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                <h3 class="text-lg font-bold text-[var(--text)]">
                   Automotive ECU Firmware &amp; Diagnostics (NXP S32K144)
                 </h3>
-                <p class="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
                   Developed bare-metal firmware for the NXP S32K144 automotive MCU, implementing dual-board ECU communication over I2C. Conducted physical-layer verification with digital oscilloscopes to analyze rise times and clock stretching.
                 </p>
-                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-muted)] pt-1">
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">S32 Design Studio</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">MAAZ EDU</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">DSO Test Points</span>
+                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--text-muted)] pt-1">
+                  <span class="rounded-full glass px-2.5 py-0.5">S32 Design Studio</span>
+                  <span class="rounded-full glass px-2.5 py-0.5">MAAZ EDU</span>
+                  <span class="rounded-full glass px-2.5 py-0.5">DSO Test Points</span>
                 </div>
               </div>
-              <div class="flex items-center gap-3 pt-4 border-t border-[var(--line-subtle)]">
-                <button onclick="openDeepDive('s32k144')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+              <div class="flex items-center gap-3 pt-4 border-t border-[var(--border)]">
+                <button onclick="openDeepDive('s32k144')" class="rounded-full glass px-3.5 py-1.5 text-xs font-medium text-[var(--text)] hover:border-[var(--border-hover)] transition-colors">
                   Read Case Study →
                 </button>
-                <button onclick="openWorkbenchTab('dso', 'i2c')" class="text-xs font-mono text-[var(--pastel-mint-text)] hover:underline">
+                <button onclick="openWorkbenchTab('dso', 'i2c')" class="text-xs font-mono text-[var(--green)] hover:underline">
                   Launch Waveform DSO ↗
                 </button>
               </div>
@@ -414,33 +472,33 @@
           </div>
 
           <!-- PROJECT 3: MIFARE Classic 1K RFID Cloner -->
-          <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between">
-            <div class="h-48 w-full overflow-hidden bg-[var(--surface-lowest)] border-b border-[var(--line-subtle)]">
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div class="h-48 w-full overflow-hidden bg-black/40 border-b border-[var(--border)]">
               <img src="assets/images/rfid_sec_lab.jpg" alt="RFID Lab Setup" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-mono text-[var(--ink-muted)]">HARDWARE SECURITY · 2024</span>
-                  <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-lavender">13.56 MHz · SPI</span>
+                  <span class="text-[10px] font-mono text-[var(--text-muted)]">HARDWARE SECURITY · 2024</span>
+                  <span class="rounded-full px-2 py-0.5 text-[10px] font-mono bg-[var(--purple-dim)] text-[var(--purple)] border border-[var(--purple)]/20">13.56 MHz · SPI</span>
                 </div>
-                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                <h3 class="text-lg font-bold text-[var(--text)]">
                   Portable MIFARE Classic 1K RFID Security &amp; Cloner Tool
                 </h3>
-                <p class="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
                   Engineered bare-metal STM32F103 firmware interfacing with an MFRC522 transceiver over SPI. Implemented an embedded 166-key dictionary engine, Crypto-1 mutual authentication, and Gen1a magic backdoor Block 0 rewrites.
                 </p>
-                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-muted)] pt-1">
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32 Blue Pill</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">MFRC522 SPI</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Gen1a 0x40/0x43 Backdoor</span>
+                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--text-muted)] pt-1">
+                  <span class="rounded-full glass px-2.5 py-0.5">STM32 Blue Pill</span>
+                  <span class="rounded-full glass px-2.5 py-0.5">MFRC522 SPI</span>
+                  <span class="rounded-full glass px-2.5 py-0.5">Gen1a Backdoor</span>
                 </div>
               </div>
-              <div class="flex items-center gap-3 pt-4 border-t border-[var(--line-subtle)]">
-                <button onclick="openDeepDive('rfid')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+              <div class="flex items-center gap-3 pt-4 border-t border-[var(--border)]">
+                <button onclick="openDeepDive('rfid')" class="rounded-full glass px-3.5 py-1.5 text-xs font-medium text-[var(--text)] hover:border-[var(--border-hover)] transition-colors">
                   Read Case Study →
                 </button>
-                <button onclick="openWorkbenchTab('rfid')" class="text-xs font-mono text-[var(--pastel-lavender-text)] hover:underline">
+                <button onclick="openWorkbenchTab('rfid')" class="text-xs font-mono text-[var(--purple)] hover:underline">
                   Inspect Hex Matrix ↗
                 </button>
               </div>
@@ -448,34 +506,34 @@
           </div>
 
           <!-- PROJECT 4: 4S3P LiFePO4 BMS Telemetry -->
-          <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between">
-            <div class="h-48 w-full overflow-hidden bg-[var(--surface-lowest)] border-b border-[var(--line-subtle)]">
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between">
+            <div class="h-48 w-full overflow-hidden bg-black/40 border-b border-[var(--border)]">
               <img src="assets/images/bms_pcb_macro.jpg" alt="Battery BMS PCB" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-mono text-[var(--ink-muted)]">BATTERY MANAGEMENT · 2025</span>
-                  <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-peach">MAX17048 · I2C Fuel Gauge</span>
+                  <span class="text-[10px] font-mono text-[var(--text-muted)]">BATTERY MANAGEMENT · 2025</span>
+                  <span class="rounded-full px-2 py-0.5 text-[10px] font-mono bg-[var(--amber-dim)] text-[var(--amber)] border border-[var(--amber)]/20">MAX17048 · I2C Fuel Gauge</span>
                 </div>
-                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                <h3 class="text-lg font-bold text-[var(--text)]">
                   LiFePO4 Battery Monitor &amp; Coulomb Counting Telemetry
                 </h3>
-                <p class="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
                   Interfaced STM32 with Maxim MAX17048 fuel gauge IC over I2C Fast-Mode to provide real-time state-of-charge (SoC) tracking across the flat 3.2V discharge plateau of custom 4S3P LiFePO4 battery packs.
                 </p>
-                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-muted)] pt-1">
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">MAX17048 ModelGauge</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Coulomb Integration</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">4S3P 12.8V 9.6Ah</span>
+                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--text-muted)] pt-1">
+                  <span class="rounded-full glass px-2.5 py-0.5">ModelGauge Algorithm</span>
+                  <span class="rounded-full glass px-2.5 py-0.5">Ohmic IR Compensation</span>
+                  <span class="rounded-full glass px-2.5 py-0.5">I2C Fast-Mode</span>
                 </div>
               </div>
-              <div class="flex items-center gap-3 pt-4 border-t border-[var(--line-subtle)]">
-                <button onclick="openDeepDive('bms')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+              <div class="flex items-center gap-3 pt-4 border-t border-[var(--border)]">
+                <button onclick="openDeepDive('bms')" class="rounded-full glass px-3.5 py-1.5 text-xs font-medium text-[var(--text)] hover:border-[var(--border-hover)] transition-colors">
                   Read Case Study →
                 </button>
-                <button onclick="openWorkbenchTab('bms')" class="text-xs font-mono text-[var(--pastel-peach-text)] hover:underline">
-                  Launch Coulomb Counter ↗
+                <button onclick="openWorkbenchTab('bms')" class="text-xs font-mono text-[var(--amber)] hover:underline">
+                  Simulate Battery Model ↗
                 </button>
               </div>
             </div>
@@ -487,229 +545,229 @@
     </section>
 
     <!-- =============================================================== -->
-    <!-- INTERACTIVE BENCH & SIGNAL LAB (CLEAN, ELEVATED, ZERO NEON)     -->
+    <!-- INTERACTIVE HARDWARE BENCH & SIGNAL LAB (GLASS CHASSIS)          -->
     <!-- =============================================================== -->
-    <section id="workbench" class="border-b border-[var(--line-default)] py-16">
+    <section id="workbench" class="py-16 sm:py-20 border-t border-[var(--border)]">
       <div class="mx-auto max-w-6xl px-6">
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)] mb-2">INTERACTIVE TOOLS</div>
-            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--ink-primary)]">
+            <div class="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)] mb-2">INTERACTIVE TOOLS</div>
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text)]">
               Interactive Hardware Bench &amp; Signal Lab
             </h2>
           </div>
-          <p class="text-xs text-[var(--ink-muted)] max-w-md">
+          <p class="text-xs text-[var(--text-secondary)] max-w-md">
             Directly test physical layer waveforms, cryptographic memory maps, and battery electro-chemical models running in real time.
           </p>
         </div>
 
-        <!-- Workbench Tab Selector -->
-        <div class="flex flex-wrap items-center gap-2 border-b border-[var(--line-subtle)] pb-4 mb-8">
-          <button id="wb-tab-btn-dso" onclick="switchWorkbenchTab('dso')" class="flex items-center gap-2 rounded px-3.5 py-2 text-xs font-mono font-medium transition-all bg-[var(--surface-container)] text-[var(--ink-primary)] border border-[var(--line-strong)]">
-            <span>01 · Digital Oscilloscope (DSO) &amp; Protocol Decoder</span>
+        <!-- Glass Tab Switcher -->
+        <div class="inline-flex p-1.5 rounded-full glass border border-[var(--border)] gap-1 mb-8">
+          <button id="wb-tab-dso" onclick="switchWorkbenchTab('dso')" class="rounded-full px-4 py-1.5 text-xs font-mono transition-all bg-white text-zinc-950 font-semibold shadow">
+            01 · Digital Oscilloscope (DSO) &amp; Protocol Decoder
           </button>
-          <button id="wb-tab-btn-rfid" onclick="switchWorkbenchTab('rfid')" class="flex items-center gap-2 rounded px-3.5 py-2 text-xs font-mono font-medium transition-all bg-[var(--surface-low)] text-[var(--ink-secondary)] border border-[var(--line-default)] hover:text-[var(--ink-primary)]">
-            <span>02 · MIFARE Classic 1K Hex Sector Matrix</span>
+          <button id="wb-tab-rfid" onclick="switchWorkbenchTab('rfid')" class="rounded-full px-4 py-1.5 text-xs font-mono transition-all text-[var(--text-secondary)] hover:text-[var(--text)]">
+            02 · MIFARE Classic 1K Hex Sector Matrix
           </button>
-          <button id="wb-tab-btn-bms" onclick="switchWorkbenchTab('bms')" class="flex items-center gap-2 rounded px-3.5 py-2 text-xs font-mono font-medium transition-all bg-[var(--surface-low)] text-[var(--ink-secondary)] border border-[var(--line-default)] hover:text-[var(--ink-primary)]">
-            <span>03 · LiFePO4 ModelGauge &amp; Coulomb Counter</span>
+          <button id="wb-tab-bms" onclick="switchWorkbenchTab('bms')" class="rounded-full px-4 py-1.5 text-xs font-mono transition-all text-[var(--text-secondary)] hover:text-[var(--text)]">
+            03 · LiFePO4 ModelGauge &amp; Coulomb Counter
           </button>
         </div>
 
-        <!-- TAB 1: DSO Oscilloscope -->
-        <div id="wb-panel-dso" class="space-y-6">
+        <!-- ============================================================= -->
+        <!-- TAB 01: DIGITAL OSCILLOSCOPE (DSO)                           -->
+        <!-- ============================================================= -->
+        <div id="wb-panel-dso" class="space-y-4">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
-            <!-- Canvas Display (8 Cols) -->
-            <div class="lg:col-span-8 clean-card rounded-xl p-4 flex flex-col justify-between">
-              
-              <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[var(--line-subtle)] text-[11px] font-mono">
+            <!-- Scope Screen (8 Cols) -->
+            <div class="lg:col-span-8 glass-card rounded-2xl p-5 space-y-3">
+              <div class="flex items-center justify-between text-[11px] font-mono text-[var(--text-secondary)] border-b border-[var(--border)] pb-2.5">
                 <div class="flex items-center gap-2">
-                  <span id="dso-run-dot" class="h-1.5 w-1.5 rounded-full bg-zinc-400"></span>
-                  <span id="dso-run-label" class="text-zinc-300 font-mono text-[10px] uppercase">ACQUIRING · 2.0 GSa/s</span>
-                  <span class="text-zinc-600">|</span>
-                  <span id="dso-timebase-display" class="text-zinc-400">1.0 µs / div</span>
+                  <span class="inline-block h-2 w-2 rounded-full bg-[var(--green)]"></span>
+                  <span id="dso-status" class="uppercase">ACQUIRING · 2.0 GSa/s</span>
+                  <span class="text-[var(--text-muted)]">|</span>
+                  <span id="dso-timebase-display">1.0 µs / div</span>
                 </div>
                 <div class="flex items-center gap-2">
-                  <button id="dso-ch1-toggle" onclick="toggleDsoChannel(1)" class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700/80 text-zinc-300 text-[10px] hover:border-zinc-500 transition-all">
-                    CH1: <span id="ch1-name-tag">CAN_H</span>
-                  </button>
-                  <button id="dso-ch2-toggle" onclick="toggleDsoChannel(2)" class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700/80 text-zinc-300 text-[10px] hover:border-zinc-500 transition-all">
-                    CH2: <span id="ch2-name-tag">CAN_L</span>
-                  </button>
-                  <button id="dso-math-toggle" onclick="toggleDsoChannel('math')" class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700/80 text-zinc-300 text-[10px] hover:border-zinc-500 transition-all">
-                    DIFF: V_diff
-                  </button>
+                  <span class="px-2 py-0.5 rounded-full glass text-[10px]">CH1: CAN_H</span>
+                  <span class="px-2 py-0.5 rounded-full glass text-[10px]">CH2: CAN_L</span>
+                  <span class="px-2 py-0.5 rounded-full glass text-[10px]">DIFF: V_diff</span>
                 </div>
               </div>
 
-              <!-- Main Canvas -->
-              <div class="relative my-3 w-full bg-[#08090d] rounded-lg border border-[var(--line-subtle)] overflow-hidden cursor-crosshair">
-                <canvas id="dsoCanvas" width="800" height="320" class="w-full h-64 sm:h-72 block"></canvas>
+              <!-- Canvas Graticule Display -->
+              <div class="relative w-full aspect-[16/9] max-h-[380px] rounded-xl overflow-hidden bg-[#07080a] border border-white/10 shadow-inner">
+                <canvas id="dso-canvas" class="w-full h-full block"></canvas>
+                <!-- Voltage Scale Markers -->
+                <div class="absolute left-2 top-2 text-[10px] font-mono text-zinc-500 pointer-events-none">+3.5V</div>
+                <div class="absolute left-2 top-1/2 -translate-y-1/2 text-[10px] font-mono text-zinc-500 pointer-events-none">+2.5V (REC)</div>
+                <div class="absolute left-2 bottom-2 text-[10px] font-mono text-zinc-500 pointer-events-none">+1.5V</div>
+              </div>
+
+              <!-- Measurement Strip -->
+              <div class="flex flex-wrap items-center justify-between gap-2 pt-2 text-[11px] font-mono text-[var(--text-secondary)]">
+                <div>X1: <span id="dso-x1" class="text-[var(--text)]">1.20 µs</span> | X2: <span id="dso-x2" class="text-[var(--text)]">3.20 µs</span> | Δt: <span id="dso-dt" class="text-[var(--green)] font-semibold">2.00 µs</span></div>
+                <div>Rate: <span id="dso-baud" class="text-[var(--text)]">500.0 kbps</span> | Slew tr: <span id="dso-slew" class="text-[var(--text)]">42 ns</span></div>
+              </div>
+            </div>
+
+            <!-- Scope Controls & Preset Selector (4 Cols) -->
+            <div class="lg:col-span-4 space-y-4">
+              
+              <div class="glass-card rounded-2xl p-5 space-y-4">
+                <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">SIGNAL PRESETS</div>
                 
-                <!-- Floating HUD (Clean Monochrome) -->
-                <div class="absolute bottom-2.5 left-2.5 flex flex-wrap gap-2 text-[10px] font-mono bg-zinc-950/90 border border-zinc-800 rounded px-2.5 py-1.5 text-zinc-400 pointer-events-none">
-                  <div>X1: <span id="hud-x1" class="text-zinc-200 font-medium">1.20 µs</span></div>
-                  <div class="text-zinc-700">|</div>
-                  <div>X2: <span id="hud-x2" class="text-zinc-200 font-medium">3.20 µs</span></div>
-                  <div class="text-zinc-700">|</div>
-                  <div>Δt: <span id="hud-dt" class="text-zinc-100 font-semibold font-mono">2.00 µs</span></div>
-                  <div class="text-zinc-700">|</div>
-                  <div>Rate: <span id="hud-freq" class="text-zinc-100 font-semibold font-mono">500.0 kbps</span></div>
-                  <div class="text-zinc-700">|</div>
-                  <div>Slew tr: <span id="hud-tr" class="text-zinc-300">42 ns</span></div>
-                </div>
-              </div>
-
-              <!-- Decoded Protocol Ribbon -->
-              <div class="pt-2 border-t border-[var(--line-subtle)]">
-                <div class="flex items-center justify-between text-[10px] font-mono text-[var(--ink-muted)] mb-1.5">
-                  <span class="flex items-center gap-1.5">
-                    <span class="h-1.5 w-1.5 rounded-full bg-zinc-400"></span>
-                    <span>PROTOCOL DECODER:</span>
-                    <strong id="protocol-decoder-title" class="text-zinc-200">CAN 2.0B Standard (500 kbps · ID 0x301)</strong>
-                  </span>
-                  <span class="text-zinc-500">Slew: 45ns · 120Ω Terminated</span>
-                </div>
-                <div id="protocol-ribbon" class="flex items-center gap-1 overflow-x-auto text-[10px] font-mono pb-1"></div>
-              </div>
-
-            </div>
-
-            <!-- Controls (4 Cols) -->
-            <div class="lg:col-span-4 clean-card rounded-xl p-5 flex flex-col justify-between space-y-4">
-              <div>
-                <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--ink-muted)] mb-3">
-                  SIGNAL PRESETS
-                </div>
                 <div class="space-y-2">
-                  <button onclick="selectDsoPreset('can')" id="dso-btn-preset-can" class="w-full text-left p-3 rounded-lg border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] transition-all">
-                    <div class="flex items-center justify-between">
-                      <div class="font-semibold text-xs text-[var(--ink-primary)]">CAN 2.0B Differential Bus</div>
-                      <span class="font-mono text-[10px] pill-mint px-1.5 py-0.5 rounded">500 kbps</span>
+                  <button id="preset-can" onclick="setSignalPreset('can')" class="w-full text-left p-3 rounded-xl border border-[var(--green)]/30 bg-[var(--green-dim)] text-[var(--text)] text-xs transition-all">
+                    <div class="flex items-center justify-between font-semibold">
+                      <span>CAN 2.0B Differential Bus</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[var(--green-dim)] text-[var(--green)] border border-[var(--green)]/20">500 kbps</span>
                     </div>
-                    <div class="text-[11px] text-[var(--ink-secondary)] mt-1">
-                      Recessive 2.5V, Dominant CAN_H 3.5V / CAN_L 1.5V with 120Ω split terminations.
-                    </div>
+                    <div class="text-[11px] text-[var(--text-secondary)] mt-1">Recessive 2.5V, Dominant CAN_H 3.5V / CAN_L 1.5V with 120Ω split terminations.</div>
                   </button>
 
-                  <button onclick="selectDsoPreset('i2c')" id="dso-btn-preset-i2c" class="w-full text-left p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] transition-all">
-                    <div class="flex items-center justify-between">
-                      <div class="font-semibold text-xs text-[var(--ink-primary)]">I2C Fast-Mode Telemetry</div>
-                      <span class="font-mono text-[10px] pill-sky px-1.5 py-0.5 rounded">400 kHz</span>
+                  <button id="preset-i2c" onclick="setSignalPreset('i2c')" class="w-full text-left p-3 rounded-xl border border-[var(--border)] glass text-[var(--text-secondary)] hover:text-[var(--text)] text-xs transition-all">
+                    <div class="flex items-center justify-between font-semibold">
+                      <span>I2C Fast-Mode Telemetry</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded-full glass">400 kHz</span>
                     </div>
-                    <div class="text-[11px] text-[var(--ink-secondary)] mt-1">
-                      Open-drain RC exponential rise curves (Rp=2.2kΩ, Cb=85pF) on MAX17048 Fuel Gauge.
-                    </div>
+                    <div class="text-[11px] text-[var(--text-muted)] mt-1">Open-drain RC exponential rise curves (Rp=2.2kΩ, Cb=85pF) on MAX17048 Fuel Gauge.</div>
                   </button>
 
-                  <button onclick="selectDsoPreset('spi')" id="dso-btn-preset-spi" class="w-full text-left p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] transition-all">
-                    <div class="flex items-center justify-between">
-                      <div class="font-semibold text-xs text-[var(--ink-primary)]">SPI 10 MHz Transceive</div>
-                      <span class="font-mono text-[10px] pill-lavender px-1.5 py-0.5 rounded">10 MHz</span>
+                  <button id="preset-spi" onclick="setSignalPreset('spi')" class="w-full text-left p-3 rounded-xl border border-[var(--border)] glass text-[var(--text-secondary)] hover:text-[var(--text)] text-xs transition-all">
+                    <div class="flex items-center justify-between font-semibold">
+                      <span>SPI 10 MHz Transceive</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded-full glass">10 MHz</span>
                     </div>
-                    <div class="text-[11px] text-[var(--ink-secondary)] mt-1">
-                      STM32 Blue Pill interrogating MFRC522 RF transceiver over high-speed hardware SPI.
-                    </div>
+                    <div class="text-[11px] text-[var(--text-muted)] mt-1">STM32 Blue Pill interrogating MFRC522 RF transceiver over high-speed hardware SPI.</div>
                   </button>
                 </div>
-              </div>
 
-              <!-- Timebase Buttons -->
-              <div class="space-y-2 pt-2 border-t border-[var(--line-subtle)]">
-                <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--ink-muted)]">TIMEBASE (SEC/DIV)</div>
-                <div class="grid grid-cols-4 gap-1.5 font-mono text-xs">
-                  <button onclick="setDsoTimebase(0.5)" id="tb-05" class="py-1 rounded border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-[var(--ink-secondary)]">0.5µs</button>
-                  <button onclick="setDsoTimebase(1.0)" id="tb-10" class="py-1 rounded border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] text-[var(--pastel-mint-text)] font-semibold">1.0µs</button>
-                  <button onclick="setDsoTimebase(2.0)" id="tb-20" class="py-1 rounded border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-[var(--ink-secondary)]">2.0µs</button>
-                  <button onclick="setDsoTimebase(5.0)" id="tb-50" class="py-1 rounded border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-[var(--ink-secondary)]">5.0µs</button>
+                <div class="pt-3 border-t border-[var(--border)] space-y-2">
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">TIMEBASE (SEC/DIV)</div>
+                  <div class="grid grid-cols-4 gap-1.5 text-xs font-mono">
+                    <button onclick="setTimebase(0.5)" class="tb-btn py-1 rounded-lg glass text-[var(--text-secondary)] hover:text-[var(--text)]">0.5µs</button>
+                    <button onclick="setTimebase(1.0)" class="tb-btn py-1 rounded-lg bg-white text-zinc-950 font-bold shadow">1.0µs</button>
+                    <button onclick="setTimebase(2.0)" class="tb-btn py-1 rounded-lg glass text-[var(--text-secondary)] hover:text-[var(--text)]">2.0µs</button>
+                    <button onclick="setTimebase(5.0)" class="tb-btn py-1 rounded-lg glass text-[var(--text-secondary)] hover:text-[var(--text)]">5.0µs</button>
+                  </div>
                 </div>
+
+                <div class="flex items-center gap-2 pt-2">
+                  <button id="dso-measure-btn" onclick="snapMeasurement()" class="flex-1 py-2 rounded-xl glass border border-[var(--border)] text-xs font-mono text-[var(--text)] hover:border-[var(--border-hover)] transition-colors">
+                    Snap 1 Bit (2µs)
+                  </button>
+                  <button id="dso-freeze-btn" onclick="toggleDsoFreeze()" class="flex-1 py-2 rounded-xl glass border border-[var(--border)] text-xs font-mono text-[var(--text)] hover:border-[var(--border-hover)] transition-colors">
+                    Freeze
+                  </button>
+                </div>
+
               </div>
 
-              <div class="flex gap-2 pt-2 border-t border-[var(--line-subtle)]">
-                <button onclick="snapCursorsToBit()" class="flex-1 py-1.5 rounded border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-xs text-[var(--ink-secondary)] font-mono">
-                  Snap 1 Bit (2µs)
-                </button>
-                <button id="dso-run-btn" onclick="toggleDsoRun()" class="px-4 py-1.5 rounded border border-[var(--line-strong)] bg-[var(--surface-container)] hover:bg-[var(--surface-high)] text-xs font-mono font-medium text-[var(--ink-primary)]">
-                  Freeze
-                </button>
+              <!-- Scope Hardware Legend -->
+              <div class="p-4 rounded-xl glass border border-[var(--border)] text-xs text-[var(--text-secondary)] space-y-1.5">
+                <p class="leading-relaxed">
+                  In embedded automotive systems, verifying the rise time (t<sub>r</sub> ≤ 50 ns) and differential voltage (V<sub>diff</sub> ≥ 1.5 V) via DSO confirms physical signal integrity before running upper-layer AUTOSAR stacks.
+                </p>
               </div>
 
-              <div class="p-3 rounded-lg border border-[var(--line-subtle)] bg-[var(--surface)] text-[11px] text-[var(--ink-secondary)] leading-relaxed">
-                In embedded automotive systems, verifying the rise time (t<sub>r</sub> ≤ 50 ns) and differential voltage (V<sub>diff</sub> ≥ 1.5 V) via DSO confirms physical signal integrity before running upper-layer AUTOSAR stacks.
-              </div>
             </div>
 
           </div>
-        </div>
 
-        <!-- TAB 2: MIFARE RFID Inspector -->
-        <div id="wb-panel-rfid" class="hidden space-y-6">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            
-            <div class="lg:col-span-4 clean-card rounded-xl p-5 space-y-4">
-              <div class="flex items-center justify-between">
-                <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--ink-muted)]">16 SECTORS (1024 BYTES)</div>
-                <span class="pill-lavender text-[10px] font-mono px-2 py-0.5 rounded">Crypto-1</span>
-              </div>
-              <div id="rfid-sector-buttons" class="grid grid-cols-4 gap-1.5 font-mono text-xs"></div>
-              
-              <div class="p-3 rounded border border-[var(--line-default)] bg-[var(--surface)] text-xs space-y-1.5">
-                <div class="text-[var(--ink-muted)] font-mono text-[10px]">SELECTED: <span id="rfid-sel-sector-badge" class="font-bold text-[var(--ink-primary)]">Sector 00 (Manufacturer)</span></div>
-                <div class="text-[var(--ink-muted)] font-mono text-[10px]">BLOCKS: <span id="rfid-sel-blocks-badge" class="text-[var(--ink-secondary)]">Block 00 – Block 03 (64 Bytes)</span></div>
-              </div>
-
-              <div class="space-y-2 pt-2 border-t border-[var(--line-subtle)]">
-                <button onclick="runRfidAttack('gen1a')" class="w-full py-2 px-3 rounded-lg border border-[var(--pastel-lavender-border)] bg-[var(--pastel-lavender-bg)] text-[var(--pastel-lavender-text)] hover:opacity-85 font-mono text-xs text-left transition-all">
-                  <div class="font-semibold">Execute Gen1a Magic Unlock (0x40/0x43)</div>
-                  <div class="text-[10px] opacity-80">Bypasses Crypto-1, rewrites Block 0 UID &amp; BCC</div>
-                </button>
-                <button onclick="runRfidAttack('cuid')" class="w-full py-2 px-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-[var(--ink-secondary)] font-mono text-xs text-left transition-all">
-                  <div class="font-semibold text-[var(--ink-primary)]">Test Gen2 / CUID Direct Write</div>
-                  <div class="text-[10px]">Standard ISO 14443-A 0xA0 write to Block 0</div>
-                </button>
-                <button onclick="runRfidAttack('dict')" class="w-full py-2 px-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-[var(--ink-secondary)] font-mono text-xs text-left transition-all">
-                  <div class="font-semibold text-[var(--ink-primary)]">Run 166-Key Dictionary Attack</div>
-                  <div class="text-[10px]">Embedded PRNG cracking in &lt;350ms</div>
-                </button>
-              </div>
-            </div>
-
-            <div class="lg:col-span-8 clean-card rounded-xl p-5 space-y-4">
-              <div class="flex items-center justify-between pb-3 border-b border-[var(--line-subtle)]">
-                <div>
-                  <h3 class="text-sm font-semibold text-[var(--ink-primary)]">
-                    Sector <span id="hex-sector-title">00</span> Memory Block Breakdown (16 Bytes / Block)
-                  </h3>
-                  <p class="text-xs text-[var(--ink-muted)]">Raw EEPROM bytes with cryptographic trailer syntax highlighting</p>
-                </div>
-                <div class="flex items-center gap-2 font-mono text-[10px]">
-                  <span class="px-1.5 py-0.5 rounded pill-lavender">Key A</span>
-                  <span class="px-1.5 py-0.5 rounded pill-sky">Access Bits</span>
-                  <span class="px-1.5 py-0.5 rounded pill-peach">Key B</span>
-                </div>
-              </div>
-
-              <div class="overflow-x-auto rounded-lg border border-[var(--line-default)] bg-[#08090d] p-3 text-zinc-300 font-mono text-xs">
-                <div class="grid grid-cols-12 gap-2 pb-2 text-[10px] text-zinc-500 border-b border-zinc-800">
-                  <div class="col-span-2">BLOCK / ADDR</div>
-                  <div class="col-span-7">HEX DATA (BYTES 00 – 15)</div>
-                  <div class="col-span-3">ASCII</div>
-                </div>
-                <div id="hex-rows-container" class="space-y-1.5 pt-2"></div>
-              </div>
-
-              <!-- Terminal -->
+          <!-- Live Protocol Decode Frame Table -->
+          <div class="glass-card rounded-2xl p-5 space-y-3">
+            <div class="flex items-center justify-between text-[11px] font-mono text-[var(--text-secondary)]">
               <div>
-                <div class="flex items-center justify-between text-[10px] font-mono text-[var(--ink-muted)] mb-1">
-                  <span>MFRC522 SPI TRANSACTION LOG</span>
-                  <span id="rfid-term-status" class="text-zinc-400 font-mono text-[10px]">READY</span>
+                <span class="inline-block h-2 w-2 rounded-full bg-[var(--green)] mr-1.5"></span>
+                PROTOCOL DECODER: <span id="decode-title" class="text-[var(--text)] font-semibold">CAN 2.0B Standard (500 kbps · ID 0x301)</span>
+              </div>
+              <div class="text-[10px] text-[var(--text-muted)]">Slew: 45ns · 120Ω Terminated</div>
+            </div>
+            <div id="decode-strip" class="grid grid-cols-7 gap-2 text-center text-xs font-mono pt-1">
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">SOF</div><div class="text-[var(--text)] font-semibold">0</div></div>
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">ID 0x301</div><div class="text-[var(--text)] font-semibold">011 0000 0001</div></div>
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">RTR</div><div class="text-[var(--text)] font-semibold">0</div></div>
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">DLC 8</div><div class="text-[var(--text)] font-semibold">1000</div></div>
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">PAYLOAD [12 A4 00 C8...]</div><div class="text-[var(--text)] font-semibold">64 bits</div></div>
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">CRC 0x4B21</div><div class="text-[var(--text)] font-semibold">15 bits</div></div>
+              <div class="p-2 rounded-lg glass"><div class="text-[10px] text-[var(--text-muted)]">ACK / EOF</div><div class="text-[var(--text)] font-semibold">0 / 1111111</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- TAB 02: MIFARE CLASSIC 1K HEX SECTOR MATRIX                   -->
+        <!-- ============================================================= -->
+        <div id="wb-panel-rfid" class="hidden space-y-4">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Sector Selector Grid (4 Cols) -->
+            <div class="lg:col-span-4 glass-card rounded-2xl p-5 space-y-4">
+              <div class="flex items-center justify-between text-[11px] font-mono text-[var(--text-secondary)]">
+                <span>16 SECTORS (1024 BYTES)</span>
+                <span class="px-2 py-0.5 rounded-full glass">Crypto-1</span>
+              </div>
+              <div class="grid grid-cols-4 gap-2 font-mono text-xs" id="rfid-sector-grid">
+                <!-- 16 buttons generated via JS -->
+              </div>
+              <div class="text-xs text-[var(--text-secondary)] pt-2 border-t border-[var(--border)]">
+                <div class="text-[10px] font-mono uppercase text-[var(--text-muted)]">SELECTED</div>
+                <div id="rfid-sector-desc" class="font-medium text-[var(--text)] mt-0.5">Sector 00 (Manufacturer Block &amp; UID)</div>
+                <div class="text-[11px] text-[var(--text-muted)] mt-1">Blocks: Block 00 - Block 03 (64 Bytes)</div>
+              </div>
+
+              <!-- Quick Attack Injections -->
+              <div class="pt-3 border-t border-[var(--border)] space-y-2">
+                <button onclick="runRfidAttack('gen1a')" class="w-full text-left p-2.5 rounded-xl glass border border-[var(--border)] hover:border-[var(--border-hover)] text-xs transition-colors">
+                  <div class="font-semibold text-[var(--text)]">Execute Gen1a Magic Unlock (0x40/0x43)</div>
+                  <div class="text-[11px] text-[var(--text-muted)]">Bypasses Crypto-1, rewrites Block 0 UID &amp; BCC</div>
+                </button>
+                <button onclick="runRfidAttack('cuid')" class="w-full text-left p-2.5 rounded-xl glass border border-[var(--border)] hover:border-[var(--border-hover)] text-xs transition-colors">
+                  <div class="font-semibold text-[var(--text)]">Test Gen2 / CUID Direct Write</div>
+                  <div class="text-[11px] text-[var(--text-muted)]">Standard ISO 14443-A 0xA0 write to Block 0</div>
+                </button>
+                <button onclick="runRfidAttack('dict')" class="w-full text-left p-2.5 rounded-xl glass border border-[var(--border)] hover:border-[var(--border-hover)] text-xs transition-colors">
+                  <div class="font-semibold text-[var(--text)]">Run 166-Key Dictionary Attack</div>
+                  <div class="text-[11px] text-[var(--text-muted)]">Embedded PRNG cracking in &lt;350ms</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Hex Memory Inspector & Serial Log (8 Cols) -->
+            <div class="lg:col-span-8 space-y-4">
+              
+              <!-- Hex Dump Card -->
+              <div class="glass-card rounded-2xl p-5 space-y-3">
+                <div class="flex items-center justify-between text-xs font-mono text-[var(--text-secondary)] border-b border-[var(--border)] pb-2">
+                  <div>
+                    <span class="font-semibold text-[var(--text)]" id="rfid-block-title">Sector 00 Memory Block Breakdown (16 Bytes / Block)</span>
+                    <span class="text-[10px] text-[var(--text-muted)] ml-2">Raw EEPROM bytes with cryptographic trailer syntax highlighting</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-[10px]">
+                    <span class="px-2 py-0.5 rounded-full bg-[var(--sky-dim)] text-[var(--sky)] border border-[var(--sky)]/20">Key A</span>
+                    <span class="px-2 py-0.5 rounded-full bg-[var(--green-dim)] text-[var(--green)] border border-[var(--green)]/20">Access Bits</span>
+                    <span class="px-2 py-0.5 rounded-full bg-[var(--amber-dim)] text-[var(--amber)] border border-[var(--amber)]/20">Key B</span>
+                  </div>
                 </div>
-                <div id="rfid-terminal" class="h-28 rounded-lg border border-zinc-800 bg-[#07080a] p-2.5 font-mono text-[11px] text-zinc-300 overflow-y-auto leading-relaxed space-y-1">
-                  <div class="text-zinc-500">// STM32F103 MFRC522 Bare-Metal SPI Console initialized. Ready for command injection.</div>
-                  <div class="text-zinc-400">&gt; CARD_DETECT: ISO 14443-A MIFARE Classic 1K present (ATQA: 0x0004, SAK: 0x08)</div>
-                  <div class="text-zinc-200">&gt; UID_SELECT: [3B 91 7E 2A] BCC Checksum: [B6] Valid.</div>
+
+                <div id="rfid-hex-view" class="font-mono text-xs overflow-x-auto space-y-2 py-2">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+
+              <!-- MFRC522 SPI Live Console Log -->
+              <div class="glass-card rounded-2xl p-4 font-mono text-xs space-y-2">
+                <div class="flex items-center justify-between text-[11px] text-[var(--text-muted)] border-b border-[var(--border)] pb-1.5">
+                  <span>MFRC522 SPI TRANSACTION LOG</span>
+                  <span id="rfid-log-status" class="text-[var(--green)] font-semibold">READY</span>
+                </div>
+                <div id="rfid-spi-log" class="text-[11px] text-[var(--text-secondary)] space-y-1 max-h-40 overflow-y-auto pr-2">
+                  <div>// STM32F103 MFRC522 Bare-Metal SPI Console initialized. Ready for command injection.</div>
+                  <div>&gt; CARD_DETECT: ISO 14443-A MIFARE Classic 1K present (ATQA: 0x0004, SAK: 0x08)</div>
+                  <div>&gt; UID_SELECT: [3B 91 7E 2A] BCC Checksum: [B6] Valid.</div>
                 </div>
               </div>
 
@@ -718,69 +776,82 @@
           </div>
         </div>
 
-        <!-- TAB 3: LiFePO4 BMS Inspector -->
-        <div id="wb-panel-bms" class="hidden space-y-6">
+        <!-- ============================================================= -->
+        <!-- TAB 03: LIFEPO4 MODELGAUGE & COULOMB COUNTER                 -->
+        <!-- ============================================================= -->
+        <div id="wb-panel-bms" class="hidden space-y-4">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
-            <div class="lg:col-span-7 clean-card rounded-xl p-4 flex flex-col justify-between">
-              <div class="flex items-center justify-between pb-2 border-b border-[var(--line-subtle)] text-xs font-mono">
-                <span class="text-zinc-200 font-semibold">LiFePO4 Flat Discharge Plateau vs. True Coulomb Count</span>
-                <span class="text-[10px] text-zinc-400">4S3P (12.8V · 9.6Ah Pack)</span>
+            <!-- Battery Chemistry Curve Graph (8 Cols) -->
+            <div class="lg:col-span-8 glass-card rounded-2xl p-5 space-y-4">
+              <div class="flex items-center justify-between text-xs font-mono text-[var(--text-secondary)] border-b border-[var(--border)] pb-2">
+                <span class="font-semibold text-[var(--text)]">LiFePO4 Flat Discharge Plateau vs. True Coulomb Count</span>
+                <span class="text-[10px] text-[var(--text-muted)]">4S3P (12.8V · 9.6Ah Pack)</span>
               </div>
-              <div class="relative my-3 w-full bg-[#08090d] rounded-lg border border-[var(--line-subtle)] overflow-hidden">
-                <canvas id="bmsCanvas" width="700" height="280" class="w-full h-64 sm:h-72 block"></canvas>
-                <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 text-[10px] font-mono bg-zinc-950/90 border border-zinc-800 rounded p-2 text-zinc-400 pointer-events-none">
-                  <div>Loaded Terminal V: <strong id="bms-hud-vterm" class="text-zinc-100 font-semibold">12.91 V</strong></div>
-                  <div>Resting OCV: <strong id="bms-hud-vocv" class="text-zinc-300">13.08 V</strong></div>
-                  <div>Coulomb Count SoC: <strong id="bms-hud-soc" class="text-zinc-100 font-semibold">55.0%</strong></div>
+
+              <div class="relative w-full aspect-[16/9] max-h-[340px] rounded-xl overflow-hidden bg-[#07080a] border border-white/10 shadow-inner">
+                <canvas id="bms-canvas" class="w-full h-full block"></canvas>
+                <!-- HUD Values Overlay -->
+                <div class="absolute right-4 top-4 p-3 rounded-xl glass border border-white/15 text-xs font-mono space-y-1">
+                  <div>Loaded Terminal V: <span id="bms-hud-vterm" class="text-white font-bold">12.85 V</span></div>
+                  <div>Resting OCV: <span id="bms-hud-ocv" class="text-zinc-400">13.10 V</span></div>
+                  <div>Coulomb Count SoC: <span id="bms-hud-soc" class="text-[var(--green)] font-bold">55.0 %</span></div>
                 </div>
               </div>
-              <div class="pt-2 border-t border-[var(--line-subtle)] flex flex-wrap items-center justify-between text-[11px] font-mono text-zinc-400">
-                <div>Cell V: <strong id="bms-cell-v" class="text-zinc-200">3.228 V</strong> | IR Drop: <strong id="bms-ir-drop" class="text-zinc-300">42 mV</strong></div>
-                <div>Effective Capacity: <strong id="bms-peukert-cap" class="text-zinc-200">9.38 Ah / 9.60 Ah</strong></div>
+
+              <div class="flex items-center justify-between text-[11px] font-mono text-[var(--text-secondary)] pt-1">
+                <div>Cell V: <span id="bms-cell-v" class="text-[var(--text)]">3.212 V</span> | IR Drop: <span id="bms-ir-drop" class="text-[var(--text)]">64 mV</span></div>
+                <div>Effective Capacity: <span id="bms-eff-ah" class="text-[var(--text)]">9.38 Ah / 9.60 Ah</span></div>
               </div>
             </div>
 
-            <div class="lg:col-span-5 clean-card rounded-xl p-5 space-y-4">
-              <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--ink-muted)]">LOAD &amp; THERMAL CONTROLS</div>
-              <div class="space-y-4 text-xs">
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span class="text-[var(--ink-primary)]">Pack State of Charge (SoC):</span>
-                    <span id="bms-soc-slider-val" class="font-mono font-bold text-[var(--ink-primary)]">55 %</span>
-                  </div>
-                  <input id="bms-soc-slider" type="range" min="2" max="99" value="55" oninput="updateBmsSimulation()" class="w-full accent-zinc-300 cursor-pointer" />
+            <!-- Physics Model Controls (4 Cols) -->
+            <div class="lg:col-span-4 glass-card rounded-2xl p-5 space-y-5">
+              <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">LOAD &amp; THERMAL CONTROLS</div>
+
+              <!-- SoC Slider -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-xs font-mono">
+                  <span class="text-[var(--text-secondary)]">Pack State of Charge (SoC):</span>
+                  <span id="bms-val-soc" class="text-[var(--text)] font-semibold">55 %</span>
                 </div>
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span class="text-[var(--ink-primary)]">Discharge Load Current:</span>
-                    <span id="bms-load-slider-val" class="font-mono font-bold text-[var(--ink-primary)]">4.5 A</span>
-                  </div>
-                  <input id="bms-load-slider" type="range" min="0" max="150" value="45" oninput="updateBmsSimulation()" class="w-full accent-zinc-300 cursor-pointer" />
+                <input id="bms-slider-soc" type="range" min="0" max="100" value="55" oninput="updateBmsPhysics()" class="w-full accent-white h-1.5 bg-white/10 rounded-lg cursor-pointer" />
+              </div>
+
+              <!-- Load Current Slider -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-xs font-mono">
+                  <span class="text-[var(--text-secondary)]">Discharge Load Current:</span>
+                  <span id="bms-val-load" class="text-[var(--text)] font-semibold">4.5 A</span>
                 </div>
-                <div>
-                  <div class="flex justify-between mb-1">
-                    <span class="text-[var(--ink-primary)]">Cell Temperature:</span>
-                    <span id="bms-temp-slider-val" class="font-mono font-bold text-[var(--ink-primary)]">25 °C</span>
-                  </div>
-                  <input id="bms-temp-slider" type="range" min="-10" max="50" value="25" oninput="updateBmsSimulation()" class="w-full accent-zinc-300 cursor-pointer" />
+                <input id="bms-slider-load" type="range" min="0" max="15" step="0.5" value="4.5" oninput="updateBmsPhysics()" class="w-full accent-white h-1.5 bg-white/10 rounded-lg cursor-pointer" />
+              </div>
+
+              <!-- Temperature Slider -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between text-xs font-mono">
+                  <span class="text-[var(--text-secondary)]">Cell Temperature:</span>
+                  <span id="bms-val-temp" class="text-[var(--text)] font-semibold">25 °C</span>
+                </div>
+                <input id="bms-slider-temp" type="range" min="-10" max="55" value="25" oninput="updateBmsPhysics()" class="w-full accent-white h-1.5 bg-white/10 rounded-lg cursor-pointer" />
+              </div>
+
+              <!-- Real Calculated Metrics -->
+              <div class="grid grid-cols-2 gap-2 pt-3 border-t border-[var(--border)] text-xs font-mono">
+                <div class="p-2.5 rounded-xl glass">
+                  <div class="text-[10px] text-[var(--text-muted)]">INTERNAL RESISTANCE</div>
+                  <div id="bms-calc-ri" class="text-[var(--text)] font-semibold mt-0.5">14.2 mΩ / cell</div>
+                </div>
+                <div class="p-2.5 rounded-xl glass">
+                  <div class="text-[10px] text-[var(--text-muted)]">HEAT LOSS (I²R)</div>
+                  <div id="bms-calc-heat" class="text-[var(--text)] font-semibold mt-0.5">1.15 Watts</div>
                 </div>
               </div>
 
-              <div class="grid grid-cols-2 gap-2 text-xs font-mono pt-2 border-t border-[var(--line-subtle)]">
-                <div class="p-2.5 rounded bg-[var(--surface)] border border-[var(--line-subtle)]">
-                  <div class="text-[9px] text-[var(--ink-muted)] uppercase">INTERNAL RESISTANCE</div>
-                  <div id="bms-ri-val" class="font-bold text-[var(--ink-primary)] mt-0.5">14.2 mΩ / cell</div>
-                </div>
-                <div class="p-2.5 rounded bg-[var(--surface)] border border-[var(--line-subtle)]">
-                  <div class="text-[9px] text-[var(--ink-muted)] uppercase">HEAT LOSS (I²R)</div>
-                  <div id="bms-heat-val" class="font-bold text-[var(--ink-primary)] mt-0.5">1.15 Watts</div>
-                </div>
-              </div>
+              <p class="text-xs text-[var(--text-secondary)] leading-relaxed pt-2">
+                Between 20% and 80% SoC, LiFePO4 cell voltage shifts by only ~25 mV. A 5A load creates a <strong>70 mV Ohmic drop (I × R<sub>i</sub>)</strong>, causing primitive voltage meters to falsely swing by 50%. The MAX17048 Coulomb Counter integrates current (Q = ∫ I dt) over I2C Fast-Mode to maintain deterministic ±1% accuracy.
+              </p>
 
-              <div class="p-3 rounded-lg border border-[var(--line-subtle)] bg-[var(--surface)] text-xs text-[var(--ink-secondary)] leading-relaxed">
-                Between 20% and 80% SoC, LiFePO4 cell voltage shifts by only <strong>~25 mV</strong>. A 5A load creates a <strong>70 mV Ohmic drop</strong> (I &times; R<sub>i</sub>), causing primitive voltage meters to falsely swing by 50%. The MAX17048 Coulomb Counter integrates current (Q = ∫ I dt) over I2C Fast-Mode to maintain deterministic ±1% accuracy.
-              </div>
             </div>
 
           </div>
@@ -790,36 +861,35 @@
     </section>
 
     <!-- =============================================================== -->
-    <!-- EXPERIENCE & EDUCATION TIMELINE                                 -->
+    <!-- EXPERIENCE & QUALIFICATIONS                                     -->
     <!-- =============================================================== -->
-    <section id="experience" class="border-b border-[var(--line-default)] py-16">
+    <section id="experience" class="py-16 sm:py-20 border-t border-[var(--border)]">
       <div class="mx-auto max-w-6xl px-6">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <div class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)] mb-2">CAREER TRAJECTORY</div>
-            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--ink-primary)]">
-              Experience &amp; Education
-            </h2>
-          </div>
-        </div>
+        <div class="text-xs font-mono uppercase tracking-widest text-[var(--text-muted)] mb-2">CAREER TRAJECTORY</div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--text)] mb-10">
+          Experience &amp; Education
+        </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          <!-- Experience Column -->
-          <div class="space-y-6">
-            <h3 class="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)] border-b border-[var(--line-subtle)] pb-2">
-              INDUSTRY APPOINTMENT
-            </h3>
-
-            <div class="clean-card rounded-xl p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold text-[var(--ink-primary)]">FPT Software</span>
-                <span class="text-[10px] font-mono pill-mint px-2 py-0.5 rounded">Sep 2026 – Dec 2026</span>
+          <!-- Experience Card -->
+          <div class="space-y-4">
+            <div class="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">INDUSTRY APPOINTMENT</div>
+            
+            <div class="glass-card rounded-2xl p-6 space-y-4">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="text-base font-bold text-[var(--text)]">FPT Software</h3>
+                  <div class="text-xs font-medium text-[var(--text)] mt-0.5">Automotive Software Engineer Intern</div>
+                  <div class="text-[11px] font-mono text-[var(--text-muted)] mt-1">FPT Automotive Division · Ho Chi Minh City</div>
+                </div>
+                <span class="rounded-full px-2.5 py-0.5 text-[10px] font-mono bg-[var(--green-dim)] text-[var(--green)] border border-[var(--green)]/20 shrink-0 font-medium">
+                  Sep 2026 – Dec 2026
+                </span>
               </div>
-              <div class="text-xs font-medium text-[var(--ink-primary)]">Automotive Software Engineer Intern</div>
-              <div class="text-[11px] text-[var(--ink-muted)] font-mono">FPT Automotive Division · Ho Chi Minh City</div>
-              <ul class="text-xs text-[var(--ink-secondary)] space-y-1.5 list-disc list-inside leading-relaxed pt-2 border-t border-[var(--line-subtle)]">
+
+              <ul class="text-xs text-[var(--text-secondary)] space-y-2 list-disc list-inside leading-relaxed">
                 <li>Developing and verifying embedded automotive software components compliant with AUTOSAR Classic architecture (BSW, MCAL, RTE).</li>
                 <li>Implementing and testing low-level MCU peripheral drivers and in-vehicle network stacks (CAN, SPI, UART) on NXP S32K144 and ARM Cortex-M.</li>
                 <li>Executing physical layer verification with digital storage oscilloscopes (DSOs) and frame timing analysis.</li>
@@ -827,46 +897,44 @@
             </div>
           </div>
 
-          <!-- Education Column -->
-          <div class="space-y-6">
-            <h3 class="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)] border-b border-[var(--line-subtle)] pb-2">
-              DUAL ACADEMIC TRACK
-            </h3>
+          <!-- Education Card -->
+          <div class="space-y-4">
+            <div class="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">DUAL ACADEMIC TRACK</div>
 
-            <!-- FPT University -->
-            <div class="clean-card rounded-xl p-5 space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold text-[var(--ink-primary)]">FPT University</span>
-                <span class="text-[10px] font-mono text-[var(--ink-muted)]">2024 – 2027</span>
+            <div class="space-y-4">
+              <div class="glass-card rounded-2xl p-5 space-y-1">
+                <div class="flex items-center justify-between text-xs">
+                  <div class="font-bold text-[var(--text)]">FPT University</div>
+                  <span class="text-[10px] font-mono text-[var(--text-muted)]">2024 – 2027</span>
+                </div>
+                <div class="text-xs text-[var(--text)]">Bachelor of Information Technology</div>
+                <div class="text-[11px] text-[var(--text-secondary)]">Major in Automotive Software Engineering (Year 3 of 4)</div>
               </div>
-              <div class="text-xs font-medium text-[var(--ink-primary)]">Bachelor of Information Technology</div>
-              <div class="text-[11px] text-[var(--ink-secondary)]">Major in Automotive Software Engineering (Year 3 of 4)</div>
+
+              <div class="glass-card rounded-2xl p-5 space-y-1">
+                <div class="flex items-center justify-between text-xs">
+                  <div class="font-bold text-[var(--text)]">FPT Academy International (FAI) - Cranes Varsity</div>
+                  <span class="text-[10px] font-mono text-[var(--text-muted)]">2025 – 2027</span>
+                </div>
+                <div class="text-xs text-[var(--text)]">Advanced Diploma in Automotive Software Development</div>
+                <div class="text-[11px] text-[var(--text-secondary)]">Intensive training track covering AUTOSAR Classic, RTOS, and MCU architectures.</div>
+              </div>
             </div>
 
-            <!-- FAI Cranes -->
-            <div class="clean-card rounded-xl p-5 space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-semibold text-[var(--ink-primary)]">FPT Academy International (FAI) - Cranes Varsity</span>
-                <span class="text-[10px] font-mono text-[var(--ink-muted)]">2025 – 2027</span>
-              </div>
-              <div class="text-xs font-medium text-[var(--ink-primary)]">Advanced Diploma in Automotive Software Development</div>
-              <div class="text-[11px] text-[var(--ink-secondary)]">Intensive training track covering AUTOSAR Classic, RTOS, and MCU architectures.</div>
-            </div>
-
-            <!-- Verified Certifications -->
-            <div class="clean-card rounded-xl p-5 space-y-3">
-              <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">VERIFIED CERTIFICATIONS</div>
-              <div class="space-y-2 text-xs">
+            <!-- Certifications -->
+            <div class="glass-card rounded-2xl p-5 space-y-3">
+              <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)]">VERIFIED CERTIFICATIONS</div>
+              <div class="space-y-2.5 text-xs">
                 <div class="flex items-center justify-between">
-                  <div class="font-medium text-[var(--ink-primary)]">IELTS Academic — Band 7.0 (CEFR C1)</div>
-                  <button onclick="openPdfModal('ielts')" class="text-[11px] font-mono text-[var(--pastel-sky-text)] hover:underline">
+                  <div class="font-medium text-[var(--text)]">IELTS Academic — Band 7.0 (CEFR C1)</div>
+                  <button onclick="openPdfModal('ielts')" class="text-[11px] font-mono text-[var(--sky)] hover:underline">
                     Verify TRF ↗
                   </button>
                 </div>
-                <div class="text-[11px] text-[var(--ink-muted)]">Listening 8.0 · Reading 8.0 · Writing 6.5 · Speaking 6.0 · British Council</div>
-                <div class="pt-2 border-t border-[var(--line-subtle)] flex items-center justify-between">
-                  <div class="font-medium text-[var(--ink-primary)]">Cisco CCNA: Introduction to Networks</div>
-                  <span class="text-[10px] font-mono text-[var(--ink-muted)]">Cisco Networking Academy</span>
+                <div class="text-[11px] text-[var(--text-muted)]">Listening 8.0 · Reading 8.0 · Writing 6.5 · Speaking 6.0 · British Council</div>
+                <div class="pt-2 border-t border-[var(--border)] flex items-center justify-between">
+                  <div class="font-medium text-[var(--text)]">Cisco CCNA: Introduction to Networks</div>
+                  <span class="text-[10px] font-mono text-[var(--text-muted)]">Cisco Networking Academy</span>
                 </div>
               </div>
             </div>
@@ -879,33 +947,36 @@
     </section>
 
     <!-- =============================================================== -->
-    <!-- CONTACT & FOOTER                                                -->
+    <!-- FOOTER                                                          -->
     <!-- =============================================================== -->
-    <footer id="contact" class="py-16">
-      <div class="mx-auto max-w-6xl px-6">
+    <footer id="contact" class="border-t border-[var(--border)] py-12">
+      <div class="mx-auto max-w-6xl px-6 space-y-8">
         
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-12 border-b border-[var(--line-default)]">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <h3 class="text-xl font-semibold text-[var(--ink-primary)]">Trinh Dang Khoa (Alex Trinh)</h3>
-            <p class="text-xs text-[var(--ink-muted)] mt-1">Automotive Software Engineer Intern · Di An, Binh Duong / Ho Chi Minh City, Vietnam</p>
+            <h3 class="text-lg font-bold text-[var(--text)]">Trinh Dang Khoa (Alex Trinh)</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1">
+              Automotive Software Engineer Intern · Di An, Binh Duong / Ho Chi Minh City, Vietnam
+            </p>
           </div>
-          <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
-            <a href="mailto:alextrinh1002@gmail.com" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-3.5 py-1.5 text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+
+          <div class="flex flex-wrap items-center gap-2.5 text-xs font-mono">
+            <button onclick="copyEmail()" class="rounded-full glass px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
               alextrinh1002@gmail.com
-            </a>
-            <a href="https://github.com/tumo07" target="_blank" rel="noopener noreferrer" class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-3.5 py-1.5 text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] transition-colors">
+            </button>
+            <a href="https://github.com/tumo07" target="_blank" rel="noopener noreferrer" class="rounded-full glass px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
               GitHub ↗
             </a>
-            <a href="https://linkedin.com/in/trinh-alex" target="_blank" rel="noopener noreferrer" class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-3.5 py-1.5 text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] transition-colors">
+            <a href="https://linkedin.com/in/trinh-alex" target="_blank" rel="noopener noreferrer" class="rounded-full glass px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
               LinkedIn ↗
             </a>
-            <button onclick="openPdfModal('resume')" class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-3.5 py-1.5 text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] transition-colors">
+            <button onclick="openPdfModal('resume')" class="rounded-full glass px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
               Resume PDF ↗
             </button>
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[11px] font-mono text-[var(--ink-muted)]">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[var(--border)] text-[11px] font-mono text-[var(--text-muted)]">
           <div>&copy; 2026 Trinh Dang Khoa. All rights reserved.</div>
           <div>Sep 7 – Dec 14, 2026 Availability Window</div>
         </div>
@@ -916,58 +987,48 @@
   </main>
 
   <!-- ================================================================= -->
-  <!-- TECHNICAL DEEP-DIVE READER (MODAL / SLIDE-OVER)                   -->
+  <!-- TECHNICAL DEEP-DIVE DRAWER / MODAL                                -->
   <!-- ================================================================= -->
-  <div id="deepdive-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-sm">
-    <div class="min-h-screen px-4 py-8 flex items-center justify-center">
-      <div class="w-full max-w-4xl rounded-2xl border border-[var(--line-strong)] bg-[var(--surface)] p-6 sm:p-8 space-y-6 shadow-2xl relative">
-        
-        <div class="flex items-center justify-between pb-4 border-b border-[var(--line-subtle)]">
-          <div>
-            <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--ink-muted)]">TECHNICAL DEEP-DIVE DOSSIER</div>
-            <h2 id="dd-title" class="text-xl sm:text-2xl font-semibold text-[var(--ink-primary)] mt-0.5"></h2>
-          </div>
-          <button onclick="closeDeepDive()" class="h-8 w-8 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)] flex items-center justify-center text-[var(--ink-muted)] hover:text-[var(--ink-primary)]">
-            ✕
-          </button>
+  <div id="dd-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-card rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col border border-white/15 shadow-2xl">
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between p-5 border-b border-[var(--border)] bg-black/30">
+        <div>
+          <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--text-muted)]">TECHNICAL DEEP-DIVE DOSSIER</div>
+          <h3 id="dd-title" class="text-lg font-bold text-[var(--text)] mt-0.5">Distributed 3-Node CAN 2.0B Bus Cluster</h3>
         </div>
-
-        <!-- Topic Tabs -->
-        <div class="flex flex-wrap items-center gap-1.5 border-b border-[var(--line-subtle)] pb-3 text-xs font-mono">
-          <button onclick="openDeepDive('s32k144')" id="dd-tab-s32k144" class="px-3 py-1.5 rounded text-[var(--ink-secondary)]">01 · NXP S32K144 ECU</button>
-          <button onclick="openDeepDive('can')" id="dd-tab-can" class="px-3 py-1.5 rounded text-[var(--ink-secondary)]">02 · CAN 2.0B Bus</button>
-          <button onclick="openDeepDive('rfid')" id="dd-tab-rfid" class="px-3 py-1.5 rounded text-[var(--ink-secondary)]">03 · MIFARE 1K RFID</button>
-          <button onclick="openDeepDive('bms')" id="dd-tab-bms" class="px-3 py-1.5 rounded text-[var(--ink-secondary)]">04 · LiFePO4 BMS</button>
-          <button onclick="openDeepDive('cdp')" id="dd-tab-cdp" class="px-3 py-1.5 rounded text-[var(--ink-secondary)]">05 · CDP Bridge</button>
-          <button onclick="openDeepDive('autosar')" id="dd-tab-autosar" class="px-3 py-1.5 rounded text-[var(--ink-secondary)]">06 · AUTOSAR Classic</button>
-        </div>
-
-        <!-- Dynamic Content Body -->
-        <div id="dd-content" class="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed space-y-4 max-h-[60vh] overflow-y-auto pr-2"></div>
-
-        <div class="flex justify-end pt-4 border-t border-[var(--line-subtle)]">
-          <button onclick="closeDeepDive()" class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-4 py-2 text-xs font-medium text-[var(--ink-primary)]">
-            Close Dossier
-          </button>
-        </div>
-
+        <button onclick="closeDeepDive()" class="h-8 w-8 rounded-full glass flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text)]">✕</button>
       </div>
+
+      <!-- Content Scroll -->
+      <div id="dd-content" class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 border-t border-[var(--border)] flex justify-end bg-black/20">
+        <button onclick="closeDeepDive()" class="rounded-full glass px-5 py-2 text-xs font-semibold text-[var(--text)] hover:border-[var(--border-hover)]">
+          Close Dossier
+        </button>
+      </div>
+
     </div>
   </div>
 
   <!-- ================================================================= -->
   <!-- DOCUMENT MODAL (PDF EMBED)                                        -->
   <!-- ================================================================= -->
-  <div id="doc-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm">
+  <div id="doc-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md">
     <div class="h-full w-full p-4 sm:p-8 flex flex-col justify-between max-w-5xl mx-auto">
       <div class="flex items-center justify-between pb-3 text-xs font-mono text-white">
         <span id="doc-modal-title">Document Viewer</span>
         <div class="flex items-center gap-3">
-          <a id="doc-modal-download" href="#" download class="px-3 py-1 rounded bg-zinc-800 text-zinc-200 hover:bg-zinc-700">Download</a>
-          <button onclick="closePdfModal()" class="h-7 w-7 rounded bg-zinc-800 text-zinc-300 hover:text-white flex items-center justify-center">✕</button>
+          <a id="doc-modal-download" href="#" download class="px-3 py-1 rounded-full bg-white/10 text-zinc-200 hover:bg-white/20">Download</a>
+          <button onclick="closePdfModal()" class="h-7 w-7 rounded-full bg-white/10 text-zinc-300 hover:text-white flex items-center justify-center">✕</button>
         </div>
       </div>
-      <div class="flex-1 w-full rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
+      <div class="flex-1 w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10">
         <iframe id="doc-modal-frame" src="" class="h-full w-full border-0"></iframe>
       </div>
     </div>
@@ -976,17 +1037,17 @@
   <!-- ================================================================= -->
   <!-- COMMAND PALETTE (CTRL+K)                                          -->
   <!-- ================================================================= -->
-  <div id="cmd-pal-modal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-start justify-center pt-20 px-4" onclick="handleCmdModalClick(event)">
-    <div class="w-full max-w-xl rounded-xl border border-[var(--line-strong)] bg-[var(--surface-low)] shadow-2xl overflow-hidden" onclick="event.stopPropagation()">
-      <div class="flex items-center px-4 py-3.5 border-b border-[var(--line-subtle)] gap-3 bg-[var(--surface-lowest)]">
-        <svg class="w-4 h-4 text-[var(--ink-muted)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <input id="cmd-pal-input" type="text" placeholder="Search projects, dossiers, signals, or quick actions..." class="w-full bg-transparent text-sm text-[var(--ink-primary)] placeholder-[var(--ink-muted)] outline-none" autocomplete="off" />
-        <kbd class="font-mono text-[10px] bg-[var(--surface-container)] px-1.5 py-0.5 rounded text-[var(--ink-muted)]">ESC</kbd>
+  <div id="cmd-pal-modal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-md flex items-start justify-center pt-20 px-4" onclick="handleCmdModalClick(event)">
+    <div class="glass-card rounded-2xl w-full max-w-xl shadow-2xl overflow-hidden border border-white/15" onclick="event.stopPropagation()">
+      <div class="flex items-center px-4 py-3.5 border-b border-[var(--border)] gap-3 bg-black/30">
+        <svg class="w-4 h-4 text-[var(--text-muted)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input id="cmd-pal-input" type="text" placeholder="Search projects, dossiers, signals, or quick actions..." class="w-full bg-transparent text-sm text-[var(--text)] placeholder-[var(--text-muted)] outline-none" autocomplete="off" />
+        <kbd class="font-mono text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-[var(--text-muted)]">ESC</kbd>
       </div>
       <div id="cmd-pal-list" class="max-h-80 overflow-y-auto p-2 space-y-1">
         <!-- items injected via js -->
       </div>
-      <div class="px-4 py-2 border-t border-[var(--line-subtle)] bg-[var(--surface-lowest)] flex items-center justify-between text-[11px] font-mono text-[var(--ink-muted)]">
+      <div class="px-4 py-2 border-t border-[var(--border)] bg-black/20 flex items-center justify-between text-[11px] font-mono text-[var(--text-muted)]">
         <div class="flex items-center gap-3">
           <span>↑↓ Navigate</span>
           <span>↵ Select</span>
@@ -997,7 +1058,7 @@
   </div>
 
   <!-- TOAST NOTIFICATION -->
-  <div id="toast-notify" class="fixed bottom-6 right-6 z-50 hidden rounded-lg border border-[var(--line-strong)] bg-[var(--surface-high)] px-4 py-2.5 text-xs font-medium text-[var(--ink-primary)] shadow-xl transition-opacity duration-200 pointer-events-none">
+  <div id="toast-notify" class="fixed bottom-6 right-6 z-50 hidden rounded-full glass border border-[var(--border-hover)] px-4 py-2 text-xs font-medium text-[var(--text)] shadow-2xl transition-opacity duration-200 pointer-events-none">
     <span id="toast-text">Notification</span>
   </div>
 
@@ -1025,10 +1086,29 @@
     themeToggle.addEventListener('click', () => {
       htmlEl.classList.toggle('dark');
       syncThemeIcons();
+      drawDso();
+      drawBms();
     });
 
-    function switchToOverview() {
-      closeDeepDive();
+    // Toast Notification
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notify');
+      const text = document.getElementById('toast-text');
+      text.innerText = msg;
+      toast.classList.remove('hidden');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2400);
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('alextrinh1002@gmail.com').then(() => {
+        showToast('Email copied: alextrinh1002@gmail.com');
+      }).catch(() => {
+        showToast('Contact: alextrinh1002@gmail.com');
+      });
     }
 
     // PDF Modal
@@ -1058,80 +1138,80 @@
 
     // Deep-Dive Dossier Data
     const DEEP_DIVE_TOPICS = {
-      s32k144: {
-        title: "NXP S32K144 Automotive ECU & Oscilloscope Diagnostics",
-        content: `
-          <p>Developed bare-metal firmware for the NXP S32K144 automotive microcontroller (ARM Cortex-M4F at 80 MHz) using S32 Design Studio and MAAZ EDU boards. Designed an inter-ECU communication pipeline over I2C Fast-Mode (400 kHz).</p>
-          <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
-            <img src="assets/images/ecu_hero.jpg" alt="NXP S32K144 Bench" class="w-full object-cover max-h-72" />
-            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
-              Fig 1.1 — Dual-board NXP S32K144 bench with active oscilloscope signal verification test points.
-            </figcaption>
-          </figure>
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-3">Engineering Highlights:</h4>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Physical-layer signal integrity validation using digital storage oscilloscopes (DSOs) at TP_SDA and TP_SCL test points.</li>
-            <li>Verified fall and rise times (tr ≤ 50ns) and clock stretch tolerance, preventing bus lockups during multi-byte transfers.</li>
-            <li>Constructed modular peripheral drivers adhering to MISRA C safety standards and AUTOSAR MCAL driver conventions.</li>
-          </ul>
-        `
-      },
       can: {
         title: "Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus",
         content: `
-          <div class="p-3 mb-4 rounded-lg border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] flex items-center justify-between text-xs">
+          <div class="p-3 mb-4 rounded-xl glass border border-[var(--green)]/20 flex items-center justify-between text-xs">
             <div>
-              <span class="font-bold text-[var(--pastel-mint-text)]">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
-              <span class="text-[var(--ink-secondary)] ml-2">(Leading a 5-Engineer Monorepo Architecture)</span>
+              <span class="font-bold text-[var(--green)]">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
+              <span class="text-[var(--text-secondary)] ml-2">(Leading a 5-Engineer Monorepo Architecture)</span>
             </div>
-            <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="font-mono text-[var(--pastel-mint-text)] hover:underline">github.com/tumo07/vehicle-dashboard-cluster ↗</a>
+            <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="font-mono text-[var(--green)] hover:underline">github.com/tumo07/vehicle-dashboard-cluster ↗</a>
           </div>
 
           <p>As <strong>System Architect &amp; Tech Lead</strong>, I directed the end-to-end architecture, network protocols, and firmware implementation for the Smart Vehicle Dashboard Cluster. The project was structured as an enterprise-grade monorepo composed of 5 distributed subsystems plus a shared CAN definitions library, with strict ownership boundaries enforced via <code class="font-mono text-xs">.github/CODEOWNERS</code> for automated pull request code reviews across the 5 sub-teams.</p>
 
-          <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+          <figure class="my-4 rounded-xl overflow-hidden glass border border-[var(--border)]">
             <img src="assets/images/stm32_can_pcb.jpg" alt="Distributed CAN Nodes" class="w-full object-cover max-h-72" />
-            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
-              Fig 2.1 — Multi-node STM32 hardware in the loop connected over a 500 kbps differential CAN 2.0B bus with SN65HVD230 transceivers and split 120Ω terminations.
+            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--text-muted)] bg-black/20">
+              Fig 1.1 — Multi-node STM32 hardware in the loop connected over a 500 kbps differential CAN 2.0B bus with SN65HVD230 transceivers and split 120Ω terminations.
             </figcaption>
           </figure>
 
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-4">Distributed Monorepo Subsystems:</h4>
+          <h4 class="font-semibold text-[var(--text)] mt-4">Distributed Monorepo Subsystems:</h4>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 my-3 text-xs">
-            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
-              <div class="font-mono font-semibold text-[var(--ink-primary)]">1. main_mcu_firmware</div>
-              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F407VGT6 Discovery (168 MHz Cortex-M4F). Executes central vehicle state machine, analog ADC sensor acquisition, OBD-style DTC error aggregation (B1001–C1011), and master clock broadcast.</div>
+            <div class="p-3 rounded-xl glass">
+              <div class="font-mono font-semibold text-[var(--text)]">1. main_mcu_firmware</div>
+              <div class="text-[11px] text-[var(--text-secondary)] mt-1">STM32F407VGT6 Discovery (168 MHz Cortex-M4F). Executes central vehicle state machine, analog ADC sensor acquisition, OBD-style DTC error aggregation (B1001–C1011), and master clock broadcast.</div>
             </div>
-            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
-              <div class="font-mono font-semibold text-[var(--ink-primary)]">2. front_bcm_firmware</div>
-              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F103C8T6. Drives front lighting actuators, PWM headlight stepping, ambient light sensor evaluation, and left/right front turn indicators.</div>
+            <div class="p-3 rounded-xl glass">
+              <div class="font-mono font-semibold text-[var(--text)]">2. front_bcm_firmware</div>
+              <div class="text-[11px] text-[var(--text-secondary)] mt-1">STM32F103C8T6. Drives front lighting actuators, PWM headlight stepping, ambient light sensor evaluation, and left/right front turn indicators.</div>
             </div>
-            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
-              <div class="font-mono font-semibold text-[var(--ink-primary)]">3. rear_bcm_firmware</div>
-              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F103C8T6. Controls tail light matrices, brake light priority interrupts, trunk servo actuator, and HC-SR04 ultrasonic parking obstacle radar.</div>
+            <div class="p-3 rounded-xl glass">
+              <div class="font-mono font-semibold text-[var(--text)]">3. rear_bcm_firmware</div>
+              <div class="text-[11px] text-[var(--text-secondary)] mt-1">STM32F103C8T6. Controls tail light matrices, brake light priority interrupts, trunk servo actuator, and HC-SR04 ultrasonic parking obstacle radar.</div>
             </div>
-            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
-              <div class="font-mono font-semibold text-[var(--ink-primary)]">4. translator_firmware</div>
-              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F103C8T6. High-throughput non-blocking CAN-to-UART bridge converting 500 kbps differential bus frames into formatted serial telemetry streams with DMA ring buffers.</div>
+            <div class="p-3 rounded-xl glass">
+              <div class="font-mono font-semibold text-[var(--text)]">4. translator_firmware</div>
+              <div class="text-[11px] text-[var(--text-secondary)] mt-1">STM32F103C8T6. High-throughput non-blocking CAN-to-UART bridge converting 500 kbps differential bus frames into formatted serial telemetry streams with DMA ring buffers.</div>
             </div>
-            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)] sm:col-span-2">
-              <div class="font-mono font-semibold text-[var(--ink-primary)]">5. qt_dashboard &amp; can_messages_shared</div>
-              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">Qt 6 / QML / C++ application rendering real-time speedometer, tachometer, animated indicators, and diagnostic HUD at 60 FPS with SQLite logging and MQTT connectivity. The shared directory defines common CAN IDs, DLCs, and bitmasks.</div>
+            <div class="p-3 rounded-xl glass sm:col-span-2">
+              <div class="font-mono font-semibold text-[var(--text)]">5. qt_dashboard &amp; can_messages_shared</div>
+              <div class="text-[11px] text-[var(--text-secondary)] mt-1">Qt 6 / QML / C++ application rendering real-time speedometer, tachometer, animated indicators, and diagnostic HUD at 60 FPS with SQLite logging and MQTT connectivity. The shared directory defines common CAN IDs, DLCs, and bitmasks.</div>
             </div>
           </div>
 
-          <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+          <figure class="my-4 rounded-xl overflow-hidden glass border border-[var(--border)]">
             <img src="assets/images/stm32_can_hud.jpg" alt="Qt 6 QML Cluster" class="w-full object-cover max-h-72" />
-            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
-              Fig 2.2 — High-performance Qt 6 / QML instrument cluster receiving 50 Hz real-time telemetry from the CAN network.
+            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--text-muted)] bg-black/20">
+              Fig 1.2 — High-performance Qt 6 / QML instrument cluster receiving 50 Hz real-time telemetry from the CAN network.
             </figcaption>
           </figure>
 
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-4">Key Protocol &amp; Systems Engineering Decisions:</h4>
-          <ul class="list-disc list-inside space-y-1.5 text-xs text-[var(--ink-secondary)] leading-relaxed">
+          <h4 class="font-semibold text-[var(--text)] mt-4">Key Protocol &amp; Systems Engineering Decisions:</h4>
+          <ul class="list-disc list-inside space-y-1.5 text-xs text-[var(--text-secondary)] leading-relaxed">
             <li><strong>CAN 2.0B Priority Arbitration Dictionary:</strong> Structured identifier space from critical safety alarms (<code class="font-mono text-[11px]">0x100</code>) down to vehicle dynamics (<code class="font-mono text-[11px]">0x200</code>), lighting states (<code class="font-mono text-[11px]">0x300</code>), and OBD-II diagnostics (<code class="font-mono text-[11px]">0x720</code>), ensuring high-priority safety frames win non-destructive bitwise arbitration.</li>
             <li><strong>500ms Master Blink Tick Protocol (<code class="font-mono text-[11px]">0x130</code>):</strong> Solved distributed timer phase drift across independent MCUs by broadcasting a periodic master clock synchronization tick, guaranteeing 100% lockstep synchronization between front and rear turn signals.</li>
             <li><strong>Fail-Safe Heartbeats &amp; Bus-Off Auto-Recovery:</strong> Implemented 1 Hz node heartbeat watchdogs; when an ECU experiences severe bus EMI or disconnects, the cluster logs diagnostic DTCs and safely recovers when hardware acknowledges.</li>
+          </ul>
+        `
+      },
+      s32k144: {
+        title: "NXP S32K144 Automotive ECU & Oscilloscope Diagnostics",
+        content: `
+          <p>Developed bare-metal firmware for the NXP S32K144 automotive microcontroller (ARM Cortex-M4F at 80 MHz) using S32 Design Studio and MAAZ EDU boards. Designed an inter-ECU communication pipeline over I2C Fast-Mode (400 kHz).</p>
+          <figure class="my-4 rounded-xl overflow-hidden glass border border-[var(--border)]">
+            <img src="assets/images/ecu_hero.jpg" alt="NXP S32K144 Bench" class="w-full object-cover max-h-72" />
+            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--text-muted)] bg-black/20">
+              Fig 2.1 — Dual-board NXP S32K144 bench with active oscilloscope signal verification test points.
+            </figcaption>
+          </figure>
+          <h4 class="font-semibold text-[var(--text)] mt-3">Engineering Highlights:</h4>
+          <ul class="list-disc list-inside space-y-1 text-xs text-[var(--text-secondary)]">
+            <li>Physical-layer signal integrity validation using digital storage oscilloscopes (DSOs) at TP_SDA and TP_SCL test points.</li>
+            <li>Verified fall and rise times (tr ≤ 50ns) and clock stretch tolerance, preventing bus lockups during multi-byte transfers.</li>
+            <li>Constructed modular peripheral drivers adhering to MISRA C safety standards and AUTOSAR MCAL driver conventions.</li>
           </ul>
         `
       },
@@ -1139,672 +1219,80 @@
         title: "Portable MIFARE Classic 1K RFID Cloner & Security Tool",
         content: `
           <p>Bare-metal/HAL firmware running on STM32F103C8T6 (Blue Pill) coupled with an MFRC522 RF transceiver over high-speed SPI. Engineered for auditing ISO 14443-A contactless smart cards.</p>
-          <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+          <figure class="my-4 rounded-xl overflow-hidden glass border border-[var(--border)]">
             <img src="assets/images/rfid_sec_lab.jpg" alt="RFID Lab Setup" class="w-full object-cover max-h-72" />
-            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
+            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--text-muted)] bg-black/20">
               Fig 3.1 — 13.56 MHz RFID hardware research bench with STM32 Blue Pill and SSD1306 OLED UI.
             </figcaption>
           </figure>
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-3">Security Research Features:</h4>
-          <ul class="list-disc list-inside space-y-1">
+          <h4 class="font-semibold text-[var(--text)] mt-3">Security Research Features:</h4>
+          <ul class="list-disc list-inside space-y-1 text-xs text-[var(--text-secondary)]">
             <li>Embedded 166-key flash dictionary attack recovering Crypto-1 sector keys in &lt;350ms.</li>
-            <li>Gen1a Magic Backdoor (0x40 / 0x43) execution bypassing cipher authentication to rewrite Manufacturer Block 0 UID and BCC checksum.</li>
-            <li>Gen2 / CUID direct ISO 14443-A block writing bypassing modern anti-cloning firewalls.</li>
+            <li>Gen1a magic backdoor (commands 0x40 / 0x43) unlocking Chinese magic cards for direct Block 0 UID rewrites.</li>
+            <li>Gen2 (CUID) ISO 14443-A direct write support without vendor backdoor commands.</li>
           </ul>
         `
       },
       bms: {
-        title: "LiFePO4 Battery Management & Dynamic Coulomb Counting",
+        title: "LiFePO4 BMS Architecture & ModelGauge Telemetry",
         content: `
-          <p>Firmware for STM32 interfacing with a Maxim MAX17048 fuel gauge IC over I2C for custom 4S3P LiFePO4 battery packs (12.8V nominal, 9.6Ah capacity).</p>
-          <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+          <p>Engineered battery telemetry firmware on STM32 interfacing with the Maxim MAX17048 fuel gauge IC over I2C Fast-Mode for 4S3P (12.8V / 9.6Ah) LiFePO4 battery packs.</p>
+          <figure class="my-4 rounded-xl overflow-hidden glass border border-[var(--border)]">
             <img src="assets/images/bms_pcb_macro.jpg" alt="BMS PCB" class="w-full object-cover max-h-72" />
-            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
-              Fig 4.1 — Maxim MAX17048 fuel gauge hardware interface for 4S3P LiFePO4 telemetry.
+            <figcaption class="p-2.5 text-[11px] font-mono text-[var(--text-muted)] bg-black/20">
+              Fig 4.1 — Custom BMS hardware PCB with MAX17048 fuel gauge and 4S balancing circuitry.
             </figcaption>
           </figure>
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-3">Why Coulomb Counting is Critical:</h4>
-          <p>Between 20% and 80% SoC, LiFePO4 cell voltage shifts by only ~25 mV. A 5A load creates a 70 mV Ohmic drop (I × Ri), causing primitive voltage meters to falsely swing from 80% to 20% SoC during vehicle acceleration. The MAX17048 Coulomb Counter integrates current (Q = ∫ I dt) to maintain deterministic ±1% accuracy.</p>
-        `
-      },
-      cdp: {
-        title: "Antigravity Browser Automation Bridge",
-        content: `
-          <p>Architected a C# .NET Native Messaging Host and Chrome extension enabling promptless Chrome DevTools Protocol (CDP) control over local TCP IPC (127.0.0.1:18789).</p>
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-3">Architecture:</h4>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Low-latency bidirectional frame communication with Chrome CDP sessions.</li>
-            <li>Chunked binary base64 transfers avoiding socket buffer saturation.</li>
-            <li>Used to automate browser workflows, compile Overleaf projects, and verify deployed interfaces autonomously.</li>
-          </ul>
-        `
-      },
-      autosar: {
-        title: "AUTOSAR Classic & Automotive Safety Standards",
-        content: `
-          <p>Specializing in the AUTOSAR Classic 4.x layered architecture across BSW, MCAL, and RTE layers for automotive microcontrollers.</p>
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-3">Key Focus Areas:</h4>
-          <ul class="list-disc list-inside space-y-1">
-            <li><strong>Microcontroller Abstraction Layer (MCAL):</strong> DIO, PORT, CAN, SPI, and PWM driver integration on NXP S32K144.</li>
-            <li><strong>Basic Software (BSW):</strong> CAN Stack (Can, CanIf, PduR, Com) and diagnostic services (UDS / ISO 14229).</li>
-            <li><strong>Functional Safety (ISO 26262):</strong> Systematic hazard analysis (HARA), fault injection testing, and ASIL-D safety requirements.</li>
-          </ul>
+          <h4 class="font-semibold text-[var(--text)] mt-3">Electro-Chemical Problem &amp; Solution:</h4>
+          <p class="text-xs text-[var(--text-secondary)] leading-relaxed">
+            LiFePO4 exhibits an extremely flat discharge curve between 20% and 80% SoC, where voltage shifts by only 25 mV. The ModelGauge m5 algorithm continuously integrates current while adjusting for dynamic internal resistance (Ri), eliminating the 50% voltage error common in standard battery monitors.
+          </p>
         `
       }
     };
 
     function openDeepDive(topicKey) {
-      const data = DEEP_DIVE_TOPICS[topicKey] || DEEP_DIVE_TOPICS.s32k144;
-      document.getElementById('dd-title').innerText = data.title;
-      document.getElementById('dd-content').innerHTML = data.content;
-
-      Object.keys(DEEP_DIVE_TOPICS).forEach(k => {
-        const btn = document.getElementById('dd-tab-' + k);
-        if (btn) {
-          if (k === topicKey) {
-            btn.className = "px-3 py-1.5 rounded bg-[var(--surface-container)] text-[var(--ink-primary)] border border-[var(--line-strong)] font-semibold";
-          } else {
-            btn.className = "px-3 py-1.5 rounded text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]";
-          }
-        }
-      });
-
-      document.getElementById('deepdive-modal').classList.remove('hidden');
+      const topic = DEEP_DIVE_TOPICS[topicKey] || DEEP_DIVE_TOPICS.can;
+      document.getElementById('dd-title').innerText = topic.title;
+      document.getElementById('dd-content').innerHTML = topic.content;
+      document.getElementById('dd-modal').classList.remove('hidden');
     }
 
     function closeDeepDive() {
-      document.getElementById('deepdive-modal').classList.add('hidden');
+      document.getElementById('dd-modal').classList.add('hidden');
     }
 
-    // =================================================================
-    // INTERACTIVE WORKBENCH ENGINE (CLEAN, ZERO NEON)
-    // =================================================================
+    // Workbench Tab Switching
     function switchWorkbenchTab(tab) {
-      ['dso', 'rfid', 'bms'].forEach(t => {
-        const btn = document.getElementById('wb-tab-btn-' + t);
-        const panel = document.getElementById('wb-panel-' + t);
-        if (t === tab) {
-          btn.className = "flex items-center gap-2 rounded px-3.5 py-2 text-xs font-mono font-medium transition-all bg-[var(--surface-container)] text-[var(--ink-primary)] border border-[var(--line-strong)]";
-          panel.classList.remove('hidden');
+      const panels = {
+        dso: document.getElementById('wb-panel-dso'),
+        rfid: document.getElementById('wb-panel-rfid'),
+        bms: document.getElementById('wb-panel-bms')
+      };
+      const buttons = {
+        dso: document.getElementById('wb-tab-dso'),
+        rfid: document.getElementById('wb-tab-rfid'),
+        bms: document.getElementById('wb-tab-bms')
+      };
+
+      Object.keys(panels).forEach(k => {
+        if (k === tab) {
+          panels[k].classList.remove('hidden');
+          buttons[k].className = "rounded-full px-4 py-1.5 text-xs font-mono transition-all bg-white text-zinc-950 font-semibold shadow";
         } else {
-          btn.className = "flex items-center gap-2 rounded px-3.5 py-2 text-xs font-mono font-medium transition-all bg-[var(--surface-low)] text-[var(--ink-secondary)] border border-[var(--line-default)] hover:text-[var(--ink-primary)]";
-          panel.classList.add('hidden');
+          panels[k].classList.add('hidden');
+          buttons[k].className = "rounded-full px-4 py-1.5 text-xs font-mono transition-all text-[var(--text-secondary)] hover:text-[var(--text)]";
         }
       });
-      if (tab === 'dso') initDsoCanvas();
-      if (tab === 'rfid') initRfidInspector();
-      if (tab === 'bms') initBmsCanvas();
+
+      if (tab === 'dso') setTimeout(drawDso, 50);
+      if (tab === 'bms') setTimeout(drawBms, 50);
     }
 
-    function openWorkbenchTab(tab, subpreset) {
-      closeDeepDive();
-      const el = document.getElementById('workbench');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    function openWorkbenchTab(tab, signal) {
       switchWorkbenchTab(tab);
-      if (tab === 'dso' && subpreset) selectDsoPreset(subpreset);
-    }
-
-    // --- 01. DSO OSCILLOSCOPE ---
-    let dsoCanvas, dsoCtx;
-    let dsoAnimFrame = null;
-    let dsoRunning = true;
-    let dsoTimebase = 1.0;
-    let dsoPreset = 'can';
-    let dsoCh1Active = true, dsoCh2Active = true, dsoMathActive = true;
-    let cursorX1 = 140, cursorX2 = 300;
-    let activeDragCursor = null;
-    let dsoPhase = 0;
-
-    const CAN_PARTS = [
-      { name: "SOF", bits: "0", type: "ctrl" },
-      { name: "ID 0x301", bits: "011 0000 0001", type: "id" },
-      { name: "RTR", bits: "0", type: "ctrl" },
-      { name: "DLC 8", bits: "1000", type: "ctrl" },
-      { name: "PAYLOAD [12 A4 00 C8...]", bits: "64 bits", type: "payload" },
-      { name: "CRC 0x4B21", bits: "15 bits", type: "crc" },
-      { name: "ACK", bits: "0", type: "ack" },
-      { name: "EOF", bits: "1111111", type: "eof" }
-    ];
-
-    const I2C_PARTS = [
-      { name: "START", bits: "S", type: "ctrl" },
-      { name: "ADDR 0x36 [W]", bits: "0110110 0", type: "id" },
-      { name: "ACK", bits: "0", type: "ack" },
-      { name: "REG 0x02 (VCELL)", bits: "00000010", type: "payload" },
-      { name: "ACK", bits: "0", type: "ack" },
-      { name: "RESTART", bits: "Sr", type: "ctrl" },
-      { name: "ADDR 0x36 [R]", bits: "0110110 1", type: "id" },
-      { name: "DATA 0x9B 0x40", bits: "16 bits", type: "payload" },
-      { name: "STOP", bits: "P", type: "ctrl" }
-    ];
-
-    function initDsoCanvas() {
-      dsoCanvas = document.getElementById('dsoCanvas');
-      if (!dsoCanvas) return;
-      dsoCtx = dsoCanvas.getContext('2d');
-      setupDsoInteractions();
-      renderProtocolRibbon();
-      if (!dsoAnimFrame) animateDso();
-    }
-
-    function setupDsoInteractions() {
-      if (!dsoCanvas) return;
-      dsoCanvas.onmousedown = (e) => {
-        const rect = dsoCanvas.getBoundingClientRect();
-        const x = (e.clientX - rect.left) * (dsoCanvas.width / rect.width);
-        if (Math.abs(x - cursorX1) < 20) activeDragCursor = 'x1';
-        else if (Math.abs(x - cursorX2) < 20) activeDragCursor = 'x2';
-        else {
-          if (Math.abs(x - cursorX1) < Math.abs(x - cursorX2)) { cursorX1 = x; activeDragCursor = 'x1'; }
-          else { cursorX2 = x; activeDragCursor = 'x2'; }
-          updateCursorReadouts();
-        }
-      };
-
-      window.addEventListener('mousemove', (e) => {
-        if (!activeDragCursor || !dsoCanvas) return;
-        const rect = dsoCanvas.getBoundingClientRect();
-        const x = (e.clientX - rect.left) * (dsoCanvas.width / rect.width);
-        const clampedX = Math.max(10, Math.min(dsoCanvas.width - 10, x));
-        if (activeDragCursor === 'x1') cursorX1 = clampedX;
-        if (activeDragCursor === 'x2') cursorX2 = clampedX;
-        updateCursorReadouts();
-      });
-
-      window.addEventListener('mouseup', () => { activeDragCursor = null; });
-    }
-
-    function updateCursorReadouts() {
-      const usPerPx = (dsoTimebase * 10) / dsoCanvas.width;
-      const t1 = (cursorX1 * usPerPx).toFixed(2);
-      const t2 = (cursorX2 * usPerPx).toFixed(2);
-      const dt = Math.abs((cursorX2 - cursorX1) * usPerPx).toFixed(2);
-      document.getElementById('hud-x1').innerText = t1 + ' µs';
-      document.getElementById('hud-x2').innerText = t2 + ' µs';
-      document.getElementById('hud-dt').innerText = dt + ' µs';
-      const freq = dt > 0 ? (1000 / dt).toFixed(1) : '0';
-      document.getElementById('hud-freq').innerText = (dsoPreset === 'can' ? (1000 / dt).toFixed(0) + ' kbps' : freq + ' kHz');
-    }
-
-    function selectDsoPreset(preset) {
-      dsoPreset = preset;
-      ['can', 'i2c', 'spi'].forEach(p => {
-        const btn = document.getElementById('dso-btn-preset-' + p);
-        if (btn) {
-          if (p === preset) {
-            btn.className = "w-full text-left p-3 rounded-lg border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] transition-all";
-          } else {
-            btn.className = "w-full text-left p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] transition-all";
-          }
-        }
-      });
-
-      const ch1Tag = document.getElementById('ch1-name-tag');
-      const ch2Tag = document.getElementById('ch2-name-tag');
-      const titleTag = document.getElementById('protocol-decoder-title');
-
-      if (preset === 'can') {
-        ch1Tag.innerText = 'CAN_H';
-        ch2Tag.innerText = 'CAN_L';
-        titleTag.innerText = 'CAN 2.0B Standard (500 kbps · ID 0x301)';
-        dsoTimebase = 1.0;
-        cursorX1 = 140; cursorX2 = 300;
-      } else if (preset === 'i2c') {
-        ch1Tag.innerText = 'SCL (Clock)';
-        ch2Tag.innerText = 'SDA (Data)';
-        titleTag.innerText = 'I2C Fast-Mode (400 kHz · Slave 0x36)';
-        dsoTimebase = 2.0;
-        cursorX1 = 120; cursorX2 = 280;
-      } else if (preset === 'spi') {
-        ch1Tag.innerText = 'SCK (Clock)';
-        ch2Tag.innerText = 'MOSI (Data)';
-        titleTag.innerText = 'SPI High-Speed (10.0 MHz · Mode 0)';
-        dsoTimebase = 0.5;
-        cursorX1 = 160; cursorX2 = 320;
-      }
-      setDsoTimebase(dsoTimebase);
-      renderProtocolRibbon();
-      updateCursorReadouts();
-    }
-
-    function setDsoTimebase(tb) {
-      dsoTimebase = tb;
-      [0.5, 1.0, 2.0, 5.0].forEach(val => {
-        const btn = document.getElementById('tb-' + String(val).replace('.', ''));
-        if (btn) {
-          btn.className = (val === tb)
-            ? "py-1 rounded border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] text-[var(--pastel-mint-text)] font-semibold"
-            : "py-1 rounded border border-[var(--line-default)] bg-[var(--surface)] hover:border-[var(--line-strong)] text-[var(--ink-secondary)]";
-        }
-      });
-      document.getElementById('dso-timebase-display').innerText = tb.toFixed(1) + ' µs / div';
-      updateCursorReadouts();
-    }
-
-    function toggleDsoChannel(ch) {
-      if (ch === 1) { dsoCh1Active = !dsoCh1Active; document.getElementById('dso-ch1-toggle').style.opacity = dsoCh1Active ? '1' : '0.4'; }
-      if (ch === 2) { dsoCh2Active = !dsoCh2Active; document.getElementById('dso-ch2-toggle').style.opacity = dsoCh2Active ? '1' : '0.4'; }
-      if (ch === 'math') { dsoMathActive = !dsoMathActive; document.getElementById('dso-math-toggle').style.opacity = dsoMathActive ? '1' : '0.4'; }
-    }
-
-    function toggleDsoRun() {
-      dsoRunning = !dsoRunning;
-      const btn = document.getElementById('dso-run-btn');
-      const dot = document.getElementById('dso-run-dot');
-      const label = document.getElementById('dso-run-label');
-      if (dsoRunning) {
-        btn.innerText = 'Freeze';
-        dot.className = "h-1.5 w-1.5 rounded-full bg-zinc-400";
-        label.innerText = "ACQUIRING · 2.0 GSa/s";
-      } else {
-        btn.innerText = 'Resume';
-        dot.className = "h-1.5 w-1.5 rounded-full bg-zinc-600";
-        label.innerText = "HOLD / PAUSED";
-      }
-    }
-
-    function snapCursorsToBit() {
-      const usPerPx = (dsoTimebase * 10) / dsoCanvas.width;
-      cursorX2 = cursorX1 + (2.0 / usPerPx);
-      updateCursorReadouts();
-    }
-
-    function renderProtocolRibbon() {
-      const container = document.getElementById('protocol-ribbon');
-      if (!container) return;
-      const parts = (dsoPreset === 'i2c' ? I2C_PARTS : CAN_PARTS);
-      container.innerHTML = parts.map((p) => {
-        let style = "bg-zinc-900 border-zinc-800 text-zinc-300";
-        if (p.type === 'id') style = "bg-zinc-800 text-zinc-100 font-medium border-zinc-700";
-        return `<div class="shrink-0 px-2 py-1 rounded border ${style} text-center">
-          <div class="text-[9px] font-medium">${p.name}</div>
-          <div class="text-[8px] text-zinc-500 font-mono">${p.bits}</div>
-        </div>`;
-      }).join('');
-    }
-
-    function animateDso() {
-      if (!dsoCtx) return;
-      const w = dsoCanvas.width;
-      const h = dsoCanvas.height;
-
-      dsoCtx.fillStyle = '#08090d';
-      dsoCtx.fillRect(0, 0, w, h);
-
-      // Clean Graticule
-      dsoCtx.strokeStyle = '#14161f';
-      dsoCtx.lineWidth = 1;
-      const divX = w / 10, divY = h / 8;
-      dsoCtx.beginPath();
-      for (let i = 0; i <= 10; i++) { dsoCtx.moveTo(i * divX, 0); dsoCtx.lineTo(i * divX, h); }
-      for (let j = 0; j <= 8; j++) { dsoCtx.moveTo(0, j * divY); dsoCtx.lineTo(w, j * divY); }
-      dsoCtx.stroke();
-
-      // Center crosshair
-      dsoCtx.strokeStyle = '#202433';
-      dsoCtx.beginPath();
-      dsoCtx.moveTo(w / 2, 0); dsoCtx.lineTo(w / 2, h);
-      dsoCtx.moveTo(0, h / 2); dsoCtx.lineTo(w, h / 2);
-      dsoCtx.stroke();
-
-      if (dsoRunning) dsoPhase += 1.8;
-
-      const bitWidth = 80 / dsoTimebase;
-      const bitSeq = [0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1];
-
-      const p1 = [], p2 = [], pDiff = [];
-      for (let x = 0; x < w; x++) {
-        const sx = x + dsoPhase;
-        const b = bitSeq[Math.floor(sx / bitWidth) % bitSeq.length];
-        const inB = (sx % bitWidth) / bitWidth;
-
-        let v1, v2;
-        if (dsoPreset === 'can') {
-          let t1 = b === 0 ? 3.5 : 2.5;
-          let t2 = b === 0 ? 1.5 : 2.5;
-          if (inB < 0.12) {
-            const frac = inB / 0.12;
-            const pb = bitSeq[(Math.floor(sx / bitWidth) - 1 + bitSeq.length) % bitSeq.length];
-            const p1v = pb === 0 ? 3.5 : 2.5;
-            const p2v = pb === 0 ? 1.5 : 2.5;
-            t1 = p1v + (t1 - p1v) * frac;
-            t2 = p2v + (t2 - p2v) * frac;
-          }
-          const toY = v => (h - 35) - (v / 5.0) * (h - 70);
-          p1.push({ x, y: toY(t1) });
-          p2.push({ x, y: toY(t2) });
-          pDiff.push({ x, y: toY(Math.max(0, t1 - t2)) + 35 });
-        } else {
-          // I2C
-          const clk = (Math.floor(sx / (bitWidth / 2)) % 2);
-          let targetClk = clk === 1 ? 3.3 : 0.1;
-          let targetData = b === 1 ? 3.3 : 0.1;
-          const toY = v => (h - 35) - (v / 4.0) * (h - 70);
-          p1.push({ x, y: toY(targetClk) - 25 });
-          p2.push({ x, y: toY(targetData) + 35 });
-        }
-      }
-
-      dsoCtx.shadowBlur = 0;
-
-      // Draw Diff
-      if (dsoPreset === 'can' && dsoMathActive && pDiff.length > 0) {
-        dsoCtx.strokeStyle = '#c4b5fd';
-        dsoCtx.lineWidth = 1.3;
-        dsoCtx.beginPath();
-        dsoCtx.moveTo(pDiff[0].x, pDiff[0].y);
-        for (let i = 1; i < pDiff.length; i++) dsoCtx.lineTo(pDiff[i].x, pDiff[i].y);
-        dsoCtx.stroke();
-      }
-
-      // Draw CH2 (Steel Blue)
-      if (dsoCh2Active && p2.length > 0) {
-        dsoCtx.strokeStyle = '#93c5fd';
-        dsoCtx.lineWidth = 1.4;
-        dsoCtx.beginPath();
-        dsoCtx.moveTo(p2[0].x, p2[0].y);
-        for (let i = 1; i < p2.length; i++) dsoCtx.lineTo(p2[i].x, p2[i].y);
-        dsoCtx.stroke();
-      }
-
-      // Draw CH1 (Pastel Mint)
-      if (dsoCh1Active && p1.length > 0) {
-        dsoCtx.strokeStyle = '#86efac';
-        dsoCtx.lineWidth = 1.5;
-        dsoCtx.beginPath();
-        dsoCtx.moveTo(p1[0].x, p1[0].y);
-        for (let i = 1; i < p1.length; i++) dsoCtx.lineTo(p1[i].x, p1[i].y);
-        dsoCtx.stroke();
-      }
-
-      // Draw Cursors (Clean Neutral)
-      drawDsoCursor(cursorX1, 'X1', h);
-      drawDsoCursor(cursorX2, 'X2', h);
-
-      dsoAnimFrame = requestAnimationFrame(animateDso);
-    }
-
-    function drawDsoCursor(x, label, h) {
-      dsoCtx.strokeStyle = '#a1a1aa';
-      dsoCtx.setLineDash([3, 3]);
-      dsoCtx.lineWidth = 1;
-      dsoCtx.beginPath();
-      dsoCtx.moveTo(x, 0); dsoCtx.lineTo(x, h);
-      dsoCtx.stroke();
-      dsoCtx.setLineDash([]);
-
-      dsoCtx.fillStyle = '#e4e4e7';
-      dsoCtx.fillRect(x - 8, 0, 16, 12);
-      dsoCtx.fillStyle = '#18181b';
-      dsoCtx.font = 'bold 9px monospace';
-      dsoCtx.fillText(label, x - 5, 9);
-    }
-
-    // --- 02. RFID INSPECTOR ---
-    let currentRfidSec = 0;
-    const RFID_DATA = [];
-    for (let s = 0; s < 16; s++) {
-      const is0 = (s === 0);
-      const b0 = is0 ? "3B 91 7E 2A B6 08 04 00 62 63 64 65 66 67 68 69" : "41 55 54 4F 53 41 52 5F 43 4C 41 53 53 49 43 00";
-      const b1 = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";
-      const b2 = "53 33 32 4B 31 34 34 5F 42 53 57 5F 43 4F 4E 46";
-      const b3 = "A0 A1 A2 A3 A4 A5 7F 07 88 69 B0 B1 B2 B3 B4 B5";
-      RFID_DATA.push([b0, b1, b2, b3]);
-    }
-
-    function initRfidInspector() {
-      const c = document.getElementById('rfid-sector-buttons');
-      if (!c || c.children.length > 0) return;
-      for (let i = 0; i < 16; i++) {
-        const btn = document.createElement('button');
-        btn.id = 'sec-btn-' + i;
-        btn.innerText = (i < 10 ? '0' : '') + i;
-        btn.className = (i === 0)
-          ? "py-1.5 rounded border border-[var(--pastel-lavender-border)] bg-[var(--pastel-lavender-bg)] text-[var(--pastel-lavender-text)] font-semibold"
-          : "py-1.5 rounded border border-[var(--line-default)] bg-[var(--surface)] text-[var(--ink-secondary)] hover:border-[var(--line-strong)]";
-        btn.onclick = () => selectRfidSec(i);
-        c.appendChild(btn);
-      }
-      selectRfidSec(0);
-    }
-
-    function selectRfidSec(idx) {
-      currentRfidSec = idx;
-      for (let i = 0; i < 16; i++) {
-        const b = document.getElementById('sec-btn-' + i);
-        if (b) {
-          b.className = (i === idx)
-            ? "py-1.5 rounded border border-[var(--pastel-lavender-border)] bg-[var(--pastel-lavender-bg)] text-[var(--pastel-lavender-text)] font-semibold"
-            : "py-1.5 rounded border border-[var(--line-default)] bg-[var(--surface)] text-[var(--ink-secondary)] hover:border-[var(--line-strong)]";
-        }
-      }
-      document.getElementById('rfid-sel-sector-badge').innerText = `Sector ${idx < 10 ? '0' : ''}${idx} ${idx === 0 ? '(Manufacturer)' : ''}`;
-      document.getElementById('hex-sector-title').innerText = `${idx < 10 ? '0' : ''}${idx}`;
-      renderHexTable(idx);
-    }
-
-    function renderHexTable(idx) {
-      const c = document.getElementById('hex-rows-container');
-      if (!c) return;
-      const start = idx * 4;
-      const blks = RFID_DATA[idx];
-
-      c.innerHTML = blks.map((hex, off) => {
-        const num = start + off;
-        const bytes = hex.split(' ');
-        const ascii = bytes.map(b => {
-          const v = parseInt(b, 16);
-          return (v >= 32 && v <= 126) ? String.fromCharCode(v) : '.';
-        }).join('');
-
-        let colored = '';
-        if (off === 3) {
-          const kA = bytes.slice(0, 6).join(' ');
-          const acc = bytes.slice(6, 9).join(' ');
-          const gp = bytes[9];
-          const kB = bytes.slice(10, 16).join(' ');
-          colored = `<span class="text-[#c4b5fd] font-medium">${kA}</span> <span class="text-[#93c5fd] font-medium">${acc}</span> <span class="text-zinc-500">${gp}</span> <span class="text-[#fed7aa] font-medium">${kB}</span>`;
-        } else if (idx === 0 && off === 0) {
-          const uid = bytes.slice(0, 4).join(' ');
-          const bcc = bytes[4];
-          const rest = bytes.slice(5).join(' ');
-          colored = `<span class="text-zinc-100 font-semibold">${uid}</span> <span class="text-zinc-400">${bcc}</span> <span class="text-zinc-500">${rest}</span>`;
-        } else {
-          colored = `<span class="text-zinc-300">${hex}</span>`;
-        }
-
-        return `<div class="grid grid-cols-12 gap-2 items-center py-1 hover:bg-zinc-800/40 rounded px-1">
-          <div class="col-span-2 text-zinc-500 text-[10px]">BLK ${num < 10 ? '0' : ''}${num}</div>
-          <div class="col-span-7 text-[11px]">${colored}</div>
-          <div class="col-span-3 text-zinc-500 text-[10px] truncate">${ascii}</div>
-        </div>`;
-      }).join('');
-    }
-
-    function runRfidAttack(type) {
-      const term = document.getElementById('rfid-terminal');
-      const st = document.getElementById('rfid-term-status');
-      if (!term) return;
-      term.innerHTML = '';
-      st.innerText = "EXECUTING...";
-
-      const log = (msg, cls = "text-zinc-400") => {
-        const d = document.createElement('div');
-        d.className = cls;
-        d.innerText = msg;
-        term.appendChild(d);
-        term.scrollTop = term.scrollHeight;
-      };
-
-      if (type === 'gen1a') {
-        log("[0.000ms] Initializing MFRC522 Chinese Magic Backdoor sequence...", "text-zinc-200 font-medium");
-        setTimeout(() => log("[0.042ms] Halting active Crypto-1 state machine... 0x50 0x00"), 100);
-        setTimeout(() => log("[0.120ms] Sending Unlock Command 1: SPI_TX -> 0x40 (7-bit halt bypass)", "text-zinc-300"), 250);
-        setTimeout(() => log("[0.165ms] Backdoor ACK received: 0x0A (Magic mode acknowledged)", "text-zinc-100 font-semibold"), 400);
-        setTimeout(() => log("[0.210ms] Sending Unlock Command 2: SPI_TX -> 0x43 (Write Mode enabled)", "text-zinc-300"), 550);
-        setTimeout(() => log("[0.340ms] Writing custom UID [0x3B, 0x91, 0x7E, 0x2A] to Block 0...", "text-zinc-200"), 750);
-        setTimeout(() => log("[0.410ms] Computing XOR BCC: 0x3B ^ 0x91 ^ 0x7E ^ 0x2A = 0xB6 (MATCH)"), 950);
-        setTimeout(() => {
-          log("[0.520ms] SUCCESS: Manufacturer Block 0 rewritten to EEPROM verified.", "text-zinc-100 font-semibold");
-          st.innerText = "UNLOCKED & VERIFIED";
-        }, 1150);
-      } else if (type === 'cuid') {
-        log("[0.000ms] Testing Gen2 / CUID Direct ISO 14443-A Block 0 Write...", "text-zinc-200 font-medium");
-        setTimeout(() => log("[0.140ms] Crypto-1 Mutual Authentication OK. Token generated.", "text-zinc-300"), 200);
-        setTimeout(() => log("[0.380ms] ACK received: CUID controller accepted write without backdoor handshake.", "text-zinc-200 font-medium"), 450);
-        setTimeout(() => {
-          log("[0.450ms] SUCCESS: Block 0 rewritten. Anti-firewall compatibility verified.", "text-zinc-100 font-semibold");
-          st.innerText = "SUCCESS (CUID PASS)";
-        }, 700);
-      } else if (type === 'dict') {
-        log("[0.000ms] Running 166-Key Dictionary Attack across all 16 sectors...", "text-zinc-200 font-medium");
-        setTimeout(() => log("[0.090ms] [Sector 00] Testing Key [A0 A1 A2 A3 A4 A5] -> SUCCESS (Crypto-1 Authenticated)", "text-zinc-100 font-semibold"), 200);
-        setTimeout(() => log("[0.150ms] [Sector 01] Testing Key [D3 F7 D3 F7 D3 F7] -> SUCCESS", "text-zinc-300"), 380);
-        setTimeout(() => {
-          log("[0.310ms] CRACK COMPLETE: 16/16 Sectors identified in 310ms. All keys extracted.", "text-zinc-100 font-semibold");
-          st.innerText = "CRACKED (16/16 KEYS)";
-        }, 600);
-      }
-    }
-
-    // --- 03. BMS ENGINE ---
-    let bmsCanvas, bmsCtx;
-    let bmsSoC = 55, bmsLoad = 4.5, bmsTemp = 25;
-
-    function initBmsCanvas() {
-      bmsCanvas = document.getElementById('bmsCanvas');
-      if (!bmsCanvas) return;
-      bmsCtx = bmsCanvas.getContext('2d');
-      updateBmsSimulation();
-    }
-
-    function getLifePo4OCV(s) {
-      if (s > 95) return 3.42 + (s - 95) * 0.04;
-      if (s > 85) return 3.32 + (s - 85) * 0.01;
-      if (s > 15) return 3.22 + (s - 15) * 0.0014; // Flat plateau
-      if (s > 5) return 3.05 + (s - 5) * 0.017;
-      return 2.50 + s * 0.11;
-    }
-
-    function updateBmsSimulation() {
-      const sIn = document.getElementById('bms-soc-slider');
-      const lIn = document.getElementById('bms-load-slider');
-      const tIn = document.getElementById('bms-temp-slider');
-      if (!sIn || !lIn || !tIn) return;
-
-      bmsSoC = parseFloat(sIn.value);
-      bmsLoad = parseFloat(lIn.value) / 10.0;
-      bmsTemp = parseFloat(tIn.value);
-
-      document.getElementById('bms-soc-slider-val').innerText = bmsSoC.toFixed(0) + ' %';
-      document.getElementById('bms-load-slider-val').innerText = bmsLoad.toFixed(1) + ' A';
-      document.getElementById('bms-temp-slider-val').innerText = bmsTemp.toFixed(0) + ' °C';
-
-      const tempFac = 1.0 + 0.018 * (25 - bmsTemp);
-      const ri = 0.0142 * Math.max(0.7, tempFac);
-      const ir = bmsLoad * ri;
-      const ocv = getLifePo4OCV(bmsSoC);
-      const vterm = Math.max(2.4, ocv - ir);
-
-      document.getElementById('bms-hud-vterm').innerText = (vterm * 4.0).toFixed(2) + ' V';
-      document.getElementById('bms-hud-vocv').innerText = (ocv * 4.0).toFixed(2) + ' V';
-      document.getElementById('bms-hud-soc').innerText = bmsSoC.toFixed(1) + ' %';
-      document.getElementById('bms-cell-v').innerText = vterm.toFixed(3) + ' V';
-      document.getElementById('bms-ir-drop').innerText = (ir * 1000).toFixed(0) + ' mV';
-      document.getElementById('bms-ri-val').innerText = (ri * 1000).toFixed(1) + ' mΩ / cell';
-      document.getElementById('bms-heat-val').innerText = (Math.pow(bmsLoad, 2) * ri * 4.0).toFixed(2) + ' Watts';
-
-      renderBmsCurve(ocv, vterm, ri);
-    }
-
-    function renderBmsCurve(ocv, vterm, ri) {
-      if (!bmsCtx || !bmsCanvas) return;
-      const w = bmsCanvas.width, h = bmsCanvas.height;
-
-      bmsCtx.fillStyle = '#08090d';
-      bmsCtx.fillRect(0, 0, w, h);
-
-      bmsCtx.strokeStyle = '#14161f';
-      bmsCtx.lineWidth = 1;
-      bmsCtx.beginPath();
-      for (let s = 0; s <= 100; s += 20) {
-        const x = 50 + (s / 100) * (w - 70);
-        bmsCtx.moveTo(x, 20); bmsCtx.lineTo(x, h - 30);
-      }
-      for (let v = 2.6; v <= 3.6; v += 0.2) {
-        const y = (h - 30) - ((v - 2.5) / 1.1) * (h - 50);
-        bmsCtx.moveTo(50, y); bmsCtx.lineTo(w - 20, y);
-      }
-      bmsCtx.stroke();
-
-      bmsCtx.fillStyle = '#64748b';
-      bmsCtx.font = '9px monospace';
-      for (let s = 0; s <= 100; s += 20) {
-        const x = 50 + (s / 100) * (w - 70);
-        bmsCtx.fillText(s + '%', x - 8, h - 15);
-      }
-
-      bmsCtx.shadowBlur = 0;
-
-      // OCV (Dashed Slate)
-      bmsCtx.strokeStyle = '#94a3b8';
-      bmsCtx.setLineDash([3, 3]);
-      bmsCtx.lineWidth = 1.2;
-      bmsCtx.beginPath();
-      for (let s = 0; s <= 100; s++) {
-        const o = getLifePo4OCV(s);
-        const x = 50 + (s / 100) * (w - 70);
-        const y = (h - 30) - ((o - 2.5) / 1.1) * (h - 50);
-        if (s === 0) bmsCtx.moveTo(x, y); else bmsCtx.lineTo(x, y);
-      }
-      bmsCtx.stroke();
-      bmsCtx.setLineDash([]);
-
-      // Loaded V (Solid Mint)
-      bmsCtx.strokeStyle = '#86efac';
-      bmsCtx.lineWidth = 1.6;
-      bmsCtx.beginPath();
-      for (let s = 0; s <= 100; s++) {
-        const o = getLifePo4OCV(s);
-        const ld = Math.max(2.4, o - (bmsLoad * ri));
-        const x = 50 + (s / 100) * (w - 70);
-        const y = (h - 30) - ((ld - 2.5) / 1.1) * (h - 50);
-        if (s === 0) bmsCtx.moveTo(x, y); else bmsCtx.lineTo(x, y);
-      }
-      bmsCtx.stroke();
-
-      // Operating point marker
-      const cx = 50 + (bmsSoC / 100) * (w - 70);
-      const cy = (h - 30) - ((vterm - 2.5) / 1.1) * (h - 50);
-      bmsCtx.fillStyle = '#e4e4e7';
-      bmsCtx.beginPath();
-      bmsCtx.arc(cx, cy, 4.5, 0, Math.PI * 2);
-      bmsCtx.fill();
-      bmsCtx.strokeStyle = '#18181b';
-      bmsCtx.lineWidth = 1.5;
-      bmsCtx.stroke();
-    }
-
-
-    // Toast Notification
-    let toastTimeout = null;
-    function showToast(msg) {
-      const toast = document.getElementById('toast-notify');
-      const text = document.getElementById('toast-text');
-      text.innerText = msg;
-      toast.classList.remove('hidden');
-      if (toastTimeout) clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => {
-        toast.classList.add('hidden');
-      }, 2400);
-    }
-
-    function copyEmail() {
-      navigator.clipboard.writeText('alextrinh1002@gmail.com').then(() => {
-        showToast('Email copied: alextrinh1002@gmail.com');
-      }).catch(() => {
-        showToast('Contact: alextrinh1002@gmail.com');
-      });
+      if (tab === 'dso' && signal) setSignalPreset(signal);
+      document.getElementById('workbench').scrollIntoView({ behavior: 'smooth' });
     }
 
     // Command Palette Logic
@@ -1817,11 +1305,8 @@
       { id: 'rfid-bench', title: 'MIFARE Classic 1K Hex Sector Matrix', category: 'Interactive Tool', action: () => { switchWorkbenchTab('rfid'); document.getElementById('workbench').scrollIntoView({behavior: 'smooth'}); } },
       { id: 'bms-bench', title: 'LiFePO4 ModelGauge & Coulomb Counter', category: 'Interactive Tool', action: () => { switchWorkbenchTab('bms'); document.getElementById('workbench').scrollIntoView({behavior: 'smooth'}); } },
       { id: 'dd-s32k144', title: 'Case Study: NXP S32K144 Automotive ECU & Diagnostics', category: 'Technical Dossier', action: () => openDeepDive('s32k144') },
-      { id: 'dd-can', title: 'Case Study: Distributed 3-Node CAN 2.0B Bus Cluster', category: 'Technical Dossier', action: () => openDeepDive('can') },
       { id: 'dd-rfid', title: 'Case Study: MIFARE Classic 1K RFID Cloner & Crypto-1', category: 'Technical Dossier', action: () => openDeepDive('rfid') },
       { id: 'dd-bms', title: 'Case Study: LiFePO4 BMS Coulomb Counting Monitor', category: 'Technical Dossier', action: () => openDeepDive('bms') },
-      { id: 'dd-cdp', title: 'Case Study: Promptless Chrome CDP Automation Bridge', category: 'Technical Dossier', action: () => openDeepDive('cdp') },
-      { id: 'dd-autosar', title: 'Architecture: AUTOSAR Classic (BSW, MCAL, RTE)', category: 'Technical Dossier', action: () => openDeepDive('autosar') },
       { id: 'pdf-resume', title: 'Open Official Engineering Resume (1-Page Overleaf PDF)', category: 'Credentials', action: () => openPdfModal('resume') },
       { id: 'pdf-ielts', title: 'Open IELTS Academic Band 7.0 Test Report Form (PDF)', category: 'Credentials', action: () => openPdfModal('ielts') },
       { id: 'act-email', title: 'Copy Email Address (alextrinh1002@gmail.com)', category: 'Quick Action', action: copyEmail },
@@ -1836,16 +1321,16 @@
     function renderCmdList() {
       const container = document.getElementById('cmd-pal-list');
       if (filteredCmds.length === 0) {
-        container.innerHTML = '<div class="p-4 text-center text-xs text-[var(--ink-muted)]">No matching actions or topics found.</div>';
+        container.innerHTML = '<div class="p-4 text-center text-xs text-[var(--text-muted)]">No matching actions or topics found.</div>';
         return;
       }
       container.innerHTML = filteredCmds.map((item, idx) => `
-        <div onclick="executeCmdIndex(${idx})" class="flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer text-xs transition-colors ${idx === cmdActiveIndex ? 'bg-[var(--surface-container)] text-[var(--ink-primary)]' : 'text-[var(--ink-secondary)] hover:bg-[var(--surface-container)] hover:text-[var(--ink-primary)]'}">
+        <div onclick="executeCmdIndex(${idx})" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl cursor-pointer text-xs transition-colors ${idx === cmdActiveIndex ? 'bg-white/10 text-white' : 'text-[var(--text-secondary)] hover:bg-white/5 hover:text-white'}">
           <div class="flex items-center gap-2.5 truncate">
-            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-[var(--ink-muted)]">${item.category}</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border border-white/10 bg-white/5 text-[var(--text-muted)]">${item.category}</span>
             <span class="font-medium truncate">${item.title}</span>
           </div>
-          <span class="text-[10px] font-mono text-[var(--ink-muted)]">↵</span>
+          <span class="text-[10px] font-mono text-[var(--text-muted)]">↵</span>
         </div>
       `).join('');
     }
@@ -1862,8 +1347,7 @@
     }
 
     function closeCommandPalette() {
-      const modal = document.getElementById('cmd-pal-modal');
-      modal.classList.add('hidden');
+      document.getElementById('cmd-pal-modal').classList.add('hidden');
     }
 
     function handleCmdModalClick(e) {
@@ -1904,7 +1388,6 @@
       }
     });
 
-    // Global Keyboard Listeners
     window.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
@@ -1917,12 +1400,445 @@
       }
     });
 
-    document.getElementById('cmd-pal-btn').addEventListener('click', () => {
-      openCommandPalette();
+    document.getElementById('cmd-pal-btn').addEventListener('click', openCommandPalette);
+
+    // =================================================================
+    // OSCILLOSCOPE ENGINE
+    // =================================================================
+    let currentSignal = 'can';
+    let currentTimebase = 1.0;
+    let dsoFrozen = false;
+    let dsoAnimFrame = null;
+
+    function setSignalPreset(sig) {
+      currentSignal = sig;
+      const btns = {
+        can: document.getElementById('preset-can'),
+        i2c: document.getElementById('preset-i2c'),
+        spi: document.getElementById('preset-spi')
+      };
+      Object.keys(btns).forEach(k => {
+        if (k === sig) {
+          btns[k].className = "w-full text-left p-3 rounded-xl border border-[var(--green)]/30 bg-[var(--green-dim)] text-[var(--text)] text-xs transition-all";
+        } else {
+          btns[k].className = "w-full text-left p-3 rounded-xl border border-[var(--border)] glass text-[var(--text-secondary)] hover:text-[var(--text)] text-xs transition-all";
+        }
+      });
+
+      const decTitle = document.getElementById('decode-title');
+      if (sig === 'can') decTitle.innerText = "CAN 2.0B Standard (500 kbps · ID 0x301)";
+      if (sig === 'i2c') decTitle.innerText = "I2C Fast-Mode (400 kHz · SLA+W 0x6C [MAX17048])";
+      if (sig === 'spi') decTitle.innerText = "SPI Mode 0 (10 MHz · Command 0x0C [MFRC522 Transceive])";
+
+      drawDso();
+    }
+
+    function setTimebase(tb) {
+      currentTimebase = tb;
+      document.getElementById('dso-timebase-display').innerText = tb.toFixed(1) + " µs / div";
+      document.querySelectorAll('.tb-btn').forEach(btn => {
+        if (btn.innerText.includes(tb.toString())) {
+          btn.className = "tb-btn py-1 rounded-lg bg-white text-zinc-950 font-bold shadow";
+        } else {
+          btn.className = "tb-btn py-1 rounded-lg glass text-[var(--text-secondary)] hover:text-[var(--text)]";
+        }
+      });
+      drawDso();
+    }
+
+    function toggleDsoFreeze() {
+      dsoFrozen = !dsoFrozen;
+      const btn = document.getElementById('dso-freeze-btn');
+      const st = document.getElementById('dso-status');
+      if (dsoFrozen) {
+        btn.innerText = "Run";
+        st.innerText = "FROZEN · SINGLE CAPTURE";
+        st.className = "uppercase text-[var(--amber)]";
+      } else {
+        btn.innerText = "Freeze";
+        st.innerText = "ACQUIRING · 2.0 GSa/s";
+        st.className = "uppercase";
+      }
+    }
+
+    function snapMeasurement() {
+      const dt = document.getElementById('dso-dt');
+      dt.innerText = "2.00 µs";
+      showToast("Cursors locked: 2.00 µs (Bit Time @ 500 kbps)");
+    }
+
+    function drawDso() {
+      const canvas = document.getElementById('dso-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+      
+      const w = rect.width;
+      const h = rect.height;
+
+      // Dark background
+      ctx.fillStyle = '#07080a';
+      ctx.fillRect(0, 0, w, h);
+
+      // Graticule grid
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+      const cols = 10;
+      const rows = 8;
+      for (let i = 1; i < cols; i++) {
+        ctx.beginPath();
+        ctx.moveTo((w / cols) * i, 0);
+        ctx.lineTo((w / cols) * i, h);
+        ctx.stroke();
+      }
+      for (let j = 1; j < rows; j++) {
+        ctx.beginPath();
+        ctx.moveTo(0, (h / rows) * j);
+        ctx.lineTo(w, (h / rows) * j);
+        ctx.stroke();
+      }
+
+      // Center crosshairs
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.16)';
+      ctx.beginPath();
+      ctx.moveTo(w / 2, 0);
+      ctx.lineTo(w / 2, h);
+      ctx.moveTo(0, h / 2);
+      ctx.lineTo(w, h / 2);
+      ctx.stroke();
+
+      // Cursors X1 and X2
+      const x1 = w * 0.22;
+      const x2 = w * 0.44;
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.beginPath();
+      ctx.moveTo(x1, 0); ctx.lineTo(x1, h);
+      ctx.moveTo(x2, 0); ctx.lineTo(x2, h);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Cursors text
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.font = '10px "JetBrains Mono"';
+      ctx.fillText('X1', x1 + 4, 16);
+      ctx.fillText('X2', x2 + 4, 16);
+
+      // Render Waveforms
+      ctx.lineWidth = 1.6;
+      if (currentSignal === 'can') {
+        // CAN_H (Sky Cyan)
+        ctx.strokeStyle = '#38bdf8';
+        ctx.beginPath();
+        const ptsH = [
+          [0, h * 0.5], [w * 0.15, h * 0.5],
+          [w * 0.16, h * 0.28], [w * 0.35, h * 0.28],
+          [w * 0.36, h * 0.5], [w * 0.45, h * 0.5],
+          [w * 0.46, h * 0.28], [w * 0.65, h * 0.28],
+          [w * 0.66, h * 0.5], [w * 0.75, h * 0.5],
+          [w * 0.76, h * 0.28], [w * 0.88, h * 0.28],
+          [w * 0.89, h * 0.5], [w, h * 0.5]
+        ];
+        ptsH.forEach((p, idx) => { if (idx === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); });
+        ctx.stroke();
+
+        // CAN_L (Mint Green)
+        ctx.strokeStyle = '#34c759';
+        ctx.beginPath();
+        const ptsL = [
+          [0, h * 0.5], [w * 0.15, h * 0.5],
+          [w * 0.16, h * 0.72], [w * 0.35, h * 0.72],
+          [w * 0.36, h * 0.5], [w * 0.45, h * 0.5],
+          [w * 0.46, h * 0.72], [w * 0.65, h * 0.72],
+          [w * 0.66, h * 0.5], [w * 0.75, h * 0.5],
+          [w * 0.76, h * 0.72], [w * 0.88, h * 0.72],
+          [w * 0.89, h * 0.5], [w, h * 0.5]
+        ];
+        ptsL.forEach((p, idx) => { if (idx === 0) ctx.moveTo(p[0], p[1]); else ctx.lineTo(p[0], p[1]); });
+        ctx.stroke();
+      } else if (currentSignal === 'i2c') {
+        // SCL clock (Purple)
+        ctx.strokeStyle = '#c084fc';
+        ctx.beginPath();
+        for (let x = 0; x < w; x += 40) {
+          ctx.lineTo(x, h * 0.65);
+          ctx.lineTo(x + 5, h * 0.35);
+          ctx.lineTo(x + 20, h * 0.35);
+          ctx.lineTo(x + 25, h * 0.65);
+        }
+        ctx.stroke();
+
+        // SDA data with open-drain RC curve (Amber)
+        ctx.strokeStyle = '#fbbf24';
+        ctx.beginPath();
+        ctx.moveTo(0, h * 0.25);
+        ctx.lineTo(w * 0.2, h * 0.25);
+        ctx.lineTo(w * 0.22, h * 0.75);
+        ctx.lineTo(w * 0.5, h * 0.75);
+        // RC curve
+        for (let t = 0; t <= 40; t++) {
+          const rx = w * 0.5 + t;
+          const ry = h * 0.75 - (1 - Math.exp(-t / 12)) * (h * 0.5);
+          ctx.lineTo(rx, ry);
+        }
+        ctx.lineTo(w, h * 0.25);
+        ctx.stroke();
+      } else if (currentSignal === 'spi') {
+        // SCK (Cyan)
+        ctx.strokeStyle = '#38bdf8';
+        ctx.beginPath();
+        for (let x = 0; x < w; x += 20) {
+          ctx.lineTo(x, h * 0.6);
+          ctx.lineTo(x + 2, h * 0.3);
+          ctx.lineTo(x + 10, h * 0.3);
+          ctx.lineTo(x + 12, h * 0.6);
+        }
+        ctx.stroke();
+
+        // MOSI (Green)
+        ctx.strokeStyle = '#34c759';
+        ctx.beginPath();
+        ctx.moveTo(0, h * 0.3);
+        ctx.lineTo(w * 0.3, h * 0.3);
+        ctx.lineTo(w * 0.31, h * 0.7);
+        ctx.lineTo(w * 0.7, h * 0.7);
+        ctx.lineTo(w * 0.71, h * 0.3);
+        ctx.lineTo(w, h * 0.3);
+        ctx.stroke();
+      }
+    }
+
+    // =================================================================
+    // MIFARE CLASSIC 1K RFID ENGINE
+    // =================================================================
+    const RFID_SECTORS = [];
+    for (let s = 0; s < 16; s++) {
+      RFID_SECTORS.push({
+        num: s,
+        blocks: [
+          s === 0 ? "3B 91 7E 2A B6 08 04 00 62 63 64 65 66 67 68 69" : "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+          "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+          s === 0 ? "53 32 4B 31 34 34 5F 42 53 57 5F 43 4F 4E 46 20" : "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+          "A0 A1 A2 A3 A4 A5 7F 07 88 69 B0 B1 B2 B3 B4 B5"
+        ]
+      });
+    }
+
+    let selectedSector = 0;
+
+    function renderRfidSectorGrid() {
+      const grid = document.getElementById('rfid-sector-grid');
+      grid.innerHTML = RFID_SECTORS.map(s => `
+        <button onclick="selectRfidSector(${s.num})" class="py-2 rounded-xl text-center font-mono text-xs transition-all ${s.num === selectedSector ? 'bg-white text-zinc-950 font-bold shadow' : 'glass text-[var(--text-secondary)] hover:text-[var(--text)]'}">
+          ${s.num < 10 ? '0' + s.num : s.num}
+        </button>
+      `).join('');
+    }
+
+    function selectRfidSector(sNum) {
+      selectedSector = sNum;
+      renderRfidSectorGrid();
+      const sec = RFID_SECTORS[sNum];
+      document.getElementById('rfid-sector-desc').innerText = sNum === 0 ? "Sector 00 (Manufacturer Block & UID)" : `Sector ${sNum < 10 ? '0' + sNum : sNum} (Data & Trailer)`;
+      document.getElementById('rfid-block-title').innerText = `Sector ${sNum < 10 ? '0' + sNum : sNum} Memory Block Breakdown`;
+
+      const hexContainer = document.getElementById('rfid-hex-view');
+      hexContainer.innerHTML = sec.blocks.map((blk, idx) => {
+        const isTrailer = (idx === 3);
+        let formatted = blk;
+        if (isTrailer) {
+          const parts = blk.split(' ');
+          const keyA = parts.slice(0, 6).join(' ');
+          const access = parts.slice(6, 10).join(' ');
+          const keyB = parts.slice(10, 16).join(' ');
+          formatted = `<span class="text-[var(--sky)] font-bold">${keyA}</span> <span class="text-[var(--green)]">${access}</span> <span class="text-[var(--amber)] font-bold">${keyB}</span>`;
+        }
+        return `
+          <div class="flex items-center gap-4 text-xs font-mono p-1 rounded hover:bg-white/5">
+            <span class="text-[var(--text-muted)] w-16">BLK 0${idx}</span>
+            <span class="flex-1 text-[var(--text)]">${formatted}</span>
+            <span class="text-[var(--text-muted)] w-28 text-right font-mono">${idx === 0 && sNum === 0 ? ';~*....bcdefghi' : (idx === 2 && sNum === 0 ? 'S32K144_BSW_CONF' : '................')}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function runRfidAttack(type) {
+      const log = document.getElementById('rfid-spi-log');
+      const st = document.getElementById('rfid-log-status');
+      st.innerText = "EXECUTING";
+      st.className = "text-[var(--amber)] font-semibold";
+
+      if (type === 'gen1a') {
+        log.innerHTML += `
+          <div class="text-[var(--green)]">&gt; GEN1A_UNLOCK: Sending magic backdoor sequence [0x40] -&gt; ACK: 0x0A (Card in Magic State).</div>
+          <div class="text-[var(--text)]">&gt; GEN1A_WIPE: Writing Block 00 UID [DE AD BE EF] Checksum [E6]... SUCCESS (UID altered).</div>
+        `;
+        RFID_SECTORS[0].blocks[0] = "DE AD BE EF E6 08 04 00 62 63 64 65 66 67 68 69";
+        selectRfidSector(0);
+        showToast("Gen1a Magic Unlock executed: Block 0 rewritten.");
+      } else if (type === 'cuid') {
+        log.innerHTML += `
+          <div class="text-[var(--sky)]">&gt; CUID_WRITE: Attempting standard ISO 14443-A MIFARE write [0xA0 0x00]...</div>
+          <div class="text-[var(--text)]">&gt; CUID_WRITE: Block 0 ACK 0x0A received. Direct UID updated to [13 37 CA FE].</div>
+        `;
+        RFID_SECTORS[0].blocks[0] = "13 37 CA FE 06 08 04 00 62 63 64 65 66 67 68 69";
+        selectRfidSector(0);
+        showToast("Gen2 / CUID Direct Write confirmed.");
+      } else if (type === 'dict') {
+        log.innerHTML += `
+          <div class="text-[var(--purple)]">&gt; DICT_ATTACK: Executing 166-key fast dictionary stream on Sector ${selectedSector}...</div>
+          <div class="text-[var(--text)]">&gt; MATCH_FOUND: Sector ${selectedSector} Key A: [A0 A1 A2 A3 A4 A5] in 240ms.</div>
+        `;
+        showToast("Dictionary attack recovered Sector Key A in 240ms.");
+      }
+      log.scrollTop = log.scrollHeight;
+      setTimeout(() => {
+        st.innerText = "READY";
+        st.className = "text-[var(--green)] font-semibold";
+      }, 1000);
+    }
+
+    // =================================================================
+    // LIFEPO4 BMS ENGINE
+    // =================================================================
+    let bmsSoC = 55;
+    let bmsLoad = 4.5;
+    let bmsTemp = 25;
+
+    function updateBmsPhysics() {
+      bmsSoC = parseFloat(document.getElementById('bms-slider-soc').value);
+      bmsLoad = parseFloat(document.getElementById('bms-slider-load').value);
+      bmsTemp = parseFloat(document.getElementById('bms-slider-temp').value);
+
+      document.getElementById('bms-val-soc').innerText = bmsSoC.toFixed(0) + " %";
+      document.getElementById('bms-val-load').innerText = bmsLoad.toFixed(1) + " A";
+      document.getElementById('bms-val-temp').innerText = bmsTemp.toFixed(0) + " °C";
+
+      // Calculate Ohmic Ri and Loaded V
+      const tempFactor = 1 + (25 - bmsTemp) * 0.015;
+      const riCell = 0.014 * tempFactor;
+      const riPack = riCell * 4 / 3;
+      const heat = Math.pow(bmsLoad, 2) * riPack;
+
+      // OCV calculation based on LiFePO4 chemistry
+      let ocvCell = 3.20;
+      if (bmsSoC > 90) ocvCell = 3.32 + (bmsSoC - 90) * 0.028;
+      else if (bmsSoC >= 20) ocvCell = 3.20 + (bmsSoC - 20) * 0.0017;
+      else ocvCell = 2.60 + (bmsSoC / 20) * 0.60;
+
+      const ocvPack = ocvCell * 4;
+      const vDrop = bmsLoad * riPack;
+      const vLoaded = Math.max(10.0, ocvPack - vDrop);
+
+      document.getElementById('bms-hud-vterm').innerText = vLoaded.toFixed(2) + " V";
+      document.getElementById('bms-hud-ocv').innerText = ocvPack.toFixed(2) + " V";
+      document.getElementById('bms-hud-soc').innerText = bmsSoC.toFixed(1) + " %";
+
+      document.getElementById('bms-cell-v').innerText = ocvCell.toFixed(3) + " V";
+      document.getElementById('bms-ir-drop').innerText = (vDrop * 1000).toFixed(0) + " mV";
+      document.getElementById('bms-calc-ri').innerText = (riCell * 1000).toFixed(1) + " mΩ / cell";
+      document.getElementById('bms-calc-heat').innerText = heat.toFixed(2) + " Watts";
+
+      drawBms();
+    }
+
+    function drawBms() {
+      const canvas = document.getElementById('bms-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const w = rect.width;
+      const h = rect.height;
+
+      // Dark screen
+      ctx.fillStyle = '#07080a';
+      ctx.fillRect(0, 0, w, h);
+
+      // Grid lines
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+      for (let s = 20; s <= 80; s += 20) {
+        const gx = 40 + (s / 100) * (w - 60);
+        ctx.beginPath();
+        ctx.moveTo(gx, 0); ctx.lineTo(gx, h);
+        ctx.stroke();
+      }
+
+      // Plateau OCV Curve (Dotted Grey)
+      ctx.setLineDash([3, 3]);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      for (let s = 0; s <= 100; s += 2) {
+        let v = 3.20;
+        if (s > 90) v = 3.32 + (s - 90) * 0.028;
+        else if (s >= 20) v = 3.20 + (s - 20) * 0.0017;
+        else v = 2.60 + (s / 20) * 0.60;
+        const x = 40 + (s / 100) * (w - 60);
+        const y = h - 25 - ((v - 2.5) / 1.1) * (h - 40);
+        if (s === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Loaded Terminal Voltage Curve (Green)
+      ctx.strokeStyle = '#34c759';
+      ctx.lineWidth = 2.0;
+      ctx.beginPath();
+      const riDrop = (bmsLoad * 0.014 * (1 + (25 - bmsTemp) * 0.015) * 4 / 3) / 4;
+      for (let s = 0; s <= 100; s += 2) {
+        let v = 3.20;
+        if (s > 90) v = 3.32 + (s - 90) * 0.028;
+        else if (s >= 20) v = 3.20 + (s - 20) * 0.0017;
+        else v = 2.60 + (s / 20) * 0.60;
+        v = Math.max(2.5, v - riDrop);
+        const x = 40 + (s / 100) * (w - 60);
+        const y = h - 25 - ((v - 2.5) / 1.1) * (h - 40);
+        if (s === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // Operating Point Dot
+      const curX = 40 + (bmsSoC / 100) * (w - 60);
+      let curV = 3.20;
+      if (bmsSoC > 90) curV = 3.32 + (bmsSoC - 90) * 0.028;
+      else if (bmsSoC >= 20) curV = 3.20 + (bmsSoC - 20) * 0.0017;
+      else curV = 2.60 + (bmsSoC / 20) * 0.60;
+      curV = Math.max(2.5, curV - riDrop);
+      const curY = h - 25 - ((curV - 2.5) / 1.1) * (h - 40);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(curX, curY, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#34c759';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    // Initialize all engines on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderRfidSectorGrid();
+      selectRfidSector(0);
+      updateBmsPhysics();
+      drawDso();
     });
 
-    window.addEventListener('DOMContentLoaded', () => {
-      initDsoCanvas();
+    window.addEventListener('resize', () => {
+      drawDso();
+      drawBms();
     });
   </script>
 </body>

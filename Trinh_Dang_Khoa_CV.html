@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinh Dang Khoa (Alex Trinh) - Engineering CV</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 10mm 11.5mm 10mm 11.5mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            background: #ffffff;
+            color: #111827;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 9pt;
+            line-height: 1.36;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        a {
+            color: #111827;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code, .mono {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 8.2pt;
+            background: #f3f4f6;
+            padding: 0.5px 3px;
+            border-radius: 2px;
+            color: #111827;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding-bottom: 6.5px;
+            border-bottom: 1.5px solid #111827;
+            margin-bottom: 8.5px;
+        }
+
+        .name {
+            font-size: 18.5pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #090d16;
+            text-transform: uppercase;
+            line-height: 1.15;
+        }
+
+        .title-tagline {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 2px;
+            letter-spacing: 0.2px;
+        }
+
+        .contact-row {
+            margin-top: 4px;
+            font-size: 8.4pt;
+            color: #1f2937;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .sep {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 8.5px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 9.6pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #090d16;
+            border-bottom: 1px solid #9ca3af;
+            padding-bottom: 1.5px;
+            margin-bottom: 5.5px;
+        }
+
+        /* Entries */
+        .entry {
+            margin-bottom: 6px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .entry-title {
+            font-size: 9.2pt;
+            font-weight: 700;
+            color: #090d16;
+        }
+
+        .entry-role-inline {
+            font-size: 8.6pt;
+            font-weight: 600;
+            font-style: italic;
+            color: #374151;
+        }
+
+        .entry-link {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 8.1pt;
+            font-weight: 400;
+            color: #374151;
+            white-space: nowrap;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .entry-meta {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #374151;
+            white-space: nowrap;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .entry-subheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 8.65pt;
+            font-style: italic;
+            color: #374151;
+            margin-top: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        ul.bullets {
+            list-style-type: disc;
+            margin-left: 14px;
+            margin-top: 2px;
+        }
+
+        ul.bullets li {
+            margin-bottom: 2px;
+            font-size: 8.85pt;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        ul.bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills Grid */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills-table td {
+            padding: 1.5px 0;
+            vertical-align: top;
+            font-size: 8.85pt;
+        }
+
+        .skill-cat {
+            font-weight: 700;
+            color: #090d16;
+            width: 175px;
+            padding-right: 8px;
+            white-space: nowrap;
+        }
+
+        .skill-list {
+            color: #1f2937;
+        }
+
+        /* Certifications */
+        .cert-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cert-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+            font-size: 8.6pt;
+            white-space: nowrap;
+        }
+
+        .cert-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .cert-main {
+            color: #1f2937;
+        }
+
+        .cert-right {
+            font-size: 8.15pt;
+            color: #374151;
+            white-space: nowrap;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="name">Trinh Dang Khoa (Alex Trinh)</div>
+        <div class="title-tagline">Automotive &amp; Embedded Systems Software Engineer</div>
+        <div class="contact-row">
+            <span>Ho Chi Minh City, Vietnam</span>
+            <span class="sep">|</span>
+            <span>+84 896 212 164</span>
+            <span class="sep">|</span>
+            <a href="mailto:alextrinh1002@gmail.com">alextrinh1002@gmail.com</a>
+            <span class="sep">|</span>
+            <a href="https://linkedin.com/in/trinh-alex">linkedin.com/in/trinh-alex</a>
+            <span class="sep">|</span>
+            <a href="https://github.com/tumo07">github.com/tumo07</a>
+            <span class="sep">|</span>
+            <a href="https://fb.com/tumo07">fb.com/tumo07</a>
+        </div>
+    </header>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">FPT Software (FPT Automotive Division)</div>
+                <div class="entry-meta">Sep 2026 &ndash; Present (Expected completion Dec 2026)</div>
+            </div>
+            <div class="entry-subheader">
+                <span><strong>Automotive Software Engineer Intern</strong></span>
+                <span>On-site, Ho Chi Minh City, Vietnam</span>
+            </div>
+            <ul class="bullets">
+                <li>Developing and verifying embedded automotive software components compliant with <strong>AUTOSAR Classic</strong> architecture (<strong>BSW</strong>, <strong>MCAL</strong>, <strong>RTE</strong>).</li>
+                <li>Implementing and testing low-level microcontroller peripheral drivers and in-vehicle network communication stacks (<strong>CAN</strong>, <strong>SPI</strong>, <strong>UART</strong>) on automotive-grade MCUs (<strong>NXP S32K144 / ARM Cortex-M</strong>).</li>
+                <li>Executing hardware-in-the-loop (<strong>HIL</strong>) bench validation, frame timing analysis, and diagnostic protocol verification.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">FPT University</div>
+                <div class="entry-meta">2024 &ndash; 2027 (Year 3 of 4)</div>
+            </div>
+            <div class="entry-subheader">
+                <span>Bachelor of Information Technology, Major in Automotive Software Engineering (Cong nghe O to so &ndash; ASE)</span>
+                <span>Ho Chi Minh City, Vietnam</span>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">FPT Academy International (FAI) &ndash; Cranes Varsity</div>
+                <div class="entry-meta">2025 &ndash; 2027 (Year 2 of 2)</div>
+            </div>
+            <div class="entry-subheader">
+                <span>Advanced Diploma in Automotive Software Development (Cranes Program)</span>
+                <span>Ho Chi Minh City, Vietnam</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <table class="skills-table">
+            <tr>
+                <td class="skill-cat">Embedded &amp; Automotive:</td>
+                <td class="skill-list">Embedded C, C++17, AUTOSAR Classic (BSW, MCAL, RTE), ARM Cortex-M (NXP S32K144, STM32F407, STM32F411, STM32F103), Bare-Metal &amp; STM32 HAL, DMA, NVIC Interrupts, Timers/PWM, ADC, Watchdog</td>
+            </tr>
+            <tr>
+                <td class="skill-cat">In-Vehicle Networking:</td>
+                <td class="skill-list">CAN 2.0A/2.0B (bxCAN, Hardware Filter Banks, Priority Arbitration), UART/USART, SPI, I2C, OBD-Style DTC Diagnostics, Hardware-in-the-Loop (HIL) Validation</td>
+            </tr>
+            <tr>
+                <td class="skill-cat">HMI, Software &amp; Tooling:</td>
+                <td class="skill-list">Qt 6, QML, Python, C# (.NET Native Messaging / TCP IPC), CMake, Git, STM32CubeIDE, S32 Design Studio, Keil uVision, Logic &amp; CAN Bus Analyzers</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+        <h2 class="section-title">Engineering Projects</h2>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">
+                    Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus
+                    <span class="sep">|</span>
+                    <span class="entry-role-inline">System Architect &amp; Tech Lead</span>
+                </div>
+                <a class="entry-link" href="https://github.com/tumo07/vehicle-dashboard-cluster">github.com/tumo07/vehicle-dashboard-cluster</a>
+            </div>
+            <ul class="bullets">
+                <li>Architected a distributed 3-node STM32 network (Central ECU on <strong>STM32F407VET6</strong> + Left/Right Body Control Modules on <strong>STM32F411/F103</strong>) communicating over <strong>CAN 2.0B (500 kbps)</strong> with a <strong>Qt 6 / QML</strong> digital instrument cluster and Python CAN sniffer/injector.</li>
+                <li>Engineered priority-grouped <strong>CAN v3.0</strong> frame arbitration (<code>0x100</code>&ndash;<code>0x720</code>), state-machine command validation, 1 Hz node heartbeat watchdogs, OBD-style DTC fault aggregation (<code>B1001</code>&ndash;<code>C1011</code>), and a <strong>500ms master blink tick</strong> (<code>0x130</code>) lockstep synchronization protocol.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">
+                    Portable MIFARE Classic 1K RFID Cloner &amp; Security Research Tool
+                </div>
+                <a class="entry-link" href="https://github.com/tumo07/bluepill-rfid-cloner">github.com/tumo07/bluepill-rfid-cloner</a>
+            </div>
+            <ul class="bullets">
+                <li>Developed bare-metal/HAL firmware on <strong>STM32F103C8T6 (Blue Pill)</strong> interfacing with an <strong>MFRC522</strong> transceiver over <strong>SPI</strong> and an <strong>SSD1306 OLED UI</strong> over I2C.</li>
+                <li>Implemented an automated 166-key dictionary attack, <strong>Crypto-1</strong> sector authentication, <strong>Gen1a</strong> magic backdoor (<code>0x40</code>/<code>0x43</code>) unlocking, and <strong>Gen2/CUID</strong> direct Block 0 UID rewrites.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">
+                    LiFePO4 Battery Management &amp; Coulomb Counting Monitor
+                </div>
+                <a class="entry-link" href="https://github.com/tumo07/stm32-battery-monitor">github.com/tumo07/stm32-battery-monitor</a>
+            </div>
+            <ul class="bullets">
+                <li>Built firmware on <strong>STM32F103</strong> interfacing with a <strong>MAX17048</strong> fuel gauge over <strong>I2C</strong> for <strong>4S3P LiFePO4</strong> battery packs, providing real-time state-of-charge (<strong>SoC</strong>), voltage telemetry, and fault thresholding.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">
+                    Antigravity Promptless Browser Automation Bridge
+                </div>
+                <a class="entry-link" href="https://github.com/tumo07/antigravity-browser-bridge">github.com/tumo07/antigravity-browser-bridge</a>
+            </div>
+            <ul class="bullets">
+                <li>Engineered a <strong>C# Native Messaging Host</strong> and <strong>Manifest V3 Chrome Extension</strong> bridging the Chrome DevTools Protocol (<strong>CDP</strong>) over local TCP IPC (<code>127.0.0.1:18789</code>) for autonomous agentic browser execution.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS & LANGUAGES -->
+    <section class="section">
+        <h2 class="section-title">Certifications &amp; Languages</h2>
+        <ul class="cert-list">
+            <li>
+                <div class="cert-main">
+                    <strong>IELTS Academic &mdash; Overall Band 7.0 (CEFR Level C1):</strong> Listening 8.0, Reading 8.0, Writing 6.5, Speaking 6.0
+                </div>
+                <div class="cert-right">British Council <span class="sep">|</span> TRF: <code>23VN509163TRID028A</code> <span class="sep">|</span> <a href="https://ielts.org/verify">ielts.org/verify</a></div>
+            </li>
+            <li>
+                <div class="cert-main"><strong>CCNA: Introduction to Networks</strong> &mdash; Routing, Switching, IPv4/IPv6 Subnetting &amp; OSI Network Architecture</div>
+                <div class="cert-right">Cisco</div>
+            </li>
+            <li>
+                <div class="cert-main"><strong>Software Development Lifecycle Specialization</strong> &mdash; Requirements, Architecture &amp; Verification</div>
+                <div class="cert-right">Coursera / University of Minnesota</div>
+            </li>
+            <li>
+                <div class="cert-main"><strong>Languages:</strong> Vietnamese (Native), English (Professional Working Proficiency &mdash; IELTS Academic 7.0 / CEFR Level C1)</div>
+                <div class="cert-right"></div>
+            </li>
+        </ul>
+    </section>
+
+</body>
+</html>
