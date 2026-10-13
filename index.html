@@ -1003,6 +1003,12 @@
                 <div>Master ECU [NXP S32K144] <---> I2C Bus (SDA/SCL + 4.7kΩ Pull-ups) <---> Secondary Diagnostic ECU [NXP S32K144]</div>
                 <div class="text-[var(--ink-muted)]">↳ Logic Analyzer & DSO probes placed at TP_SDA and TP_SCL test points for runtime signal inspection</div>
               </div>
+              <figure class="my-6 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+                <img src="assets/images/ecu_hero.jpg" alt="NXP S32K144 ECU Hardware Bench & Oscilloscope Setup" class="w-full object-cover max-h-80" />
+                <figcaption class="p-3 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)] border-t border-[var(--line-subtle)]">
+                  Fig 1.1 — Dual-board NXP S32K144 microcontroller bench with active oscilloscope signal verification test points.
+                </figcaption>
+              </figure>
               <p>Firmware was developed bare-metal without heavy third-party abstractions to achieve cycle-accurate execution times and maintain direct visibility over peripheral register states.</p>
             `
           },
@@ -1069,6 +1075,12 @@
                 <div>                                                                       ↓</div>
                 <div>                                                      [Qt 6 QML Cluster + PyCAN Injector]</div>
               </div>
+              <figure class="my-6 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+                <img src="assets/images/stm32_can_pcb.jpg" alt="Distributed STM32 CAN 2.0B Hardware Nodes" class="w-full object-cover max-h-80" />
+                <figcaption class="p-3 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)] border-t border-[var(--line-subtle)]">
+                  Fig 2.1 — Distributed STM32 hardware nodes connected via differential CAN 2.0B bus with 120Ω split terminations.
+                </figcaption>
+              </figure>
             `
           },
           {
@@ -1083,6 +1095,12 @@
             title: "3. Instrument Cluster Telemetry Pipeline",
             content: `
               <p>The Central ECU forwards validated CAN frames over a high-throughput USB Virtual COM Port (VCP) to a host running a Qt 6 / QML graphical instrument cluster. Hardware-accelerated gauge rendering guarantees a steady 60 FPS refresh rate for speed, RPM, battery SoC, and tire pressure diagnostics.</p>
+              <figure class="my-6 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+                <img src="assets/images/stm32_can_hud.jpg" alt="Qt 6 QML Digital Instrument Cluster" class="w-full object-cover max-h-80" />
+                <figcaption class="p-3 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)] border-t border-[var(--line-subtle)]">
+                  Fig 2.2 — High-performance Qt 6 / QML instrument cluster receiving 50 Hz real-time telemetry over Virtual COM Port.
+                </figcaption>
+              </figure>
             `
           }
         ]
@@ -1118,6 +1136,12 @@
             title: "1. 13.56 MHz RF Frontend & SPI Driver Architecture",
             content: `
               <p>The tool interfaces with an <strong>NXP MFRC522</strong> contactless reader IC over a high-speed hardware SPI bus. Bare-metal drivers configure the internal analog transmitter registers, carrier modulation depth, receiver antenna gain, and FIFO interrupt lines without runtime RTOS overhead.</p>
+              <figure class="my-6 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+                <img src="assets/images/rfid_sec_lab.jpg" alt="MFRC522 RF Security Analysis Bench" class="w-full object-cover max-h-80" />
+                <figcaption class="p-3 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)] border-t border-[var(--line-subtle)]">
+                  Fig 3.1 — 13.56 MHz RFID hardware research bench with STM32 Blue Pill, MFRC522 SPI module, and OLED display.
+                </figcaption>
+              </figure>
             `
           },
           {
@@ -1160,6 +1184,12 @@
             title: "1. Overcoming the Flat LiFePO4 Discharge Curve",
             content: `
               <p>Unlike standard Lithium Cobalt batteries whose voltage drops linearly from 4.2V down to 3.0V, LiFePO4 cells maintain an exceptionally flat 3.2V plateau across 80% of their discharge cycle. Traditional ADC voltage dividers produce massive SoC estimation errors when load currents fluctuate. To solve this, the firmware interfaces with the <strong>Maxim MAX17048</strong> fuel gauge IC, combining cell voltage tracking with dynamic Coulomb counting.</p>
+              <figure class="my-6 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+                <img src="assets/images/bms_pcb_macro.jpg" alt="4S3P LiFePO4 Battery Monitor PCB" class="w-full object-cover max-h-80" />
+                <figcaption class="p-3 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)] border-t border-[var(--line-subtle)]">
+                  Fig 4.1 — Maxim MAX17048 fuel gauge IC hardware interface for 4S3P LiFePO4 battery pack telemetry.
+                </figcaption>
+              </figure>
             `
           },
           {
@@ -1167,6 +1197,12 @@
             title: "2. Fault Thresholding & Active Safety Alert Handling",
             content: `
               <p>The firmware continuously inspects MAX17048 status registers, triggering automated load disconnect relays whenever cell voltage drops below 2.5V or discharge rate exceeds thermal dissipation safety envelopes.</p>
+              <figure class="my-6 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
+                <img src="assets/images/bms_hud_telemetry.jpg" alt="Battery Telemetry HUD" class="w-full object-cover max-h-80" />
+                <figcaption class="p-3 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)] border-t border-[var(--line-subtle)]">
+                  Fig 4.2 — Real-time Coulomb counting and state-of-charge (SoC) monitoring dashboard.
+                </figcaption>
+              </figure>
             `
           }
         ]
