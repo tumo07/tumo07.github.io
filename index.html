@@ -197,7 +197,7 @@
     }
   </style>
 </head>
-<body class="selection:bg-emerald-500/20 selection:text-emerald-300">
+<body class="selection:bg-zinc-700/50 selection:text-zinc-100">
 
   <!-- ================================================================= -->
   <!-- TOP NAVIGATION BAR                                               -->
@@ -682,10 +682,9 @@
               <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800 text-[11px] font-mono">
                 <div class="flex items-center gap-2">
                   <span class="flex h-2 w-2 relative">
-                    <span id="dso-run-ping" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span id="dso-run-dot" class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    <span id="dso-run-dot" class="relative inline-flex rounded-full h-2 w-2 bg-zinc-400"></span>
                   </span>
-                  <span id="dso-run-label" class="text-emerald-400 font-semibold">TRIG'D / RUNNING</span>
+                  <span id="dso-run-label" class="text-zinc-300 font-mono text-[10px] tracking-wider uppercase">ACQUIRING · 2.0 GSa/s</span>
                   <span class="text-slate-500">|</span>
                   <span class="text-slate-400">2.0 GSa/s</span>
                   <span class="text-slate-500">|</span>
@@ -694,16 +693,16 @@
 
                 <!-- Channel Badges -->
                 <div class="flex items-center gap-3">
-                  <button id="dso-ch1-toggle" onclick="toggleDsoChannel(1)" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-600/60 text-emerald-300 text-[10px] hover:brightness-125 transition-all">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  <button id="dso-ch1-toggle" onclick="toggleDsoChannel(1)" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700/80 text-zinc-300 text-[10px] hover:border-zinc-500 transition-all">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[#a7f3d0]"></span>
                     <span>CH1: <span id="ch1-name-tag">CAN_H</span> (1.0V/div)</span>
                   </button>
-                  <button id="dso-ch2-toggle" onclick="toggleDsoChannel(2)" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-sky-950/80 border border-sky-600/60 text-sky-300 text-[10px] hover:brightness-125 transition-all">
-                    <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                  <button id="dso-ch2-toggle" onclick="toggleDsoChannel(2)" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700/80 text-zinc-300 text-[10px] hover:border-zinc-500 transition-all">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[#bae6fd]"></span>
                     <span>CH2: <span id="ch2-name-tag">CAN_L</span> (1.0V/div)</span>
                   </button>
-                  <button id="dso-math-toggle" onclick="toggleDsoChannel('math')" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-purple-950/80 border border-purple-600/60 text-purple-300 text-[10px] hover:brightness-125 transition-all">
-                    <span class="h-1.5 w-1.5 rounded-full bg-purple-400"></span>
+                  <button id="dso-math-toggle" onclick="toggleDsoChannel(\'math\')" class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-700/80 text-zinc-300 text-[10px] hover:border-zinc-500 transition-all">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[#ddd6fe]"></span>
                     <span>DIFF: V_diff</span>
                   </button>
                 </div>
@@ -714,16 +713,16 @@
                 <canvas id="dsoCanvas" width="800" height="340" class="w-full h-72 sm:h-80 block"></canvas>
                 
                 <!-- Floating Real-Time Measurement HUD -->
-                <div class="absolute bottom-2.5 left-2.5 flex flex-wrap gap-2 text-[10px] font-mono bg-slate-950/90 border border-slate-700/60 rounded px-2.5 py-1.5 text-slate-300 backdrop-blur-sm pointer-events-none shadow-lg">
-                  <div>X1: <span id="hud-x1" class="text-amber-300 font-semibold">1.20 µs</span></div>
-                  <div class="text-slate-600">|</div>
-                  <div>X2: <span id="hud-x2" class="text-amber-300 font-semibold">3.20 µs</span></div>
-                  <div class="text-slate-600">|</div>
-                  <div>Δt: <span id="hud-dt" class="text-emerald-400 font-semibold font-mono">2.00 µs</span></div>
-                  <div class="text-slate-600">|</div>
-                  <div>1/Δt: <span id="hud-freq" class="text-sky-300 font-semibold">500.0 kbps</span></div>
-                  <div class="text-slate-600">|</div>
-                  <div>Rise tr: <span id="hud-tr" class="text-purple-300">42 ns</span></div>
+                <div class="absolute bottom-2.5 left-2.5 flex flex-wrap gap-2 text-[10px] font-mono bg-zinc-950/90 border border-zinc-800 rounded px-2.5 py-1.5 text-zinc-400 backdrop-blur-sm pointer-events-none">
+                  <div>X1: <span id="hud-x1" class="text-zinc-200 font-medium">1.20 µs</span></div>
+                  <div class="text-zinc-700">|</div>
+                  <div>X2: <span id="hud-x2" class="text-zinc-200 font-medium">3.20 µs</span></div>
+                  <div class="text-zinc-700">|</div>
+                  <div>Δt: <span id="hud-dt" class="text-zinc-100 font-semibold font-mono">2.00 µs</span></div>
+                  <div class="text-zinc-700">|</div>
+                  <div>Rate: <span id="hud-freq" class="text-zinc-100 font-semibold font-mono">500.0 kbps</span></div>
+                  <div class="text-zinc-700">|</div>
+                  <div>Slew tr: <span id="hud-tr" class="text-zinc-300">42 ns</span></div>
                 </div>
 
                 <!-- Cursor Instructions Overlay -->
@@ -736,8 +735,8 @@
               <div class="pt-2 border-t border-slate-800">
                 <div class="flex items-center justify-between text-[10px] font-mono text-slate-400 mb-1.5">
                   <span class="flex items-center gap-1.5">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                    <span>HARDWARE PROTOCOL DECODER:</span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-zinc-400"></span>
+                    <span class="text-zinc-400">HARDWARE PROTOCOL DECODER:</span>
                     <strong id="protocol-decoder-title" class="text-slate-200">CAN 2.0B Standard (500 kbps · ID 0x301)</strong>
                   </span>
                   <span class="text-slate-500">Parity: None · Slew: 45ns · 120Ω Terminated</span>
@@ -946,15 +945,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] text-[var(--ink-secondary)]">
                   <div class="p-2.5 rounded bg-[var(--surface)] border border-[var(--line-subtle)] space-y-1">
                     <div class="font-medium text-[var(--ink-primary)]">Data Blocks 00–02 Permissions:</div>
-                    <div>• Read Access: <strong class="text-emerald-500">Key A | Key B</strong></div>
-                    <div>• Write Access: <strong class="text-emerald-500">Key B Only</strong></div>
-                    <div>• Increment/Decrement: <strong class="text-emerald-500">Allowed (Value Block)</strong></div>
+                    <div>• Read Access: <strong class="text-zinc-200">Key A | Key B</strong></div>
+                    <div>• Write Access: <strong class="text-zinc-200">Key B Only</strong></div>
+                    <div>• Increment/Decrement: <strong class="text-zinc-200">Allowed (Value Block)</strong></div>
                   </div>
                   <div class="p-2.5 rounded bg-[var(--surface)] border border-[var(--line-subtle)] space-y-1">
                     <div class="font-medium text-[var(--ink-primary)]">Sector Trailer (Block 03) Permissions:</div>
-                    <div>• Key A Read: <strong class="text-rose-500">Never (Returns 0x00 per spec)</strong></div>
-                    <div>• Key A Write: <strong class="text-emerald-500">Key B Only</strong></div>
-                    <div>• Access Bits Read/Write: <strong class="text-emerald-500">Read: Key A|B · Write: Key B</strong></div>
+                    <div>• Key A Read: <strong class="text-zinc-400">Never (Returns 0x00 per spec)</strong></div>
+                    <div>• Key A Write: <strong class="text-zinc-200">Key B Only</strong></div>
+                    <div>• Access Bits Read/Write: <strong class="text-zinc-200">Read: Key A|B · Write: Key B</strong></div>
                   </div>
                 </div>
               </div>
@@ -963,12 +962,12 @@
               <div>
                 <div class="flex items-center justify-between text-[10px] font-mono text-[var(--ink-muted)] mb-1">
                   <span>MFRC522 SPI HARDWARE TRANSACTION TERMINAL</span>
-                  <span id="rfid-term-status" class="text-emerald-500">READY</span>
+                  <span id="rfid-term-status" class="text-zinc-400 font-mono">READY</span>
                 </div>
-                <div id="rfid-terminal" class="h-28 rounded border border-slate-800 bg-[#06090e] p-2.5 font-mono text-[11px] text-emerald-400 overflow-y-auto leading-relaxed space-y-1">
-                  <div class="text-slate-500">// STM32F103 MFRC522 Bare-Metal SPI Console initialized. Ready for command injection.</div>
-                  <div class="text-slate-400">&gt; CARD_DETECT: ISO 14443-A MIFARE Classic 1K present (ATQA: 0x0004, SAK: 0x08)</div>
-                  <div class="text-emerald-300">&gt; UID_SELECT: [3B 91 7E 2A] BCC Checksum: [B6] Valid.</div>
+                <div id="rfid-terminal" class="h-28 rounded border border-zinc-800 bg-[#090a0d] p-2.5 font-mono text-[11px] text-zinc-300 overflow-y-auto leading-relaxed space-y-1">
+                  <div class="text-zinc-500">// STM32F103 MFRC522 Bare-Metal SPI Console initialized. Ready for command injection.</div>
+                  <div class="text-zinc-400">&gt; CARD_DETECT: ISO 14443-A MIFARE Classic 1K present (ATQA: 0x0004, SAK: 0x08)</div>
+                  <div class="text-zinc-200">&gt; UID_SELECT: [3B 91 7E 2A] BCC Checksum: [B6] Valid.</div>
                 </div>
               </div>
 
@@ -990,8 +989,8 @@
               
               <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-xs font-mono">
                 <div class="flex items-center gap-2">
-                  <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                  <span class="text-slate-200 font-semibold">LiFePO4 Flat Discharge Plateau vs. True Coulomb Count</span>
+                  <span class="h-2 w-2 rounded-full bg-zinc-400"></span>
+                  <span class="text-zinc-200 font-semibold">LiFePO4 Flat Discharge Plateau vs. True Coulomb Count</span>
                 </div>
                 <span class="text-[10px] text-slate-400">4S3P (12.8V · 9.6Ah Pack)</span>
               </div>
@@ -1001,18 +1000,18 @@
                 <canvas id="bmsCanvas" width="700" height="300" class="w-full h-64 sm:h-72 block"></canvas>
                 
                 <!-- Floating Real-Time Curve HUD -->
-                <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 text-[10px] font-mono bg-slate-950/85 border border-slate-700/60 rounded p-2 text-slate-300 backdrop-blur-sm pointer-events-none shadow-lg">
+                <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 text-[10px] font-mono bg-zinc-950/90 border border-zinc-800 rounded p-2 text-zinc-400 backdrop-blur-sm pointer-events-none">
                   <div class="flex items-center gap-2">
-                    <span class="inline-block w-3 h-0.5 bg-emerald-400"></span>
-                    <span>Loaded Terminal V: <strong id="bms-hud-vterm" class="text-emerald-400 font-bold">12.91 V</strong></span>
+                    <span class="inline-block w-3 h-0.5 bg-[#a7f3d0]"></span>
+                    <span>Loaded Terminal V: <strong id="bms-hud-vterm" class="text-zinc-100 font-semibold">12.91 V</strong></span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="inline-block w-3 h-0.5 border-t border-dashed border-sky-400"></span>
-                    <span>Resting OCV: <strong id="bms-hud-vocv" class="text-sky-300">13.08 V</strong></span>
+                    <span class="inline-block w-3 h-0.5 border-t border-dashed border-zinc-400"></span>
+                    <span>Resting OCV: <strong id="bms-hud-vocv" class="text-zinc-300">13.08 V</strong></span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
-                    <span>Coulomb Count SoC: <strong id="bms-hud-soc" class="text-amber-300 font-bold">55.0%</strong></span>
+                    <span class="h-1.5 w-1.5 rounded-full bg-zinc-300"></span>
+                    <span>Coulomb Count SoC: <strong id="bms-hud-soc" class="text-zinc-100 font-semibold">55.0%</strong></span>
                   </div>
                 </div>
 
@@ -1025,16 +1024,16 @@
               <div class="pt-2 border-t border-slate-800 flex flex-wrap items-center justify-between text-[11px] font-mono text-slate-400">
                 <div class="flex items-center gap-3">
                   <span class="flex items-center gap-1.5">
-                    <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                    <span>Cell V: <strong id="bms-cell-v" class="text-slate-200">3.228 V</strong></span>
+                    <span class="h-2 w-2 rounded-full bg-[#a7f3d0]"></span>
+                    <span>Cell V: <strong id="bms-cell-v" class="text-zinc-200">3.228 V</strong></span>
                   </span>
                   <span class="flex items-center gap-1.5">
-                    <span class="h-2 w-2 rounded-full bg-purple-400"></span>
-                    <span>IR Drop: <strong id="bms-ir-drop" class="text-purple-300">42 mV</strong></span>
+                    <span class="h-2 w-2 rounded-full bg-zinc-500"></span>
+                    <span>IR Drop: <strong id="bms-ir-drop" class="text-zinc-300">42 mV</strong></span>
                   </span>
                 </div>
                 <div>
-                  Effective Peukert Capacity: <strong id="bms-peukert-cap" class="text-emerald-400">9.38 Ah / 9.60 Ah</strong>
+                  Effective Peukert Capacity: <strong id="bms-peukert-cap" class="text-zinc-200">9.38 Ah / 9.60 Ah</strong>
                 </div>
               </div>
 
@@ -1055,7 +1054,7 @@
                       <span class="font-medium text-[var(--ink-primary)]">Pack State of Charge (SoC):</span>
                       <span id="bms-soc-slider-val" class="font-mono font-bold text-[var(--pastel-mint-text)]">55 %</span>
                     </div>
-                    <input id="bms-soc-slider" type="range" min="2" max="99" value="55" oninput="updateBmsSimulation()" class="w-full accent-emerald-500 cursor-pointer" />
+                    <input id="bms-soc-slider" type="range" min="2" max="99" value="55" oninput="updateBmsSimulation()" class="w-full accent-zinc-300 cursor-pointer" />
                     <div class="flex justify-between text-[9px] font-mono text-[var(--ink-muted)]">
                       <span>0% (Empty · 10.0V)</span>
                       <span>Flat Plateau (3.2V)</span>
@@ -1069,7 +1068,7 @@
                       <span class="font-medium text-[var(--ink-primary)]">Discharge Load Current:</span>
                       <span id="bms-load-slider-val" class="font-mono font-bold text-[var(--pastel-sky-text)]">4.5 A</span>
                     </div>
-                    <input id="bms-load-slider" type="range" min="0" max="150" value="45" oninput="updateBmsSimulation()" class="w-full accent-sky-500 cursor-pointer" />
+                    <input id="bms-load-slider" type="range" min="0" max="150" value="45" oninput="updateBmsSimulation()" class="w-full accent-zinc-300 cursor-pointer" />
                     <div class="flex justify-between text-[9px] font-mono text-[var(--ink-muted)]">
                       <span>0.0A (Resting)</span>
                       <span>5.0A (Nominal Load)</span>
@@ -1083,7 +1082,7 @@
                       <span class="font-medium text-[var(--ink-primary)]">Cell Temperature:</span>
                       <span id="bms-temp-slider-val" class="font-mono font-bold text-[var(--pastel-peach-text)]">25 °C</span>
                     </div>
-                    <input id="bms-temp-slider" type="range" min="-10" max="50" value="25" oninput="updateBmsSimulation()" class="w-full accent-orange-500 cursor-pointer" />
+                    <input id="bms-temp-slider" type="range" min="-10" max="50" value="25" oninput="updateBmsSimulation()" class="w-full accent-zinc-300 cursor-pointer" />
                     <div class="flex justify-between text-[9px] font-mono text-[var(--ink-muted)]">
                       <span>-10°C (High Ri)</span>
                       <span>25°C (Room Temp)</span>
@@ -2245,16 +2244,18 @@
       const label = document.getElementById('dso-run-label');
       if (dsoRunning) {
         btn.innerText = 'Freeze';
-        ping.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75";
-        dot.className = "relative inline-flex rounded-full h-2 w-2 bg-emerald-500";
-        label.innerText = "TRIG'D / RUNNING";
-        label.className = "text-emerald-400 font-semibold";
+        if (dot) dot.className = "relative inline-flex rounded-full h-2 w-2 bg-zinc-400";
+        if (label) {
+          label.innerText = "ACQUIRING · 2.0 GSa/s";
+          label.className = "text-zinc-300 font-mono text-[10px] tracking-wider uppercase";
+        }
       } else {
         btn.innerText = 'Resume';
-        ping.className = "hidden";
-        dot.className = "relative inline-flex rounded-full h-2 w-2 bg-amber-500";
-        label.innerText = "HOLD / FROZEN";
-        label.className = "text-amber-400 font-semibold";
+        if (dot) dot.className = "relative inline-flex rounded-full h-2 w-2 bg-zinc-500";
+        if (label) {
+          label.innerText = "HOLD / PAUSED";
+          label.className = "text-zinc-400 font-mono text-[10px] tracking-wider uppercase";
+        }
       }
     }
 
@@ -2277,16 +2278,13 @@
       if (!container) return;
       const parts = dsoPreset === 'can' ? CAN_PACKET_PARTS : (dsoPreset === 'i2c' ? I2C_PACKET_PARTS : CAN_PACKET_PARTS);
       container.innerHTML = parts.map((p, idx) => {
-        let badgeColor = "bg-slate-800 text-slate-300 border-slate-700";
-        if (p.type === 'dominant' || p.type === 'start') badgeColor = "bg-emerald-950 text-emerald-300 border-emerald-600/50";
-        if (p.type === 'id') badgeColor = "bg-sky-950 text-sky-300 border-sky-600/50";
-        if (p.type === 'payload') badgeColor = "bg-purple-950 text-purple-300 border-purple-600/50";
-        if (p.type === 'ack') badgeColor = "bg-emerald-900 text-emerald-200 border-emerald-500/50";
-        if (p.type === 'crc') badgeColor = "bg-amber-950 text-amber-300 border-amber-600/50";
+        let badgeStyle = "bg-zinc-900/90 text-zinc-300 border-zinc-800";
+        if (p.type === 'id') badgeStyle = "bg-zinc-800/90 text-zinc-100 border-zinc-700 font-medium";
+        if (p.type === 'payload') badgeStyle = "bg-zinc-800/60 text-zinc-200 border-zinc-700/80";
 
-        return `<div onclick="highlightPacketPart(${idx})" class="shrink-0 cursor-pointer px-2 py-1 rounded border ${badgeColor} hover:brightness-125 transition-all text-center">
-          <div class="font-bold text-[9px]">${p.name}</div>
-          <div class="text-[8px] opacity-75 font-mono">${p.bits}</div>
+        return `<div onclick="highlightPacketPart(${idx})" class="shrink-0 cursor-pointer px-2.5 py-1 rounded border ${badgeStyle} hover:border-zinc-500 transition-all text-center">
+          <div class="font-medium text-[9px] text-zinc-200">${p.name}</div>
+          <div class="text-[8px] text-zinc-500 font-mono">${p.bits}</div>
         </div>`;
       }).join('');
     }
@@ -2415,49 +2413,42 @@
         }
       }
 
-      // Draw Traces
-      // Math Differential
+      // Draw Traces (Zero Glow, Clean Crisp Vector Lines)
+      dsoCtx.shadowBlur = 0;
+
+      // Math Differential (Subtle muted lavender)
       if (dsoPreset === 'can' && dsoMathActive && pointsDiff.length > 0) {
-        dsoCtx.strokeStyle = '#c084fc';
-        dsoCtx.lineWidth = 2.0;
-        dsoCtx.shadowColor = '#c084fc';
-        dsoCtx.shadowBlur = 6;
+        dsoCtx.strokeStyle = '#c4b5fd';
+        dsoCtx.lineWidth = 1.3;
         dsoCtx.beginPath();
         dsoCtx.moveTo(pointsDiff[0].x, pointsDiff[0].y);
         for (let i = 1; i < pointsDiff.length; i++) dsoCtx.lineTo(pointsDiff[i].x, pointsDiff[i].y);
         dsoCtx.stroke();
-        dsoCtx.shadowBlur = 0;
       }
 
-      // CH2 (Sky Blue)
+      // CH2 (Subtle muted steel blue)
       if (dsoCh2Active && pointsCH2.length > 0) {
-        dsoCtx.strokeStyle = '#38bdf8';
-        dsoCtx.lineWidth = 1.8;
-        dsoCtx.shadowColor = '#38bdf8';
-        dsoCtx.shadowBlur = 5;
+        dsoCtx.strokeStyle = '#93c5fd';
+        dsoCtx.lineWidth = 1.4;
         dsoCtx.beginPath();
         dsoCtx.moveTo(pointsCH2[0].x, pointsCH2[0].y);
         for (let i = 1; i < pointsCH2.length; i++) dsoCtx.lineTo(pointsCH2[i].x, pointsCH2[i].y);
         dsoCtx.stroke();
-        dsoCtx.shadowBlur = 0;
       }
 
-      // CH1 (Mint Green)
+      // CH1 (Subtle muted pastel mint)
       if (dsoCh1Active && pointsCH1.length > 0) {
-        dsoCtx.strokeStyle = '#10b981';
-        dsoCtx.lineWidth = 2.0;
-        dsoCtx.shadowColor = '#10b981';
-        dsoCtx.shadowBlur = 6;
+        dsoCtx.strokeStyle = '#86efac';
+        dsoCtx.lineWidth = 1.5;
         dsoCtx.beginPath();
         dsoCtx.moveTo(pointsCH1[0].x, pointsCH1[0].y);
         for (let i = 1; i < pointsCH1.length; i++) dsoCtx.lineTo(pointsCH1[i].x, pointsCH1[i].y);
         dsoCtx.stroke();
-        dsoCtx.shadowBlur = 0;
       }
 
-      // Draw Cursors
-      drawCursor(dsoCtx, cursorX1, '#f59e0b', 'X1', h);
-      drawCursor(dsoCtx, cursorX2, '#f59e0b', 'X2', h);
+      // Draw Cursors (Clean Subtle Neutral Gray)
+      drawCursor(dsoCtx, cursorX1, '#d4d4d8', 'X1', h);
+      drawCursor(dsoCtx, cursorX2, '#d4d4d8', 'X2', h);
 
       dsoAnimFrame = requestAnimationFrame(animateDso);
     }
@@ -2564,13 +2555,13 @@
           const acc = bytes.slice(6, 9).join(' ');
           const gp = bytes[9];
           const keyB = bytes.slice(10, 16).join(' ');
-          coloredHex = `<span class="text-purple-300 font-bold">${keyA}</span> <span class="text-sky-300 font-bold">${acc}</span> <span class="text-slate-400">${gp}</span> <span class="text-orange-300 font-bold">${keyB}</span>`;
+          coloredHex = `<span class="text-[#c4b5fd] font-medium">${keyA}</span> <span class="text-[#93c5fd] font-medium">${acc}</span> <span class="text-zinc-500">${gp}</span> <span class="text-[#fed7aa] font-medium">${keyB}</span>`;
         } else if (sectorIdx === 0 && blkOffset === 0) {
           // Block 0: UID (0-3), BCC (4), SAK (5), ATQA (6-7), Manufacturer (8-15)
           const uid = bytes.slice(0, 4).join(' ');
           const bcc = bytes[4];
           const rest = bytes.slice(5).join(' ');
-          coloredHex = `<span class="text-emerald-400 font-bold">${uid}</span> <span class="text-amber-300 font-bold">${bcc}</span> <span class="text-slate-300">${rest}</span>`;
+          coloredHex = `<span class="text-zinc-100 font-semibold">${uid}</span> <span class="text-zinc-400">${bcc}</span> <span class="text-zinc-500">${rest}</span>`;
         } else {
           coloredHex = `<span class="text-slate-200">${hexStr}</span>`;
         }
@@ -2596,7 +2587,7 @@
 
       term.innerHTML = '';
       status.innerText = "EXECUTING...";
-      status.className = "text-amber-400";
+      status.className = "text-zinc-400 font-mono text-[10px]";
 
       const log = (msg, color = "text-slate-300") => {
         const div = document.createElement('div');
@@ -2607,42 +2598,42 @@
       };
 
       if (type === 'gen1a') {
-        log("[0.000ms] Initializing MFRC522 Chinese Magic Backdoor sequence...", "text-purple-300 font-semibold");
-        setTimeout(() => log("[0.042ms] Halting active Crypto-1 state machine... 0x50 0x00"), 100);
-        setTimeout(() => log("[0.120ms] Sending Unlock Command 1: SPI_TX -> 0x40 (7-bit halt bypass)", "text-sky-300"), 250);
-        setTimeout(() => log("[0.165ms] Backdoor ACK received: 0x0A (Card acknowledged magic mode)", "text-emerald-400 font-bold"), 400);
-        setTimeout(() => log("[0.210ms] Sending Unlock Command 2: SPI_TX -> 0x43 (Write Mode enabled)", "text-sky-300"), 550);
-        setTimeout(() => log("[0.250ms] Backdoor ACK received: 0x0A. Card in Unlocked State!"), 700);
-        setTimeout(() => log("[0.340ms] Writing custom UID [0x3B, 0x91, 0x7E, 0x2A] to Block 0...", "text-amber-300"), 850);
-        setTimeout(() => log("[0.410ms] Computing XOR BCC: 0x3B ^ 0x91 ^ 0x7E ^ 0x2A = 0xB6 (MATCH)"), 1000);
+        log("[0.000ms] Initializing MFRC522 Chinese Magic Backdoor sequence...", "text-zinc-200 font-medium");
+        setTimeout(() => log("[0.042ms] Halting active Crypto-1 state machine... 0x50 0x00", "text-zinc-400"), 100);
+        setTimeout(() => log("[0.120ms] Sending Unlock Command 1: SPI_TX -> 0x40 (7-bit halt bypass)", "text-zinc-300"), 250);
+        setTimeout(() => log("[0.165ms] Backdoor ACK received: 0x0A (Magic mode acknowledged)", "text-zinc-100 font-semibold"), 400);
+        setTimeout(() => log("[0.210ms] Sending Unlock Command 2: SPI_TX -> 0x43 (Write Mode enabled)", "text-zinc-300"), 550);
+        setTimeout(() => log("[0.250ms] Backdoor ACK received: 0x0A. Card in Unlocked State!", "text-zinc-400"), 700);
+        setTimeout(() => log("[0.340ms] Writing custom UID [0x3B, 0x91, 0x7E, 0x2A] to Block 0...", "text-zinc-200"), 850);
+        setTimeout(() => log("[0.410ms] Computing XOR BCC: 0x3B ^ 0x91 ^ 0x7E ^ 0x2A = 0xB6 (MATCH)", "text-zinc-400"), 1000);
         setTimeout(() => {
-          log("[0.520ms] SUCCESS: Manufacturer Block 0 rewritten to EEPROM verified!", "text-emerald-400 font-bold");
+          log("[0.520ms] SUCCESS: Manufacturer Block 0 rewritten to EEPROM verified.", "text-zinc-100 font-semibold");
           status.innerText = "UNLOCKED & VERIFIED";
-          status.className = "text-emerald-400 font-bold";
+          status.className = "text-zinc-300 font-mono text-[10px]";
         }, 1200);
 
       } else if (type === 'cuid') {
-        log("[0.000ms] Testing Gen2 / CUID Direct ISO 14443-A Block 0 Write...", "text-sky-300 font-semibold");
-        setTimeout(() => log("[0.050ms] Authenticating Sector 0 with Default Key A [FF FF FF FF FF FF]..."), 150);
-        setTimeout(() => log("[0.140ms] Crypto-1 Mutual Authentication OK. Token generated.", "text-emerald-400"), 300);
-        setTimeout(() => log("[0.220ms] Sending standard ISO WRITE command 0xA0 to Block 0x00..."), 500);
-        setTimeout(() => log("[0.380ms] ACK received: CUID controller accepted write without backdoor handshake.", "text-emerald-400 font-bold"), 700);
+        log("[0.000ms] Testing Gen2 / CUID Direct ISO 14443-A Block 0 Write...", "text-zinc-200 font-medium");
+        setTimeout(() => log("[0.050ms] Authenticating Sector 0 with Default Key A [FF FF FF FF FF FF]...", "text-zinc-400"), 150);
+        setTimeout(() => log("[0.140ms] Crypto-1 Mutual Authentication OK. Token generated.", "text-zinc-300"), 300);
+        setTimeout(() => log("[0.220ms] Sending standard ISO WRITE command 0xA0 to Block 0x00...", "text-zinc-400"), 500);
+        setTimeout(() => log("[0.380ms] ACK received: CUID controller accepted write without backdoor handshake.", "text-zinc-200 font-medium"), 700);
         setTimeout(() => {
-          log("[0.450ms] SUCCESS: Block 0 rewritten. Anti-firewall compatibility verified.", "text-emerald-400 font-bold");
+          log("[0.450ms] SUCCESS: Block 0 rewritten. Anti-firewall compatibility verified.", "text-zinc-100 font-semibold");
           status.innerText = "SUCCESS (CUID PASS)";
-          status.className = "text-emerald-400 font-bold";
+          status.className = "text-zinc-300 font-mono text-[10px]";
         }, 900);
 
       } else if (type === 'dict') {
-        log("[0.000ms] Running 166-Key Dictionary Attack across all 16 sectors...", "text-amber-300 font-semibold");
-        setTimeout(() => log("[0.045ms] [Sector 00] Testing Key [FF FF FF FF FF FF] -> FAILED (Auth Timeout)"), 120);
-        setTimeout(() => log("[0.090ms] [Sector 00] Testing Key [A0 A1 A2 A3 A4 A5] -> SUCCESS (Crypto-1 Cracked!)", "text-emerald-400 font-bold"), 240);
-        setTimeout(() => log("[0.150ms] [Sector 01] Testing Key [D3 F7 D3 F7 D3 F7] -> SUCCESS", "text-emerald-400"), 380);
-        setTimeout(() => log("[0.210ms] [Sector 02] Testing Key [B0 B1 B2 B3 B4 B5] -> SUCCESS", "text-emerald-400"), 520);
+        log("[0.000ms] Running 166-Key Dictionary Attack across all 16 sectors...", "text-zinc-200 font-medium");
+        setTimeout(() => log("[0.045ms] [Sector 00] Testing Key [FF FF FF FF FF FF] -> FAILED (Auth Timeout)", "text-zinc-500"), 120);
+        setTimeout(() => log("[0.090ms] [Sector 00] Testing Key [A0 A1 A2 A3 A4 A5] -> SUCCESS (Crypto-1 Authenticated)", "text-zinc-100 font-semibold"), 240);
+        setTimeout(() => log("[0.150ms] [Sector 01] Testing Key [D3 F7 D3 F7 D3 F7] -> SUCCESS", "text-zinc-300"), 380);
+        setTimeout(() => log("[0.210ms] [Sector 02] Testing Key [B0 B1 B2 B3 B4 B5] -> SUCCESS", "text-zinc-300"), 520);
         setTimeout(() => {
-          log("[0.310ms] CRACK COMPLETE: 16/16 Sectors identified in 310ms. All keys extracted.", "text-emerald-400 font-bold");
+          log("[0.310ms] CRACK COMPLETE: 16/16 Sectors identified in 310ms. All keys extracted.", "text-zinc-100 font-semibold");
           status.innerText = "CRACKED (16/16 KEYS)";
-          status.className = "text-emerald-400 font-bold";
+          status.className = "text-zinc-300 font-mono text-[10px]";
         }, 700);
       }
     }
@@ -2764,11 +2755,10 @@
       bmsCtx.stroke();
       bmsCtx.setLineDash([]);
 
-      // Plot Loaded Terminal Voltage Curve (Solid Mint Green)
-      bmsCtx.strokeStyle = '#10b981';
-      bmsCtx.lineWidth = 2.2;
-      bmsCtx.shadowColor = '#10b981';
-      bmsCtx.shadowBlur = 6;
+      // Plot Loaded Terminal Voltage Curve (Clean Solid Muted Mint, Zero Glow)
+      bmsCtx.shadowBlur = 0;
+      bmsCtx.strokeStyle = '#86efac';
+      bmsCtx.lineWidth = 1.6;
       bmsCtx.beginPath();
       for (let s = 0; s <= 100; s++) {
         const ocv = getLifePo4OCV(s);
@@ -2778,19 +2768,18 @@
         if (s === 0) bmsCtx.moveTo(x, y); else bmsCtx.lineTo(x, y);
       }
       bmsCtx.stroke();
-      bmsCtx.shadowBlur = 0;
 
-      // Pulsing Marker at current operating point
+      // Clean Operating Point Marker (Subtle Solid Dot, Zero Glow)
       const curX = 50 + (bmsCurrentSoC / 100) * (w - 70);
       const curY = (h - 30) - ((currentVterm - 2.5) / 1.1) * (h - 50);
 
-      bmsCtx.fillStyle = '#f59e0b';
+      bmsCtx.fillStyle = '#e4e4e7';
       bmsCtx.beginPath();
-      bmsCtx.arc(curX, curY, 6, 0, Math.PI * 2);
+      bmsCtx.arc(curX, curY, 4.5, 0, Math.PI * 2);
       bmsCtx.fill();
 
-      bmsCtx.strokeStyle = '#ffffff';
-      bmsCtx.lineWidth = 2;
+      bmsCtx.strokeStyle = '#18181b';
+      bmsCtx.lineWidth = 1.5;
       bmsCtx.stroke();
     }
 
