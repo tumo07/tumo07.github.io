@@ -825,7 +825,7 @@
                   <span class="h-1.5 w-1.5 rounded-full bg-[var(--pastel-mint-dot)]"></span>
                   Physical Layer Verification
                 </div>
-                In embedded automotive systems, verifying the rise time (\(t_r \le 50	ext{ns}\)) and differential voltage (\(V_{	ext{diff}} \ge 1.5	ext{V}\)) via DSO confirms signal integrity across noisy chassis harnesses before running upper-layer AUTOSAR stacks.
+                In embedded automotive systems, verifying the rise time (t<sub>r</sub> ≤ 50 ns) and differential voltage (V<sub>diff</sub> ≥ 1.5 V) via DSO confirms signal integrity across noisy chassis harnesses before running upper-layer AUTOSAR stacks.
               </div>
 
             </div>
@@ -1111,7 +1111,7 @@
                   Why Simple Voltage Gauges Fail on LiFePO4:
                 </div>
                 <p class="text-[11px] text-[var(--ink-secondary)] leading-relaxed">
-                  Between 20% and 80% SoC, LiFePO4 cell voltage shifts by only <strong>~25 mV</strong>. A mere 5A load creates a <strong>70 mV Ohmic drop</strong> (I · R<sub>i</sub>), causing primitive voltage-based meters to falsely swing from 80% to 20% SoC during vehicle acceleration.
+                  Between 20% and 80% SoC, LiFePO4 cell voltage shifts by only <strong>~25 mV</strong>. A mere 5A load creates a <strong>70 mV Ohmic drop</strong> (I &times; R<sub>i</sub>), causing primitive voltage-based meters to falsely swing from 80% to 20% SoC during vehicle acceleration.
                 </p>
                 <div class="pt-1.5 border-t border-[var(--line-subtle)] text-[11px] text-[var(--pastel-mint-text)] font-mono font-medium">
                   ↳ MAX17048 Coulomb Counting solves this by continuously integrating current (Q = ∫ I dt) over I2C Fast-Mode.
