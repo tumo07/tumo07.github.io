@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex Trinh (Trinh Dang Khoa) — Automotive &amp; Embedded Software Engineer</title>
-  <meta name="description" content="Portfolio of Alex Trinh (Trinh Dang Khoa) — Automotive Software Engineer Intern at FPT Software, specializing in AUTOSAR Classic, CAN 2.0B in-vehicle networking, and ARM Cortex-M embedded systems." />
+  <meta name="description" content="Portfolio and technical case studies of Alex Trinh (Trinh Dang Khoa) — Automotive Software Engineer Intern specializing in NXP S32K144, AUTOSAR Classic, distributed CAN 2.0B bus architectures, and bare-metal embedded systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -46,36 +46,86 @@
   <style>
     :root {
       --surface-lowest: #ffffff;
-      --surface: #fafafa;
-      --surface-low: #f4f4f5;
-      --surface-container: #e4e4e7;
-      --surface-high: #d4d4d8;
-      --ink-primary: #09090b;
-      --ink-secondary: #3f3f46;
-      --ink-muted: #71717a;
-      --ink-inverse: #fafafa;
-      --line-subtle: rgba(9, 9, 11, 0.07);
-      --line-default: rgba(9, 9, 11, 0.12);
-      --line-strong: rgba(9, 9, 11, 0.24);
-      --spotlight: rgba(9, 9, 11, 0.05);
-      --spotlight-border: rgba(9, 9, 11, 0.22);
+      --surface: #faf9f6;
+      --surface-low: #f3f2ee;
+      --surface-container: #e7e5e0;
+      --surface-high: #d6d3cd;
+      --ink-primary: #141413;
+      --ink-secondary: #4a4945;
+      --ink-muted: #787670;
+      --ink-inverse: #faf9f6;
+      --line-subtle: rgba(20, 20, 19, 0.06);
+      --line-default: rgba(20, 20, 19, 0.11);
+      --line-strong: rgba(20, 20, 19, 0.22);
+      --spotlight: rgba(20, 20, 19, 0.035);
+
+      /* Pastel Tokens (Light Mode) */
+      --pastel-mint-text: #0f6e56;
+      --pastel-mint-bg: rgba(167, 243, 208, 0.35);
+      --pastel-mint-border: rgba(16, 185, 129, 0.3);
+      --pastel-mint-dot: #10b981;
+
+      --pastel-sky-text: #0369a1;
+      --pastel-sky-bg: rgba(186, 230, 253, 0.4);
+      --pastel-sky-border: rgba(14, 165, 233, 0.3);
+      --pastel-sky-dot: #0ea5e9;
+
+      --pastel-lavender-text: #5b21b6;
+      --pastel-lavender-bg: rgba(221, 214, 254, 0.45);
+      --pastel-lavender-border: rgba(139, 92, 246, 0.3);
+      --pastel-lavender-dot: #8b5cf6;
+
+      --pastel-peach-text: #9a3412;
+      --pastel-peach-bg: rgba(254, 215, 170, 0.45);
+      --pastel-peach-border: rgba(249, 115, 22, 0.3);
+      --pastel-peach-dot: #f97316;
+
+      --pastel-rose-text: #9f1239;
+      --pastel-rose-bg: rgba(254, 205, 211, 0.45);
+      --pastel-rose-border: rgba(244, 63, 94, 0.3);
+      --pastel-rose-dot: #f43f5e;
     }
 
-    html.dark {
-      --surface-lowest: #0a0a0c;
-      --surface: #0e0e10;
-      --surface-low: #141417;
-      --surface-container: #1c1c20;
-      --surface-high: #27272c;
-      --ink-primary: #fafafa;
+    .dark {
+      --surface-lowest: #050506;
+      --surface: #0a0a0c;
+      --surface-low: #111114;
+      --surface-container: #18181c;
+      --surface-high: #222228;
+      --ink-primary: #ededed;
       --ink-secondary: #a1a1aa;
       --ink-muted: #71717a;
-      --ink-inverse: #09090b;
-      --line-subtle: rgba(255, 255, 255, 0.07);
-      --line-default: rgba(255, 255, 255, 0.11);
-      --line-strong: rgba(255, 255, 255, 0.24);
-      --spotlight: rgba(255, 255, 255, 0.035);
-      --spotlight-border: rgba(255, 255, 255, 0.22);
+      --ink-inverse: #0a0a0c;
+      --line-subtle: rgba(255, 255, 255, 0.05);
+      --line-default: rgba(255, 255, 255, 0.09);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --spotlight: rgba(255, 255, 255, 0.045);
+
+      /* Pastel Tokens (Dark Mode: Soft, Muted Luminous Tints — ZERO Harsh Neon) */
+      --pastel-mint-text: #a7f3d0;
+      --pastel-mint-bg: rgba(167, 243, 208, 0.10);
+      --pastel-mint-border: rgba(167, 243, 208, 0.22);
+      --pastel-mint-dot: #86efac;
+
+      --pastel-sky-text: #bae6fd;
+      --pastel-sky-bg: rgba(186, 230, 253, 0.10);
+      --pastel-sky-border: rgba(186, 230, 253, 0.22);
+      --pastel-sky-dot: #7dd3fc;
+
+      --pastel-lavender-text: #ddd6fe;
+      --pastel-lavender-bg: rgba(221, 214, 254, 0.10);
+      --pastel-lavender-border: rgba(221, 214, 254, 0.22);
+      --pastel-lavender-dot: #c4b5fd;
+
+      --pastel-peach-text: #fed7aa;
+      --pastel-peach-bg: rgba(254, 215, 170, 0.10);
+      --pastel-peach-border: rgba(254, 215, 170, 0.22);
+      --pastel-peach-dot: #fdba74;
+
+      --pastel-rose-text: #fecdd3;
+      --pastel-rose-bg: rgba(254, 205, 211, 0.10);
+      --pastel-rose-border: rgba(254, 205, 211, 0.22);
+      --pastel-rose-dot: #fda4af;
     }
 
     body {
@@ -85,925 +135,1349 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle architectural grid background */
-    .arch-grid {
-      background-size: 48px 48px;
+    /* Soft Grid Underlay */
+    .grid-bg {
       background-image: 
         linear-gradient(to right, var(--line-subtle) 1px, transparent 1px),
         linear-gradient(to bottom, var(--line-subtle) 1px, transparent 1px);
+      background-size: 32px 32px;
     }
 
-    /* Linear / Geist Mouse-Tracking Spotlight Card */
+    /* Pastel Badge Classes */
+    .pill-mint {
+      color: var(--pastel-mint-text);
+      background-color: var(--pastel-mint-bg);
+      border: 1px solid var(--pastel-mint-border);
+    }
+    .pill-mint .pill-dot { background-color: var(--pastel-mint-dot); }
+
+    .pill-sky {
+      color: var(--pastel-sky-text);
+      background-color: var(--pastel-sky-bg);
+      border: 1px solid var(--pastel-sky-border);
+    }
+    .pill-sky .pill-dot { background-color: var(--pastel-sky-dot); }
+
+    .pill-lavender {
+      color: var(--pastel-lavender-text);
+      background-color: var(--pastel-lavender-bg);
+      border: 1px solid var(--pastel-lavender-border);
+    }
+    .pill-lavender .pill-dot { background-color: var(--pastel-lavender-dot); }
+
+    .pill-peach {
+      color: var(--pastel-peach-text);
+      background-color: var(--pastel-peach-bg);
+      border: 1px solid var(--pastel-peach-border);
+    }
+    .pill-peach .pill-dot { background-color: var(--pastel-peach-dot); }
+
+    .pill-rose {
+      color: var(--pastel-rose-text);
+      background-color: var(--pastel-rose-bg);
+      border: 1px solid var(--pastel-rose-border);
+    }
+    .pill-rose .pill-dot { background-color: var(--pastel-rose-dot); }
+
+    /* Interactive Spotlight Card */
     .spotlight-card {
       position: relative;
       background-color: var(--surface-low);
       border: 1px solid var(--line-default);
-      transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
-      overflow: hidden;
-    }
-    .spotlight-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        520px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
-        var(--spotlight),
-        transparent 40%
-      );
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .spotlight-card:hover::before {
-      opacity: 1;
+      transition: border-color 0.25s ease, transform 0.25s ease;
     }
     .spotlight-card:hover {
       border-color: var(--line-strong);
     }
 
-    /* Subtle top edge specular line */
-    .specular-top {
-      box-shadow: inset 0 1px 0 0 var(--line-subtle);
-    }
-
-    /* Custom subtle scrollbars */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--surface-lowest);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--surface-high);
-      border-radius: 3px;
+    /* Selection Styling */
+    ::selection {
+      background-color: var(--pastel-mint-bg);
+      color: var(--ink-primary);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-ink-primary selection:text-ink-inverse">
+<body class="selection:bg-emerald-500/20 selection:text-emerald-300">
 
-  <!-- TOP NAVIGATION (STITCH SHELL) -->
-  <header class="fixed top-0 left-0 w-full z-40 bg-surface/85 backdrop-blur-md border-b border-line-subtle">
-    <div class="h-16 max-w-[1160px] mx-auto px-5 sm:px-8 flex items-center justify-between gap-4">
-      <!-- Brand / Identity -->
-      <a href="#overview" class="flex items-center gap-3 group focus:outline-none">
-        <div class="w-8 h-8 rounded bg-ink-primary text-ink-inverse flex items-center justify-center font-mono text-xs font-medium tracking-tighter transition-transform duration-200 group-hover:scale-105">
-          AT
-        </div>
-        <div class="flex flex-col">
-          <span class="text-sm font-medium text-ink-primary tracking-tight leading-none">Alex Trinh</span>
-          <span class="font-mono text-[11px] text-ink-muted mt-1 hidden sm:block">Automotive &amp; Embedded Systems</span>
-        </div>
-      </a>
+  <!-- ================================================================= -->
+  <!-- TOP NAVIGATION BAR                                               -->
+  <!-- ================================================================= -->
+  <nav class="sticky top-0 z-40 w-full border-b border-[var(--line-default)] bg-[var(--surface)]/90 backdrop-blur-md transition-colors">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
+      <div class="flex items-center gap-3">
+        <a href="#overview" onclick="switchToOverview()" class="group flex items-center gap-2.5">
+          <div class="flex h-8 w-8 items-center justify-center rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-xs font-semibold tracking-wider font-mono text-[var(--ink-primary)]">
+            AT
+          </div>
+          <div>
+            <div class="text-xs font-semibold tracking-tight text-[var(--ink-primary)]">Alex Trinh</div>
+            <div class="text-[10px] text-[var(--ink-muted)]">Trinh Dang Khoa · Embedded &amp; Automotive</div>
+          </div>
+        </a>
+      </div>
 
-      <!-- Center Nav -->
-      <nav class="hidden md:flex items-center gap-7 text-[13px]">
-        <a href="#overview" class="text-ink-secondary hover:text-ink-primary transition-colors">Overview</a>
-        <a href="#work" class="text-ink-secondary hover:text-ink-primary transition-colors">Selected Work</a>
-        <a href="#experience" class="text-ink-secondary hover:text-ink-primary transition-colors">Experience</a>
-        <a href="#education" class="text-ink-secondary hover:text-ink-primary transition-colors">Credentials</a>
-        <a href="#contact" class="text-ink-secondary hover:text-ink-primary transition-colors">Contact</a>
-      </nav>
+      <div class="hidden md:flex items-center gap-6 text-xs text-[var(--ink-secondary)]">
+        <a href="#overview" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Overview</a>
+        <a href="#work" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Engineering Work</a>
+        <a href="javascript:void(0)" onclick="openDeepDive('s32k144')" class="flex items-center gap-1.5 hover:text-[var(--pastel-mint-text)] transition-colors">
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--pastel-mint-dot)]"></span>
+          Deep-Dive Reader
+        </a>
+        <a href="#experience" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Experience</a>
+        <a href="#credentials" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Credentials</a>
+        <a href="#contact" onclick="switchToOverview()" class="hover:text-[var(--ink-primary)] transition-colors">Contact</a>
+      </div>
 
-      <!-- Right Actions: Command Menu, Theme Toggle, Resume CTA -->
       <div class="flex items-center gap-2.5">
-        <button id="cmd-trigger" type="button" class="hidden sm:inline-flex items-center gap-2 px-2.5 py-1.5 rounded bg-surface-low border border-line text-xs text-ink-secondary hover:text-ink-primary hover:border-line-strong transition-colors" title="Open Command Menu (Ctrl+K)">
-          <span>Command</span>
-          <kbd class="font-mono text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-ink-muted">Ctrl K</kbd>
+        <button id="cmd-pal-btn" class="hidden sm:flex items-center gap-2 rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-xs text-[var(--ink-muted)] hover:border-[var(--line-strong)] hover:text-[var(--ink-primary)] transition-colors">
+          <span>Explore</span>
+          <kbd class="font-mono text-[10px] bg-[var(--surface-container)] px-1 py-0.5 rounded text-[var(--ink-secondary)]">Ctrl K</kbd>
         </button>
 
-        <button id="theme-toggle" type="button" aria-label="Toggle theme" class="p-2 rounded bg-surface-low border border-line text-ink-secondary hover:text-ink-primary hover:border-line-strong transition-colors" title="Switch Dark / Light Theme">
-          <!-- Sun icon (shown in dark mode) -->
-          <svg id="icon-sun" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-          </svg>
-          <!-- Moon icon (shown in light mode) -->
-          <svg id="icon-moon" class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-          </svg>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle theme" class="flex h-8 w-8 items-center justify-center rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-[var(--ink-muted)] hover:text-[var(--ink-primary)] hover:border-[var(--line-strong)] transition-colors">
+          <svg id="theme-icon-dark" class="hidden h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="theme-icon-light" class="hidden h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
         </button>
 
-        <button type="button" onclick="openPdfModal('assets/docs/Trinh_Dang_Khoa_CV.pdf', 'Trinh Dang Khoa — Engineering CV')" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-ink-primary text-ink-inverse text-[13px] font-medium hover:opacity-90 transition-opacity">
+        <!-- Resume Modal Trigger -->
+        <button onclick="openPdfModal('resume')" class="flex items-center gap-1.5 rounded border border-[var(--line-strong)] bg-[var(--ink-primary)] px-3 py-1 text-xs font-medium text-[var(--ink-inverse)] hover:opacity-90 transition-opacity">
           <span>Resume</span>
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-          </svg>
+          <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </button>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="flex-1 pt-16">
-    <!-- SECTION 1: EDITORIAL HERO (STITCH PRECISION DESIGN) -->
-    <section id="overview" class="relative w-full bg-surface-lowest border-b border-line-subtle overflow-hidden">
-      <div class="absolute inset-0 arch-grid opacity-50 pointer-events-none"></div>
-      <div class="relative max-w-[1160px] mx-auto px-5 sm:px-8 pt-12 pb-20 md:pt-20 md:pb-24">
+  <!-- ================================================================= -->
+  <!-- MAIN VIEW: PORTFOLIO OVERVIEW                                     -->
+  <!-- ================================================================= -->
+  <main id="portfolio-main-view" class="relative">
+
+    <!-- HERO SECTION WITH EDITORIAL GRID -->
+    <section id="overview" class="relative border-b border-[var(--line-default)] grid-bg pt-14 pb-16">
+      <div class="mx-auto max-w-7xl px-6">
         
-        <!-- Top Status Bar -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 border-b border-line-subtle">
-          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded bg-surface-low border border-line self-start">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ink-primary opacity-60"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-ink-primary"></span>
-            </span>
-            <span class="font-mono text-[11px] text-ink-primary uppercase tracking-wider">
-              Automotive Software Engineer Intern · FPT Software
-            </span>
+        <!-- Eyebrow Badges with Pastel Accents -->
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-8">
+          <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-mono pill-mint">
+            <span class="h-1.5 w-1.5 rounded-full pill-dot"></span>
+            <span>AUTOMOTIVE SOFTWARE ENGINEER INTERN · FPT SOFTWARE</span>
           </div>
-          <div class="flex items-center gap-3 text-ink-muted font-mono text-[11px] tracking-wider uppercase">
-            <span>Ho Chi Minh City, VN</span>
-            <span>/</span>
-            <span>AUTOSAR &amp; ARM Cortex-M</span>
+          <div class="flex items-center gap-2 text-xs font-mono text-[var(--ink-muted)]">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--pastel-sky-dot)]"></span>
+            <span>DI AN, BINH DUONG / HO CHI MINH CITY, VIETNAM</span>
           </div>
         </div>
 
-        <!-- Core Hero Grid -->
-        <div class="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+        <!-- 12-Column Hero Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          <!-- Left 7 Columns: Editorial Headline & Bio -->
-          <div class="lg:col-span-7 flex flex-col gap-6">
-            <div class="flex items-center gap-3">
-              <img src="assets/images/avatar.jpg" alt="Trinh Dang Khoa (Alex Trinh)" class="w-11 h-11 rounded-full object-cover border border-line-strong grayscale contrast-125" />
-              <div class="flex flex-col">
-                <span class="text-sm font-medium text-ink-primary">Trinh Dang Khoa (Alex Trinh)</span>
-                <span class="font-mono text-[11px] text-ink-muted">B.Sc. Automotive Software Engineering · FPT University</span>
-              </div>
+          <!-- Left Column (7 Cols): Editorial Headline & Mission -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="space-y-3">
+              <p class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)]">
+                TRINH DANG KHOA (ALEX TRINH) :: HARDWARE-SOFTWARE CO-DESIGN
+              </p>
+              <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight text-[var(--ink-primary)] leading-[1.08]">
+                Engineering deterministic <br class="hidden sm:inline"/>
+                embedded systems <br class="hidden sm:inline"/>
+                <span class="font-serif italic font-normal text-[var(--ink-secondary)]">&amp; automotive software.</span>
+              </h1>
             </div>
 
-            <h1 class="text-4xl sm:text-5xl md:text-[54px] font-semibold text-ink-primary tracking-[-0.035em] leading-[1.06] text-balance">
-              Engineering deterministic embedded systems &amp; <span class="font-serif italic font-normal">automotive software.</span>
-            </h1>
-
-            <p class="text-base sm:text-[17px] text-ink-secondary max-w-2xl leading-relaxed font-normal">
-              Developing safety-critical microcontroller firmware, in-vehicle CAN 2.0B communication stacks, and hardware security tooling across ARM Cortex-M and AUTOSAR Classic architectures.
+            <p class="text-base text-[var(--ink-secondary)] leading-relaxed max-w-2xl">
+              Alex Trinh (Trinh Dang Khoa) develops bare-metal microcontroller firmware, fault-tolerant CAN 2.0B / AUTOSAR Classic stacks, and hardware security diagnostic tooling on automotive-grade NXP S32K144 and ARM Cortex-M microcontrollers.
             </p>
 
-            <!-- Primary Actions -->
-            <div class="flex flex-wrap items-center gap-3.5 pt-2">
-              <a href="#work" class="inline-flex items-center justify-center px-5 py-2.5 rounded bg-ink-primary text-ink-inverse text-[13px] font-medium hover:opacity-90 transition-opacity">
-                View Selected Work
+            <!-- Mission Bio from CV -->
+            <div class="p-4 rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-xs text-[var(--ink-secondary)] leading-relaxed">
+              <span class="font-semibold text-[var(--ink-primary)]">Engineering Philosophy:</span>
+              &ldquo;Methodical engineer who thrives in team-based environments, contributing reliable work while actively learning from peers. Adapts quickly to new MCU platforms and eager to grow within automotive embedded software development.&rdquo;
+            </div>
+
+            <!-- Primary CTAs -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#work" class="rounded border border-[var(--ink-primary)] bg-[var(--ink-primary)] px-4 py-2 text-xs font-medium text-[var(--ink-inverse)] hover:opacity-90 transition-opacity">
+                View Selected Projects
               </a>
-              <button type="button" onclick="openPdfModal('assets/docs/Trinh_Dang_Khoa_CV.pdf', 'Trinh Dang Khoa — Engineering CV')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded bg-surface-low border border-line text-ink-primary text-[13px] font-medium hover:border-line-strong transition-colors">
-                <svg class="w-4 h-4 text-ink-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                </svg>
-                <span>Resume (PDF)</span>
+              <button onclick="openDeepDive('s32k144')" class="group flex items-center gap-2 rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-4 py-2 text-xs font-medium text-[var(--ink-primary)] hover:border-[var(--line-strong)] transition-colors">
+                <span>Explore Technical Deep-Dives</span>
+                <span class="text-[var(--pastel-mint-text)] transition-transform group-hover:translate-x-0.5">→</span>
               </button>
-              <a href="https://github.com/tumo07" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-2 text-ink-secondary hover:text-ink-primary text-[13px] transition-colors">
-                <span>GitHub</span>
-                <span class="font-mono text-[11px]">↗</span>
-              </a>
-              <a href="https://www.linkedin.com/in/trinh-alex/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-2 text-ink-secondary hover:text-ink-primary text-[13px] transition-colors">
-                <span>LinkedIn</span>
-                <span class="font-mono text-[11px]">↗</span>
-              </a>
+              <button onclick="openPdfModal('resume')" class="rounded border border-[var(--line-default)] bg-transparent px-4 py-2 text-xs font-medium text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] hover:border-[var(--line-strong)] transition-colors">
+                Download Resume (PDF)
+              </button>
             </div>
           </div>
 
-          <!-- Right 5 Columns: Interactive Monochrome Architecture Inspector -->
-          <div class="lg:col-span-5 spotlight-card specular-top rounded p-6 flex flex-col gap-5">
-            <div class="flex items-center justify-between pb-3.5 border-b border-line-subtle">
-              <div class="flex flex-col">
-                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-widest">Interactive Topology</span>
-                <span class="text-xs font-medium text-ink-primary mt-0.5">Multi-Node CAN 2.0B Architecture</span>
+          <!-- Right Column (5 Cols): Real Portrait & At-a-Glance Profile Card -->
+          <div class="lg:col-span-5">
+            <div class="spotlight-card rounded-lg p-5 space-y-5">
+              
+              <!-- Header with Real Portrait -->
+              <div class="flex items-center gap-4 pb-4 border-b border-[var(--line-subtle)]">
+                <div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-md border border-[var(--line-default)] bg-[var(--surface-container)]">
+                  <img src="avatar.jpg" alt="Trinh Dang Khoa (Alex Trinh)" class="h-full w-full object-cover object-top" onerror="this.onerror=null; this.src='avatar.png';" />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono uppercase tracking-wider text-[var(--ink-muted)]">ENGINEER PROFILE</span>
+                    <span class="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10px] font-mono pill-mint">
+                      <span class="h-1 w-1 rounded-full pill-dot"></span>
+                      Active
+                    </span>
+                  </div>
+                  <div class="text-sm font-semibold text-[var(--ink-primary)] truncate mt-0.5">Trinh Dang Khoa</div>
+                  <div class="text-xs text-[var(--ink-muted)] font-mono truncate">Alex Trinh · Born Oct 30, 2002</div>
+                </div>
               </div>
-              <span class="font-mono text-[11px] text-ink-primary bg-surface-container px-2 py-0.5 rounded">500 kbps</span>
+
+              <!-- Key Profile Specs from Overleaf CV -->
+              <div class="space-y-3.5 text-xs">
+                <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">CURRENT ROLE</div>
+                  <div class="font-medium text-[var(--ink-primary)] mt-0.5">Automotive Software Engineer Intern</div>
+                  <div class="text-[11px] text-[var(--ink-secondary)]">FPT Software · Automotive Division</div>
+                </div>
+
+                <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">AVAILABILITY</div>
+                  <div class="font-mono text-[11px] text-[var(--pastel-mint-text)] font-medium mt-0.5">
+                    Sep 7 – Dec 14, 2026 (3+ months)
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">DUAL ACADEMIC TRACK</div>
+                  <div class="font-medium text-[var(--ink-primary)] mt-0.5">B.Sc. Automotive Software Engineering</div>
+                  <div class="text-[11px] text-[var(--ink-secondary)]">FPT University (2024 – Present · 3rd Year)</div>
+                  <div class="font-medium text-[var(--ink-primary)] mt-1.5">Automotive Software Development</div>
+                  <div class="text-[11px] text-[var(--ink-secondary)]">FPT Academy (2025 – Present · Training Track)</div>
+                </div>
+
+                <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">CORE DOMAIN FOCUS</div>
+                  <div class="flex flex-wrap gap-1.5 mt-1.5 font-mono text-[10px]">
+                    <span class="rounded px-2 py-0.5 pill-mint">NXP S32K144</span>
+                    <span class="rounded px-2 py-0.5 pill-sky">CAN 2.0B Bus</span>
+                    <span class="rounded px-2 py-0.5 pill-lavender">RC522 RF Tool</span>
+                    <span class="rounded px-2 py-0.5 pill-peach">4S3P BMS</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Toolchain & Standards Ribbon -->
+        <div class="mt-12 pt-6 border-t border-[var(--line-subtle)]">
+          <div class="text-[10px] font-mono uppercase tracking-widest text-[var(--ink-muted)] mb-3">
+            VERIFIED HARDWARE PLATFORMS &amp; INDUSTRIAL TOOLING (FROM OVERLEAF CV)
+          </div>
+          <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">Embedded C / C++ (C++11/C++14)</span>
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">NXP S32K144 (Automotive)</span>
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">STM32 (Bluepill &amp; Nucleo)</span>
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">AUTOSAR Classic (BSW, RTE)</span>
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">CAN / LIN / I2C / SPI / UART</span>
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">S32 Design Studio &amp; MAAZ EDU</span>
+            <span class="rounded border border-[var(--line-default)] bg-[var(--surface-low)] px-2.5 py-1 text-[var(--ink-secondary)]">Oscilloscopes &amp; Hardware Debugging</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SELECTED ENGINEERING WORK (2×2 GRID WITH PASTEL ACCENTS)           -->
+    <!-- ================================================================= -->
+    <section id="work" class="border-b border-[var(--line-default)] py-16">
+      <div class="mx-auto max-w-7xl px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--pastel-mint-dot)]"></span>
+              <span class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)]">SELECTED SYSTEMS &amp; CASE STUDIES</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--ink-primary)]">
+              Selected Engineering Work
+            </h2>
+          </div>
+          <p class="text-xs text-[var(--ink-muted)] max-w-md">
+            Click <strong class="text-[var(--ink-primary)] font-medium">Read Case Study</strong> on any project to inspect its system architecture, hardware topology, and engineering decisions in depth.
+          </p>
+        </div>
+
+        <!-- 2x2 Clean Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- CARD 1: NXP S32K144 Automotive ECU & Oscilloscope Diagnostics (Pastel Mint) -->
+          <div class="spotlight-card rounded-lg p-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">AUTOMOTIVE ECU · 2025</span>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-mint">NXP S32K144 · I2C ECU</span>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-secondary)]">
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Bare-Metal Firmware</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">S32 Design Studio</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">MAAZ EDU</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Digital Oscilloscope</span>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                  Automotive ECU Firmware &amp; Diagnostics (NXP S32K144)
+                </h3>
+                <p class="mt-2 text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  Developed bare-metal firmware for the NXP S32K144 automotive microcontroller, implementing a dual-board ECU communication system using I2C. Performed integration testing and physical layer verification using an oscilloscope to analyze and debug communication signals.
+                </p>
+              </div>
+
+              <!-- Challenge & Outcome Summary -->
+              <div class="space-y-2 pt-2 border-t border-[var(--line-subtle)] text-xs">
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--ink-muted)] shrink-0 w-16">CHALLENGE</span>
+                  <span class="text-[var(--ink-secondary)]">Ensure glitch-free multi-byte packet delivery across asynchronous clock domains with noise resilience.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--pastel-mint-text)] shrink-0 w-16">OUTCOME</span>
+                  <span class="text-[var(--ink-primary)]">Verified physical layer rise-time, clock stretch timing, and ACK sequences via oscilloscope; zero frame losses.</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Interactive Node Selector Buttons -->
-            <div class="grid grid-cols-3 gap-2" role="tablist" aria-label="ECU Nodes">
-              <button type="button" onclick="selectNode('central')" id="node-btn-central" class="node-tab text-left p-2.5 rounded border border-ink-primary bg-surface-container transition-all">
-                <div class="font-mono text-[10px] text-ink-muted">NODE 01</div>
-                <div class="text-xs font-medium text-ink-primary mt-0.5 truncate">Central ECU</div>
-                <div class="font-mono text-[10px] text-ink-secondary mt-0.5">STM32F407</div>
-              </button>
-              <button type="button" onclick="selectNode('bcm')" id="node-btn-bcm" class="node-tab text-left p-2.5 rounded border border-line bg-surface-lowest hover:border-line-strong transition-all">
-                <div class="font-mono text-[10px] text-ink-muted">NODE 02–03</div>
-                <div class="text-xs font-medium text-ink-primary mt-0.5 truncate">Zone BCMs</div>
-                <div class="font-mono text-[10px] text-ink-secondary mt-0.5">F411 / F103</div>
-              </button>
-              <button type="button" onclick="selectNode('hmi')" id="node-btn-hmi" class="node-tab text-left p-2.5 rounded border border-line bg-surface-lowest hover:border-line-strong transition-all">
-                <div class="font-mono text-[10px] text-ink-muted">GATEWAY</div>
-                <div class="text-xs font-medium text-ink-primary mt-0.5 truncate">Qt 6 Cluster</div>
-                <div class="font-mono text-[10px] text-ink-secondary mt-0.5">QML / PyCAN</div>
-              </button>
+            <!-- Card Actions -->
+            <div class="flex items-center justify-between pt-6 border-t border-[var(--line-subtle)] mt-6">
+              <span class="text-[11px] font-mono text-[var(--ink-muted)]">NXP S32K / Embedded C</span>
+              <div class="flex items-center gap-3">
+                <button onclick="openDeepDive('s32k144')" class="rounded border border-[var(--line-default)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:border-[var(--pastel-mint-border)] hover:text-[var(--pastel-mint-text)] transition-colors">
+                  Read Case Study →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: Distributed Multi-Node CAN Bus Cluster (Pastel Sky) -->
+          <div class="spotlight-card rounded-lg p-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">IN-VEHICLE NETWORKING · TEAM LEAD</span>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-sky">CAN 2.0B · 3 ECUs</span>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-secondary)]">
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32F407 / F411 / F103</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">SN65HVD230</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Qt 6 / QML Cluster</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Python PyCAN</span>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                  Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus
+                </h3>
+                <p class="mt-2 text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  Architected a distributed 3-node STM32 network communicating over a 500 kbps CAN 2.0B bus paired with a high-performance Qt 6 / QML digital instrument cluster and Python packet analyzer.
+                </p>
+              </div>
+
+              <!-- Challenge & Outcome Summary -->
+              <div class="space-y-2 pt-2 border-t border-[var(--line-subtle)] text-xs">
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--ink-muted)] shrink-0 w-16">CHALLENGE</span>
+                  <span class="text-[var(--ink-secondary)]">Prevent turn-signal phase drift and bus contention across independent front and rear body control modules.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--pastel-sky-text)] shrink-0 w-16">OUTCOME</span>
+                  <span class="text-[var(--ink-primary)]">Engineered priority-grouped CAN v3.0 arbitration, &lt;10 ms command ACK, and a 500 ms lockstep synchronization tick.</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Minimalist Monochrome Bus Diagram -->
-            <div class="p-3.5 rounded bg-surface-lowest border border-line-subtle flex flex-col gap-3">
-              <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted">
-                <span id="arch-bus-label">BUS: CAN 2.0B (SN65HVD230) · 87.5% SAMPLE</span>
-                <span id="arch-id-badge" class="text-ink-primary">ID: 0x100 / 0x130</span>
+            <!-- Card Actions -->
+            <div class="flex items-center justify-between pt-6 border-t border-[var(--line-subtle)] mt-6">
+              <span class="text-[11px] font-mono text-[var(--ink-muted)]">STM32CubeIDE · C / C++</span>
+              <div class="flex items-center gap-3">
+                <button onclick="openDeepDive('can')" class="rounded border border-[var(--line-default)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:border-[var(--pastel-sky-border)] hover:text-[var(--pastel-sky-text)] transition-colors">
+                  Read Case Study →
+                </button>
+                <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener" class="text-xs text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+                  GitHub ↗
+                </a>
               </div>
-              <div class="w-full bg-surface-container h-1.5 rounded-sm overflow-hidden flex">
-                <div id="arch-bar-fill" class="bg-ink-primary h-full w-[68%] transition-all duration-300"></div>
+            </div>
+          </div>
+
+          <!-- CARD 3: MIFARE Classic RF Hardware Interfacing (Pastel Lavender) -->
+          <div class="spotlight-card rounded-lg p-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">RF HARDWARE SECURITY · 2024</span>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-lavender">13.56 MHz RF · SPI</span>
               </div>
-              <p id="arch-node-desc" class="text-xs text-ink-secondary leading-relaxed">
-                Central Master ECU arbitrates priority-grouped frames, generates the 500ms lockstep turn-signal synchronization tick, and bridges telemetry to the digital instrument cluster.
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-secondary)]">
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32F103C8T6</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">RC522 Module</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Crypto-1 Audit</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">SSD1306 OLED</span>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                  RF Hardware Interfacing &amp; Protocol Analysis (MIFARE Classic)
+                </h3>
+                <p class="mt-2 text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  Programmed an RC522 RFID module to interface with MIFARE Classic cards, executing low-level memory operations, sector key recovery, and Block 0 UID modifications on bare-metal ARM Cortex-M.
+                </p>
+              </div>
+
+              <!-- Challenge & Outcome Summary -->
+              <div class="space-y-2 pt-2 border-t border-[var(--line-subtle)] text-xs">
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--ink-muted)] shrink-0 w-16">CHALLENGE</span>
+                  <span class="text-[var(--ink-secondary)]">Execute rapid multi-sector Crypto-1 key recovery and Block 0 UID diagnostics on a resource-constrained 20 KB SRAM MCU.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--pastel-lavender-text)] shrink-0 w-16">OUTCOME</span>
+                  <span class="text-[var(--ink-primary)]">Implemented a 166-key Flash dictionary engine, full 16-sector EEPROM staging, and Gen1a/Gen2 Block 0 unlock routines.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="flex items-center justify-between pt-6 border-t border-[var(--line-subtle)] mt-6">
+              <span class="text-[11px] font-mono text-[var(--ink-muted)]">Bare-Metal / HAL C · RF</span>
+              <div class="flex items-center gap-3">
+                <button onclick="openDeepDive('rfid')" class="rounded border border-[var(--line-default)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:border-[var(--pastel-lavender-border)] hover:text-[var(--pastel-lavender-text)] transition-colors">
+                  Read Case Study →
+                </button>
+                <a href="https://github.com/tumo07/bluepill-rfid-cloner" target="_blank" rel="noopener" class="text-xs text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 4: 4S3P LiFePO4 Battery Monitoring System (Pastel Peach) -->
+          <div class="spotlight-card rounded-lg p-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">FIRMWARE &amp; EMBEDDED SYSTEMS · 2025</span>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-peach">MAX17048 · I2C Fuel Gauge</span>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-secondary)]">
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32 Bluepill</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Coulomb Counting</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">4S3P LiFePO4</span>
+                <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Hardware Alerts</span>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
+                  Embedded Battery Monitoring &amp; Coulomb Counting System
+                </h3>
+                <p class="mt-2 text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  Engineered C/C++ firmware for an STM32 Bluepill microcontroller interfaced with a MAX17048 fuel gauge IC via I2C, implementing a Coulomb counting algorithm to provide real-time capacity and power telemetry for custom 4S3P LiFePO4 battery packs.
+                </p>
+              </div>
+
+              <!-- Challenge & Outcome Summary -->
+              <div class="space-y-2 pt-2 border-t border-[var(--line-subtle)] text-xs">
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--ink-muted)] shrink-0 w-16">CHALLENGE</span>
+                  <span class="text-[var(--ink-secondary)]">Flat LiFePO4 discharge curves make simple ADC voltage dividers inaccurate for state-of-charge estimation under load.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="font-mono text-[10px] uppercase text-[var(--pastel-peach-text)] shrink-0 w-16">OUTCOME</span>
+                  <span class="text-[var(--ink-primary)]">Integrated ModelGauge register polling (0x36), voltage sag filtering, and hardware alert thresholding over Fast-Mode I2C.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="flex items-center justify-between pt-6 border-t border-[var(--line-subtle)] mt-6">
+              <span class="text-[11px] font-mono text-[var(--ink-muted)]">Embedded C · Battery Telemetry</span>
+              <div class="flex items-center gap-3">
+                <button onclick="openDeepDive('bms')" class="rounded border border-[var(--line-default)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:border-[var(--pastel-peach-border)] hover:text-[var(--pastel-peach-text)] transition-colors">
+                  Read Case Study →
+                </button>
+                <a href="https://github.com/tumo07/stm32-battery-monitor" target="_blank" rel="noopener" class="text-xs text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- EXPERIENCE & CREDENTIALS SECTION                                  -->
+    <!-- ================================================================= -->
+    <section id="experience" class="border-b border-[var(--line-default)] py-16">
+      <div class="mx-auto max-w-7xl px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--pastel-lavender-dot)]"></span>
+              <span class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)]">CAREER TRAJECTORY &amp; FOUNDATION</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--ink-primary)]">
+              Experience &amp; Qualifications
+            </h2>
+          </div>
+          <button onclick="openDeepDive('autosar')" class="text-xs font-mono text-[var(--pastel-lavender-text)] hover:underline">
+            Deep Dive: AUTOSAR &amp; Dual-Track Curriculum →
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Professional Experience (6 Cols) -->
+          <div class="lg:col-span-6 space-y-6">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)] pb-2 border-b border-[var(--line-subtle)] flex items-center justify-between">
+              <span>PROFESSIONAL EXPERIENCE</span>
+              <span>HO CHI MINH CITY</span>
+            </h3>
+
+            <!-- FPT Software Role -->
+            <div class="spotlight-card rounded-lg p-6 space-y-4">
+              <div class="flex items-start justify-between">
+                <div>
+                  <span class="text-[10px] font-mono uppercase text-[var(--pastel-mint-text)]">AUTOMOTIVE DIVISION</span>
+                  <h4 class="text-base font-semibold text-[var(--ink-primary)] mt-0.5">Automotive Software Engineer Intern</h4>
+                  <div class="text-xs text-[var(--ink-muted)]">FPT Software · On-site, Ho Chi Minh City</div>
+                </div>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-mint">Sep 2026 – Present</span>
+              </div>
+
+              <p class="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                Developing and verifying embedded automotive software components compliant with AUTOSAR Classic architecture (BSW, MCAL, RTE) and low-level peripheral drivers.
+              </p>
+
+              <ul class="space-y-2 text-xs text-[var(--ink-secondary)]">
+                <li class="flex items-start gap-2">
+                  <span class="text-[var(--pastel-mint-text)] mt-0.5">·</span>
+                  <span>Developing MCAL peripheral drivers and in-vehicle communication stacks (CAN, SPI, UART) on automotive-grade microcontrollers (NXP S32K144 / ARM Cortex-M).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[var(--pastel-mint-text)] mt-0.5">·</span>
+                  <span>Executing hardware-in-the-loop (HIL) bench validation, oscilloscope waveform debugging, and frame timing verification.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[var(--pastel-mint-text)] mt-0.5">·</span>
+                  <span>Documenting diagnostic test procedures and adhering to MISRA C safety standards.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Academic Foundation (6 Cols) -->
+          <div id="credentials" class="lg:col-span-6 space-y-6">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-[var(--ink-muted)] pb-2 border-b border-[var(--line-subtle)] flex items-center justify-between">
+              <span>ACADEMIC FOUNDATION</span>
+              <span>DUAL TRACK</span>
+            </h3>
+
+            <!-- Education Card 1: FPT University -->
+            <div class="spotlight-card rounded-lg p-5 space-y-3">
+              <div class="flex items-start justify-between">
+                <div>
+                  <span class="text-[10px] font-mono uppercase text-[var(--pastel-sky-text)]">DEGREE PROGRAM</span>
+                  <h4 class="text-sm font-semibold text-[var(--ink-primary)] mt-0.5">FPT University</h4>
+                  <div class="text-xs text-[var(--ink-secondary)]">Bachelor of Information Technology, Major in Automotive Software Engineering</div>
+                </div>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono bg-[var(--surface-container)] text-[var(--ink-muted)]">2024 – 2027 · Year 3</span>
+              </div>
+              <p class="text-xs text-[var(--ink-muted)]">
+                Core curriculum: In-vehicle networks, embedded operating systems, computer architecture, digital electronics co-design.
               </p>
             </div>
 
-            <!-- Code / Frame Spec Preview -->
-            <div class="font-mono text-[11.5px] text-ink-secondary bg-surface-lowest p-3.5 rounded border border-line-subtle leading-relaxed overflow-x-auto">
-              <div id="arch-code-line1"><span class="text-ink-primary">#define</span> CAN_BAUDRATE_KBPS  500U</div>
-              <div id="arch-code-line2" class="text-ink-muted">/* 42 MHz APB1 / (6 * (1 + 11 + 2)) = 500 kbps */</div>
-              <div id="arch-code-line3"><span class="text-ink-primary">extern</span> CanFrame_t Tx_MasterSync_0x130;</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Core Technical Domains Bar -->
-        <div class="mt-16 pt-8 border-t border-line-subtle flex flex-wrap items-center justify-between gap-y-4 gap-x-6">
-          <span class="font-mono text-[11px] text-ink-muted uppercase tracking-widest">
-            Core Engineering Stack
-          </span>
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-surface-low border border-line font-mono text-[11px] text-ink-primary">Embedded C / C++</span>
-            <span class="px-2.5 py-1 rounded bg-surface-low border border-line font-mono text-[11px] text-ink-primary">AUTOSAR Classic (BSW / MCAL / RTE)</span>
-            <span class="px-2.5 py-1 rounded bg-surface-low border border-line font-mono text-[11px] text-ink-primary">CAN 2.0B / SPI / I2C / UART</span>
-            <span class="px-2.5 py-1 rounded bg-surface-low border border-line font-mono text-[11px] text-ink-primary">STM32 &amp; NXP S32K144</span>
-            <span class="px-2.5 py-1 rounded bg-surface-low border border-line font-mono text-[11px] text-ink-primary">UDS (ISO 14229) &amp; HIL</span>
-            <span class="px-2.5 py-1 rounded bg-surface-low border border-line font-mono text-[11px] text-ink-primary">Qt 6 / QML &amp; Python</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 2: SELECTED ENGINEERING WORK (2x2 BENTO GRID) -->
-    <section id="work" class="w-full bg-surface py-20 md:py-24 border-b border-line-subtle">
-      <div class="max-w-[1160px] mx-auto px-5 sm:px-8 flex flex-col gap-12">
-        
-        <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-line-subtle pb-6">
-          <div class="flex flex-col gap-2">
-            <span class="font-mono text-[11px] text-ink-muted uppercase tracking-widest">Selected Systems</span>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-ink-primary tracking-tight">
-              Engineering Work
-            </h2>
-          </div>
-          <p class="text-sm text-ink-secondary max-w-md">
-            Production-style embedded firmware, in-vehicle communication networks, and hardware security tooling with full source repositories.
-          </p>
-        </div>
-
-        <!-- 2x2 Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <!-- PROJECT 01: Multi-Node CAN Cluster -->
-          <article class="spotlight-card specular-top rounded p-6 sm:p-8 flex flex-col justify-between">
-            <div class="flex flex-col gap-5">
-              <div class="flex items-center justify-between border-b border-line-subtle pb-4">
-                <span class="font-mono text-[11px] text-ink-muted uppercase">In-Vehicle Networking · Team Lead</span>
-                <span class="font-mono text-[11px] text-ink-primary bg-surface-container px-2 py-0.5 rounded">CAN 2.0B</span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5">
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">STM32F407 / F411 / F103</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">SN65HVD230</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">Qt 6 / QML</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">Python PyCAN</span>
-              </div>
-
-              <div class="flex flex-col gap-2.5">
-                <h3 class="text-xl font-medium text-ink-primary tracking-tight">
-                  Multi-Node Automotive CAN Bus &amp; Digital Cluster
-                </h3>
-                <p class="text-sm text-ink-secondary leading-relaxed">
-                  Architected a distributed 3-node STM32 network communicating over a 500 kbps CAN 2.0B bus paired with a Qt 6 / QML digital instrument cluster and Python packet injector. Engineered priority-grouped frame arbitration, sub-10ms command acknowledgment, and a 500ms master blink synchronization protocol.
-                </p>
-              </div>
-
-              <div class="p-3.5 bg-surface-lowest rounded border border-line-subtle font-mono text-xs flex flex-col gap-1.5 text-ink-secondary">
-                <div class="flex justify-between">
-                  <span>Bus Arbitration</span>
-                  <span class="text-ink-primary">0x100 – 0x720 Priority Map</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Command ACK / Sync</span>
-                  <span class="text-ink-primary">&lt; 10 ms ACK · 500 ms Lockstep</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-6 mt-6 border-t border-line-subtle flex items-center justify-between">
-              <span class="font-mono text-[11px] text-ink-muted">3x STM32 ECUs · C / C++ / Python</span>
-              <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink-primary hover:opacity-75 transition-opacity">
-                <span>View Repository</span>
-                <span class="font-mono text-xs">↗</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- PROJECT 02: MIFARE Classic 1K Security Tool -->
-          <article class="spotlight-card specular-top rounded p-6 sm:p-8 flex flex-col justify-between">
-            <div class="flex flex-col gap-5">
-              <div class="flex items-center justify-between border-b border-line-subtle pb-4">
-                <span class="font-mono text-[11px] text-ink-muted uppercase">Hardware Security Research</span>
-                <span class="font-mono text-[11px] text-ink-primary bg-surface-container px-2 py-0.5 rounded">13.56 MHz RF</span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5">
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">STM32F103C8T6</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">MFRC522 SPI</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">Crypto-1 Analysis</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">SSD1306 OLED</span>
-              </div>
-
-              <div class="flex flex-col gap-2.5">
-                <h3 class="text-xl font-medium text-ink-primary tracking-tight">
-                  MIFARE Classic 1K RFID Security &amp; Analysis Tool
-                </h3>
-                <p class="text-sm text-ink-secondary leading-relaxed">
-                  Built a standalone embedded security research tool on STM32 for auditing 13.56 MHz contactless smart cards over SPI. Implements an automated Flash dictionary engine, Crypto-1 sector authentication, full 1 KB EEPROM sector inspection, and Block 0 UID verification routines.
-                </p>
-              </div>
-
-              <div class="p-3.5 bg-surface-lowest rounded border border-line-subtle font-mono text-xs flex flex-col gap-1.5 text-ink-secondary">
-                <div class="flex justify-between">
-                  <span>Memory Architecture</span>
-                  <span class="text-ink-primary">16 Sectors × 4 Blocks (1 KB)</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Authentication Audit</span>
-                  <span class="text-ink-primary">Key A/B Dictionary &amp; Gen1a/Gen2</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-6 mt-6 border-t border-line-subtle flex items-center justify-between">
-              <span class="font-mono text-[11px] text-ink-muted">Bare-Metal / HAL C · SPI &amp; I2C</span>
-              <a href="https://github.com/tumo07/bluepill-rfid-cloner" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink-primary hover:opacity-75 transition-opacity">
-                <span>View Repository</span>
-                <span class="font-mono text-xs">↗</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- PROJECT 03: LiFePO4 BMS Telemetry -->
-          <article class="spotlight-card specular-top rounded p-6 sm:p-8 flex flex-col justify-between">
-            <div class="flex flex-col gap-5">
-              <div class="flex items-center justify-between border-b border-line-subtle pb-4">
-                <span class="font-mono text-[11px] text-ink-muted uppercase">Power Electronics &amp; Sensing</span>
-                <span class="font-mono text-[11px] text-ink-primary bg-surface-container px-2 py-0.5 rounded">4S3P BMS</span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5">
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">STM32F103</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">MAX17048 Fuel Gauge</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">I2C Telemetry</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">LiFePO4</span>
-              </div>
-
-              <div class="flex flex-col gap-2.5">
-                <h3 class="text-xl font-medium text-ink-primary tracking-tight">
-                  LiFePO4 Battery Management &amp; State-of-Charge Monitor
-                </h3>
-                <p class="text-sm text-ink-secondary leading-relaxed">
-                  Developed real-time battery monitoring firmware on STM32 interfacing with the MAX17048 fuel gauge over I2C for 4S3P LiFePO4 battery packs. Tracks state-of-charge (SoC), pack voltage stability, and programmable low-voltage fault thresholds with minimal quiescent overhead.
-                </p>
-              </div>
-
-              <div class="p-3.5 bg-surface-lowest rounded border border-line-subtle font-mono text-xs flex flex-col gap-1.5 text-ink-secondary">
-                <div class="flex justify-between">
-                  <span>Fuel Gauge Bus</span>
-                  <span class="text-ink-primary">I2C Address 0x36 (ModelGauge)</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Pack Configuration</span>
-                  <span class="text-ink-primary">4S3P LiFePO4 Telemetry</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-6 mt-6 border-t border-line-subtle flex items-center justify-between">
-              <span class="font-mono text-[11px] text-ink-muted">Embedded C · Power Monitoring</span>
-              <a href="https://github.com/tumo07/stm32-battery-monitor" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink-primary hover:opacity-75 transition-opacity">
-                <span>View Repository</span>
-                <span class="font-mono text-xs">↗</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- PROJECT 04: Chrome CDP Native Automation Bridge -->
-          <article class="spotlight-card specular-top rounded p-6 sm:p-8 flex flex-col justify-between">
-            <div class="flex flex-col gap-5">
-              <div class="flex items-center justify-between border-b border-line-subtle pb-4">
-                <span class="font-mono text-[11px] text-ink-muted uppercase">Systems &amp; IPC Tooling</span>
-                <span class="font-mono text-[11px] text-ink-primary bg-surface-container px-2 py-0.5 rounded">CDP / TCP IPC</span>
-              </div>
-
-              <div class="flex flex-wrap gap-1.5">
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">C# .NET Native Host</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">Chrome DevTools Protocol</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">Manifest V3</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-surface-lowest border border-line text-ink-secondary">Async Sockets</span>
-              </div>
-
-              <div class="flex flex-col gap-2.5">
-                <h3 class="text-xl font-medium text-ink-primary tracking-tight">
-                  Native Chrome CDP Automation Bridge
-                </h3>
-                <p class="text-sm text-ink-secondary leading-relaxed">
-                  Engineered a C# Native Messaging host and Manifest V3 extension that bridges raw Chrome DevTools Protocol (CDP) streams over local TCP IPC. Enables deterministic, zero-prompt browser orchestration, DOM introspection, and automated end-to-end verification pipelines.
-                </p>
-              </div>
-
-              <div class="p-3.5 bg-surface-lowest rounded border border-line-subtle font-mono text-xs flex flex-col gap-1.5 text-ink-secondary">
-                <div class="flex justify-between">
-                  <span>IPC Transport</span>
-                  <span class="text-ink-primary">Local TCP Loopback ↔ Native Host</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Execution Model</span>
-                  <span class="text-ink-primary">Persistent Debugger Session</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-6 mt-6 border-t border-line-subtle flex items-center justify-between">
-              <span class="font-mono text-[11px] text-ink-muted">C# .NET · JavaScript · CDP</span>
-              <a href="https://github.com/tumo07/antigravity-browser-bridge" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink-primary hover:opacity-75 transition-opacity">
-                <span>View Repository</span>
-                <span class="font-mono text-xs">↗</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: EXPERIENCE, EDUCATION & CREDENTIALS (CLEAN TWO-COLUMN LAYOUT) -->
-    <section id="experience" class="w-full bg-surface-lowest py-20 md:py-24 border-b border-line-subtle">
-      <div class="max-w-[1160px] mx-auto px-5 sm:px-8">
-        
-        <!-- Section Header -->
-        <div class="flex flex-col gap-2 pb-10 border-b border-line-subtle">
-          <span class="font-mono text-[11px] text-ink-muted uppercase tracking-widest">Background &amp; Foundation</span>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-ink-primary tracking-tight">
-            Experience &amp; Qualifications
-          </h2>
-          <p class="text-sm text-ink-secondary">
-            Industrial automotive software engineering experience, dual academic training, and verified certifications.
-          </p>
-        </div>
-
-        <!-- Two-Column Grid -->
-        <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
-          <!-- LEFT COLUMN: Professional Experience (7 cols) -->
-          <div class="lg:col-span-7 flex flex-col gap-6">
-            <div class="flex items-center justify-between pb-3 border-b border-line-subtle">
-              <span class="font-mono text-[11px] text-ink-primary uppercase tracking-widest">Professional Experience</span>
-              <span class="font-mono text-[10px] text-ink-muted uppercase">Ho Chi Minh City</span>
-            </div>
-
-            <!-- Role 1: FPT Software -->
-            <div class="spotlight-card specular-top rounded p-6 sm:p-7 flex flex-col gap-5">
-              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+            <!-- Education Card 2: FPT Academy -->
+            <div class="spotlight-card rounded-lg p-5 space-y-3">
+              <div class="flex items-start justify-between">
                 <div>
-                  <h3 class="text-lg font-medium text-ink-primary tracking-tight">
-                    FPT Software
-                  </h3>
-                  <p class="text-sm text-ink-secondary mt-0.5">
-                    Automotive Software Engineer Intern · <span class="font-mono text-xs text-ink-muted">FPT Automotive Division</span>
-                  </p>
+                  <span class="text-[10px] font-mono uppercase text-[var(--pastel-lavender-text)]">INTENSIVE TRAINING PROGRAM</span>
+                  <h4 class="text-sm font-semibold text-[var(--ink-primary)] mt-0.5">FPT Academy</h4>
+                  <div class="text-xs text-[var(--ink-secondary)]">Automotive Software Development</div>
                 </div>
-                <span class="font-mono text-[11px] text-ink-secondary bg-surface-lowest px-2.5 py-1 rounded border border-line whitespace-nowrap self-start">
-                  Sep 2026 – Present
-                </span>
+                <span class="rounded px-2 py-0.5 text-[10px] font-mono bg-[var(--surface-container)] text-[var(--ink-muted)]">2025 – Present</span>
               </div>
-
-              <ul class="flex flex-col gap-2.5 text-sm text-ink-secondary leading-relaxed">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-ink-primary mt-1 font-mono text-xs">▸</span>
-                  <span>Developing and verifying embedded automotive software components compliant with <strong class="font-medium text-ink-primary">AUTOSAR Classic</strong> architecture (BSW, MCAL, and RTE layers).</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-ink-primary mt-1 font-mono text-xs">▸</span>
-                  <span>Implementing and testing low-level microcontroller peripheral drivers and in-vehicle communication stacks (<strong class="font-medium text-ink-primary">CAN 2.0B, SPI, UART</strong>) on automotive-grade ARM Cortex-M targets (<strong class="font-medium text-ink-primary">NXP S32K144, STM32F4</strong>).</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-ink-primary mt-1 font-mono text-xs">▸</span>
-                  <span>Executing hardware-in-the-loop (<strong class="font-medium text-ink-primary">HIL</strong>) bench validation, deterministic frame timing analysis, and <strong class="font-medium text-ink-primary">UDS (ISO 14229)</strong> diagnostic verification under MISRA C:2012 guidelines.</span>
-                </li>
-              </ul>
-
-              <div class="pt-3 border-t border-line-subtle flex flex-wrap gap-2">
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">AUTOSAR Classic</span>
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">NXP S32K144</span>
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">ISO 14229 UDS</span>
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">MISRA C:2012</span>
-              </div>
+              <p class="text-xs text-[var(--ink-muted)]">
+                Practical engineering training on AUTOSAR MCAL layer, CAN diagnostic stacks, S32 Design Studio, and automotive ECU integration.
+              </p>
             </div>
 
-            <!-- Role 2: Embedded Systems & Security Research -->
-            <div class="spotlight-card specular-top rounded p-6 sm:p-7 flex flex-col gap-5">
-              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
-                <div>
-                  <h3 class="text-lg font-medium text-ink-primary tracking-tight">
-                    Embedded Systems &amp; Hardware Security Projects
-                  </h3>
-                  <p class="text-sm text-ink-secondary mt-0.5">
-                    Team Lead &amp; Systems Architect
-                  </p>
-                </div>
-                <span class="font-mono text-[11px] text-ink-secondary bg-surface-lowest px-2.5 py-1 rounded border border-line whitespace-nowrap self-start">
-                  2024 – Present
-                </span>
-              </div>
-
-              <ul class="flex flex-col gap-2.5 text-sm text-ink-secondary leading-relaxed">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-ink-primary mt-1 font-mono text-xs">▸</span>
-                  <span>Led architecture and firmware integration for multi-node STM32 CAN 2.0B networks, custom digital instrument clusters, and LiFePO4 battery management nodes.</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-ink-primary mt-1 font-mono text-xs">▸</span>
-                  <span>Conducted low-level hardware security research on 13.56 MHz RF transponders and built native inter-process communication bridges for automated verification.</span>
-                </li>
-              </ul>
-
-              <div class="pt-3 border-t border-line-subtle flex flex-wrap gap-2">
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">STM32CubeIDE</span>
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">CAN Bus Arbitration</span>
-                <span class="font-mono text-[10px] px-2 py-0.5 bg-surface-lowest border border-line-subtle text-ink-muted rounded">Hardware Bring-Up</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- RIGHT COLUMN: Education & Verified Certifications (5 cols) -->
-          <div id="education" class="lg:col-span-5 flex flex-col gap-8">
-            
-            <!-- Academic Foundation -->
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between pb-3 border-b border-line-subtle">
-                <span class="font-mono text-[11px] text-ink-primary uppercase tracking-widest">Academic Foundation</span>
-                <span class="font-mono text-[10px] text-ink-muted uppercase">Dual Track</span>
-              </div>
-
-              <div class="spotlight-card specular-top rounded p-6 flex flex-col gap-5">
-                <div class="flex flex-col gap-1">
+            <!-- Verified Certifications & Language -->
+            <div class="spotlight-card rounded-lg p-5 space-y-3">
+              <span class="text-[10px] font-mono uppercase text-[var(--ink-muted)]">VERIFIED CERTIFICATIONS &amp; ENGLISH</span>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+                <div class="p-3 rounded border border-[var(--line-subtle)] bg-[var(--surface)]">
                   <div class="flex items-center justify-between">
-                    <span class="font-mono text-[10px] text-ink-muted uppercase">2024 – 2027 (Year 3 of 4)</span>
-                    <span class="font-mono text-[10px] text-ink-secondary">B.Sc. Degree</span>
+                    <span class="font-semibold text-[var(--ink-primary)]">IELTS Academic 7.0</span>
+                    <button onclick="openPdfModal('ielts')" class="text-[10px] font-mono text-[var(--pastel-mint-text)] hover:underline">View eTRF ↗</button>
                   </div>
-                  <h4 class="text-base font-medium text-ink-primary mt-0.5">FPT University</h4>
-                  <p class="text-sm text-ink-secondary">
-                    Bachelor of Information Technology — Automotive Software Engineering
-                  </p>
+                  <div class="text-[11px] text-[var(--ink-muted)] mt-1">CEFR C1 · British Council</div>
+                  <div class="font-mono text-[10px] text-[var(--ink-secondary)] mt-1">L: 8.0 · R: 8.0 · W: 6.5 · S: 6.0</div>
                 </div>
 
-                <div class="pt-5 border-t border-line-subtle flex flex-col gap-1">
-                  <div class="flex items-center justify-between">
-                    <span class="font-mono text-[10px] text-ink-muted uppercase">2025 – 2027 (Year 2 of 2)</span>
-                    <span class="font-mono text-[10px] text-ink-secondary">Advanced Diploma</span>
-                  </div>
-                  <h4 class="text-base font-medium text-ink-primary mt-0.5">FPT Academy International (Cranes Varsity)</h4>
-                  <p class="text-sm text-ink-secondary">
-                    Advanced Diploma in Automotive Software Development
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Verified Certifications (Concise, Uncluttered) -->
-            <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between pb-3 border-b border-line-subtle">
-                <span class="font-mono text-[11px] text-ink-primary uppercase tracking-widest">Verified Credentials</span>
-                <span class="font-mono text-[10px] text-ink-muted uppercase">Attestations</span>
-              </div>
-
-              <div class="grid grid-cols-1 gap-2.5">
-                <!-- IELTS Academic 7.0 -->
-                <div class="spotlight-card rounded p-4 flex items-center justify-between gap-4">
-                  <div class="flex items-center gap-3 min-w-0">
-                    <span class="w-1.5 h-1.5 rounded-full bg-ink-primary shrink-0"></span>
-                    <div class="flex flex-col min-w-0">
-                      <span class="text-sm text-ink-primary font-medium truncate">IELTS Academic — Band 7.0 (CEFR C1)</span>
-                      <span class="font-mono text-[11px] text-ink-muted truncate">British Council · L: 8.0 · R: 8.0 · W: 6.5 · S: 6.0</span>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-2 shrink-0">
-                    <button type="button" onclick="openPdfModal('assets/docs/IELTS_TRF_23VN509163TRID028A.pdf', 'British Council IELTS Academic eTRF — Band 7.0 (C1)')" class="font-mono text-[10px] text-ink-secondary hover:text-ink-primary px-2 py-1 rounded bg-surface-lowest border border-line transition-colors">
-                      eTRF
-                    </button>
-                    <a href="https://ielts.org/verify" target="_blank" rel="noopener" class="font-mono text-[10px] text-ink-primary px-2 py-1 rounded bg-surface-container hover:opacity-80 transition-opacity">
-                      Verify ↗
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Cisco CCNA -->
-                <div class="spotlight-card rounded p-4 flex items-center justify-between gap-4">
-                  <div class="flex items-center gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-ink-primary shrink-0"></span>
-                    <div class="flex flex-col">
-                      <span class="text-sm text-ink-primary font-medium">CCNA: Introduction to Networks</span>
-                      <span class="font-mono text-[11px] text-ink-muted">Cisco Networking Academy</span>
-                    </div>
-                  </div>
-                  <span class="font-mono text-[10px] text-ink-muted px-2 py-0.5 rounded bg-surface-lowest border border-line-subtle">CISCO</span>
-                </div>
-
-                <!-- SDLC Specialization -->
-                <div class="spotlight-card rounded p-4 flex items-center justify-between gap-4">
-                  <div class="flex items-center gap-3">
-                    <span class="w-1.5 h-1.5 rounded-full bg-ink-primary shrink-0"></span>
-                    <div class="flex flex-col">
-                      <span class="text-sm text-ink-primary font-medium">Software Development Lifecycle (SDLC)</span>
-                      <span class="font-mono text-[11px] text-ink-muted">University of Minnesota · Coursera Specialization</span>
-                    </div>
-                  </div>
-                  <span class="font-mono text-[10px] text-ink-muted px-2 py-0.5 rounded bg-surface-lowest border border-line-subtle">VERIFIED</span>
+                <div class="p-3 rounded border border-[var(--line-subtle)] bg-[var(--surface)]">
+                  <div class="font-semibold text-[var(--ink-primary)]">CCNA Networking</div>
+                  <div class="text-[11px] text-[var(--ink-muted)] mt-1">Introduction to Networks · Cisco</div>
+                  <div class="font-mono text-[10px] text-[var(--ink-secondary)] mt-1">TCP/IP, Subnetting, OSI Layer 2/3</div>
                 </div>
               </div>
             </div>
 
           </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION 4: MINIMAL CONFIDENT CONTACT & DISPATCH -->
-    <section id="contact" class="w-full bg-surface py-16 md:py-20">
-      <div class="max-w-[1160px] mx-auto px-5 sm:px-8">
-        <div class="spotlight-card specular-top rounded p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div class="flex flex-col gap-2 max-w-xl">
-            <span class="font-mono text-[11px] text-ink-muted uppercase tracking-widest">Direct Contact</span>
-            <h2 class="text-2xl sm:text-3xl font-semibold text-ink-primary tracking-tight">
-              Available for automotive &amp; embedded engineering collaborations.
-            </h2>
-            <p class="text-sm text-ink-secondary leading-relaxed mt-1">
-              Reach out directly via email or connect through LinkedIn and GitHub for technical discussions, firmware roles, or research inquiries.
+    <!-- ================================================================= -->
+    <!-- FOOTER & CONTACT SECTION                                         -->
+    <!-- ================================================================= -->
+    <footer id="contact" class="py-16">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pb-12 border-b border-[var(--line-subtle)]">
+          <div class="md:col-span-6 space-y-3">
+            <h3 class="text-xl font-semibold text-[var(--ink-primary)]">Trinh Dang Khoa (Alex Trinh)</h3>
+            <p class="text-xs text-[var(--ink-secondary)] leading-relaxed max-w-md">
+              Automotive and embedded software engineer specializing in NXP S32K144, AUTOSAR Classic, and CAN 2.0B bus architectures. Open for engineering consultation and internship opportunities.
             </p>
+            <div class="text-xs font-mono text-[var(--pastel-mint-text)] pt-1">
+              Available: September 7 – December 14, 2026
+            </div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3">
-            <a href="mailto:alextrinh1002@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-ink-primary text-ink-inverse text-[13px] font-medium hover:opacity-90 transition-opacity">
-              <span>alextrinh1002@gmail.com</span>
-              <span class="font-mono text-xs">↗</span>
-            </a>
-            <button type="button" onclick="copyEmail()" id="copy-email-btn" class="px-3.5 py-2.5 rounded bg-surface-lowest border border-line text-ink-secondary hover:text-ink-primary hover:border-line-strong font-mono text-xs transition-colors">
-              Copy Email
-            </button>
+          <div class="md:col-span-6 flex flex-wrap md:justify-end gap-6 text-xs font-mono">
+            <div>
+              <div class="text-[10px] uppercase text-[var(--ink-muted)] mb-2">CHANNELS</div>
+              <div class="space-y-1.5">
+                <div><a href="mailto:alextrinh1002@gmail.com" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">alextrinh1002@gmail.com</a></div>
+                <div><a href="tel:+84896212164" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">+84 896 212 164</a></div>
+                <div><a href="https://linkedin.com/in/trinh-alex/" target="_blank" rel="noopener" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">LinkedIn ↗</a></div>
+                <div><a href="https://github.com/tumo07" target="_blank" rel="noopener" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">GitHub ↗</a></div>
+                <div><a href="https://fb.com/tumo07" target="_blank" rel="noopener" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">Facebook ↗</a></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="text-[10px] uppercase text-[var(--ink-muted)] mb-2">DOCUMENTS</div>
+              <div class="space-y-1.5">
+                <div><button onclick="openPdfModal('resume')" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">Resume PDF (Overleaf) ↗</button></div>
+                <div><button onclick="openPdfModal('ielts')" class="text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">IELTS TRF PDF ↗</button></div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-[11px] font-mono text-[var(--ink-muted)]">
+          <div>© 2026 Trinh Dang Khoa · Di An, Binh Duong / Ho Chi Minh City, Vietnam</div>
+          <div>Built with precision · Zero AI bloom · Senior Editorial Design</div>
+        </div>
       </div>
-    </section>
+    </footer>
+
   </main>
 
-  <!-- MINIMAL FOOTER -->
-  <footer class="w-full bg-surface-lowest border-t border-line-subtle">
-    <div class="max-w-[1160px] mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div class="flex flex-col gap-1">
-        <p class="text-xs text-ink-primary font-medium">
-          Alex Trinh (Trinh Dang Khoa) <span class="text-ink-muted font-normal">— Automotive &amp; Embedded Software Systems</span>
-        </p>
-        <p class="font-mono text-[11px] text-ink-muted">
-          Ho Chi Minh City, Vietnam · Built with precision architectural tokens
-        </p>
-      </div>
+  <!-- ================================================================= -->
+  <!-- SECOND VIEW: TECHNICAL DEEP-DIVE READER (SCREEN 2)               -->
+  <!-- ================================================================= -->
+  <section id="deep-dive-view" class="hidden min-h-screen bg-[var(--surface)] pb-24">
+    
+    <!-- Deep-Dive Sticky Header Bar -->
+    <div class="sticky top-14 z-30 border-b border-[var(--line-default)] bg-[var(--surface)]/95 backdrop-blur-md">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <button onclick="switchToOverview()" class="group flex items-center gap-2 text-xs font-mono text-[var(--ink-secondary)] hover:text-[var(--ink-primary)] transition-colors">
+          <span class="transition-transform group-hover:-translate-x-1">←</span>
+          <span>Return to Portfolio Overview</span>
+        </button>
 
-      <div class="flex flex-wrap items-center gap-6 font-mono text-[11px] uppercase tracking-wider">
-        <a href="mailto:alextrinh1002@gmail.com" class="text-ink-secondary hover:text-ink-primary transition-colors">Email</a>
-        <a href="https://www.linkedin.com/in/trinh-alex/" target="_blank" rel="noopener" class="text-ink-secondary hover:text-ink-primary transition-colors">LinkedIn</a>
-        <a href="https://github.com/tumo07" target="_blank" rel="noopener" class="text-ink-secondary hover:text-ink-primary transition-colors">GitHub</a>
-        <a href="https://fb.com/tumo07" target="_blank" rel="noopener" class="text-ink-secondary hover:text-ink-primary transition-colors">Facebook</a>
-        <a href="assets/docs/Trinh_Dang_Khoa_CV.pdf" target="_blank" rel="noopener" class="text-ink-secondary hover:text-ink-primary transition-colors">Resume PDF</a>
+        <!-- Topic Switcher Pills with Pastel Accents -->
+        <div class="flex items-center gap-1.5 overflow-x-auto py-1 text-xs font-mono">
+          <button onclick="openDeepDive('s32k144')" id="tab-s32k144" class="rounded px-2.5 py-1 transition-colors pill-mint">
+            S32K144 ECU
+          </button>
+          <button onclick="openDeepDive('can')" id="tab-can" class="rounded px-2.5 py-1 text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+            CAN Bus Cluster
+          </button>
+          <button onclick="openDeepDive('rfid')" id="tab-rfid" class="rounded px-2.5 py-1 text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+            RF Security
+          </button>
+          <button onclick="openDeepDive('bms')" id="tab-bms" class="rounded px-2.5 py-1 text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+            LiFePO4 BMS
+          </button>
+          <button onclick="openDeepDive('cdp')" id="tab-cdp" class="rounded px-2.5 py-1 text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+            CDP Bridge
+          </button>
+          <button onclick="openDeepDive('autosar')" id="tab-autosar" class="rounded px-2.5 py-1 text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors">
+            AUTOSAR Track
+          </button>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- COMMAND PALETTE MODAL (Ctrl+K / Cmd+K) -->
-  <div id="cmd-modal" class="fixed inset-0 z-50 hidden items-start justify-center pt-24 px-4 bg-black/60 backdrop-blur-xs">
-    <div class="w-full max-w-lg rounded bg-surface-low border border-line-strong shadow-2xl overflow-hidden">
-      <div class="flex items-center px-4 py-3 border-b border-line-subtle gap-3">
-        <svg class="w-4 h-4 text-ink-muted shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </svg>
-        <input id="cmd-input" type="text" placeholder="Type a command or search sections..." class="w-full bg-transparent text-sm text-ink-primary placeholder:text-ink-muted focus:outline-none" />
-        <button type="button" onclick="closeCmdModal()" class="font-mono text-[10px] text-ink-muted px-1.5 py-0.5 rounded bg-surface-container">ESC</button>
+    <!-- Article Reader Container -->
+    <div class="mx-auto max-w-7xl px-6 pt-10">
+      
+      <!-- Article Header -->
+      <div class="max-w-4xl pb-8 border-b border-[var(--line-default)] space-y-4">
+        <div class="flex items-center gap-2">
+          <span id="dd-category-pill" class="rounded px-2 py-0.5 text-[10px] font-mono pill-mint">
+            AUTOMOTIVE ECU ARCHITECTURE
+          </span>
+          <span id="dd-read-time" class="text-xs font-mono text-[var(--ink-muted)]">
+            7 min technical read
+          </span>
+        </div>
+
+        <h1 id="dd-title" class="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--ink-primary)] leading-tight">
+          Deterministic Automotive ECU Firmware &amp; Oscilloscope Diagnostics on NXP S32K144
+        </h1>
+
+        <p id="dd-subtitle" class="text-base text-[var(--ink-secondary)] leading-relaxed">
+          Bare-metal ARM Cortex-M4F implementation of inter-ECU communication protocols, physical layer noise filtering, and signal integrity validation using digital storage oscilloscopes.
+        </p>
+
+        <!-- Dynamic Specs Callout Bar -->
+        <div id="dd-specs-bar" class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 font-mono text-xs">
+          <!-- Populated by JS -->
+        </div>
       </div>
-      <div id="cmd-list" class="max-h-72 overflow-y-auto p-2 flex flex-col gap-1 text-xs">
-        <button type="button" onclick="runCmd('work')" data-label="jump to selected engineering work projects can bus rfid bms cdp" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Jump to Selected Engineering Work</span>
-          <span class="font-mono text-[10px] text-ink-muted">#work</span>
+
+      <!-- Article 12-Column Grid (4 Sidebar + 8 Content) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-10 items-start">
+        
+        <!-- Left Sticky Sidebar: TOC + Bench Specs -->
+        <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-36">
+          
+          <!-- Table of Contents -->
+          <div class="spotlight-card rounded-lg p-4 space-y-3 text-xs">
+            <div class="font-mono text-[10px] uppercase tracking-wider text-[var(--ink-muted)]">SECTION INDEX</div>
+            <nav id="dd-toc" class="space-y-1.5 text-[var(--ink-secondary)] font-mono text-[11px]">
+              <!-- Populated by JS -->
+            </nav>
+          </div>
+
+          <!-- Verified Bench Specs Card -->
+          <div class="spotlight-card rounded-lg p-4 space-y-3 text-xs">
+            <div class="font-mono text-[10px] uppercase tracking-wider text-[var(--ink-muted)]">BENCHMARK &amp; PLATFORM SPECS</div>
+            <div id="dd-bench-specs" class="space-y-2 text-[11px] font-mono">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- External Code Link -->
+          <div id="dd-repo-box" class="p-4 rounded border border-[var(--line-default)] bg-[var(--surface-low)] text-xs font-mono">
+            <div class="text-[var(--ink-muted)] text-[10px] uppercase">SOURCE CODE / ARTIFACT</div>
+            <a id="dd-repo-link" href="#" target="_blank" rel="noopener" class="text-[var(--ink-primary)] hover:underline flex items-center justify-between mt-1">
+              <span id="dd-repo-title">View Repository</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+        </aside>
+
+        <!-- Right 8 Columns: Deep-Dive Article Body -->
+        <article id="dd-article-body" class="lg:col-span-8 space-y-10 text-sm leading-relaxed text-[var(--ink-secondary)]">
+          <!-- Populated dynamically by JS -->
+        </article>
+
+      </div>
+
+      <!-- Article Footer: Next Topic Link -->
+      <div class="max-w-4xl mt-16 pt-8 border-t border-[var(--line-default)] flex items-center justify-between">
+        <button onclick="switchToOverview()" class="text-xs font-mono text-[var(--ink-muted)] hover:text-[var(--ink-primary)]">
+          ← Return to Overview
         </button>
-        <button type="button" onclick="runCmd('experience')" data-label="jump to experience fpt software education credentials" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Jump to Experience &amp; Education</span>
-          <span class="font-mono text-[10px] text-ink-muted">#experience</span>
-        </button>
-        <button type="button" onclick="runCmd('cv')" data-label="preview download resume cv pdf" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Preview / Download Engineering CV (PDF)</span>
-          <span class="font-mono text-[10px] text-ink-muted">PDF</span>
-        </button>
-        <button type="button" onclick="runCmd('trf')" data-label="preview ielts academic 7.0 etrf british council certificate" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Preview IELTS Academic 7.0 (CEFR C1) Official eTRF</span>
-          <span class="font-mono text-[10px] text-ink-muted">PDF</span>
-        </button>
-        <button type="button" onclick="runCmd('email')" data-label="copy email address alextrinh1002@gmail.com" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Copy Email (alextrinh1002@gmail.com)</span>
-          <span class="font-mono text-[10px] text-ink-muted">Clipboard</span>
-        </button>
-        <button type="button" onclick="runCmd('theme')" data-label="toggle dark light mode theme" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Toggle Dark / Light Theme</span>
-          <span class="font-mono text-[10px] text-ink-muted">Theme</span>
-        </button>
-        <button type="button" onclick="runCmd('github')" data-label="open github profile tumo07" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Open GitHub (@tumo07)</span>
-          <span class="font-mono text-[10px] text-ink-muted">External ↗</span>
-        </button>
-        <button type="button" onclick="runCmd('linkedin')" data-label="open linkedin profile trinh-alex" class="cmd-item w-full text-left px-3 py-2 rounded hover:bg-surface-container flex items-center justify-between text-ink-primary">
-          <span>Open LinkedIn (in/trinh-alex)</span>
-          <span class="font-mono text-[10px] text-ink-muted">External ↗</span>
+        <button id="dd-next-btn" onclick="" class="group flex items-center gap-2 text-xs font-mono text-[var(--pastel-mint-text)] hover:underline">
+          <span id="dd-next-label">Next Case Study</span>
+          <span class="transition-transform group-hover:translate-x-1">→</span>
         </button>
       </div>
+
     </div>
-  </div>
+  </section>
 
-  <!-- DOCUMENT PREVIEW MODAL -->
-  <div id="pdf-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-xs">
-    <div class="w-full max-w-4xl h-[85vh] rounded bg-surface-low border border-line-strong shadow-2xl flex flex-col overflow-hidden">
-      <div class="flex items-center justify-between px-5 py-3.5 border-b border-line-subtle">
-        <span id="pdf-modal-title" class="text-sm font-medium text-ink-primary truncate">Document Preview</span>
+  <!-- ================================================================= -->
+  <!-- PDF VIEWER MODAL (RESUME & IELTS)                                -->
+  <!-- ================================================================= -->
+  <div id="pdf-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm p-4 sm:p-8 flex items-center justify-center">
+    <div class="relative flex flex-col h-full max-h-[92vh] w-full max-w-5xl rounded-lg border border-[var(--line-default)] bg-[var(--surface)] overflow-hidden shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-3 border-b border-[var(--line-default)] bg-[var(--surface-low)]">
         <div class="flex items-center gap-2.5">
-          <a id="pdf-modal-download" href="assets/docs/Trinh_Dang_Khoa_CV.pdf" download class="px-3 py-1 rounded bg-ink-primary text-ink-inverse text-xs font-medium hover:opacity-90 transition-opacity">
-            Download PDF
+          <span id="modal-type-dot" class="h-2 w-2 rounded-full bg-[var(--pastel-mint-dot)]"></span>
+          <span id="modal-doc-title" class="text-xs font-mono font-medium text-[var(--ink-primary)]">DOCUMENT VIEWER</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a id="modal-download-link" href="#" download class="rounded border border-[var(--line-default)] bg-[var(--surface)] px-2.5 py-1 text-xs font-mono text-[var(--ink-secondary)] hover:text-[var(--ink-primary)]">
+            Download ↗
           </a>
-          <button type="button" onclick="closePdfModal()" class="p-1 rounded text-ink-muted hover:text-ink-primary">
+          <button onclick="closePdfModal()" class="flex h-7 w-7 items-center justify-center rounded text-[var(--ink-muted)] hover:text-[var(--ink-primary)]">
             ✕
           </button>
         </div>
       </div>
-      <div class="flex-1 bg-surface-lowest">
-        <iframe id="pdf-modal-frame" src="" class="w-full h-full border-0" title="Document Preview"></iframe>
+
+      <!-- PDF Frame -->
+      <div class="flex-1 w-full bg-[var(--surface-lowest)]">
+        <iframe id="pdf-frame" src="" class="h-full w-full border-none"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- INTERACTIVE SCRIPTS -->
+  <!-- ================================================================= -->
+  <!-- COMMAND PALETTE (CTRL+K)                                         -->
+  <!-- ================================================================= -->
+  <div id="cmd-pal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm p-4 flex items-start justify-center pt-24">
+    <div class="relative w-full max-w-lg rounded-lg border border-[var(--line-strong)] bg-[var(--surface-low)] shadow-2xl overflow-hidden">
+      <div class="flex items-center border-b border-[var(--line-default)] px-4 py-3">
+        <span class="font-mono text-xs text-[var(--ink-muted)] mr-2">/</span>
+        <input id="cmd-input" type="text" placeholder="Search case studies, platforms, credentials..." class="w-full bg-transparent text-sm text-[var(--ink-primary)] placeholder-[var(--ink-muted)] outline-none" />
+        <span class="text-[10px] font-mono text-[var(--ink-muted)]">ESC</span>
+      </div>
+      <div id="cmd-results" class="max-h-80 overflow-y-auto p-2 space-y-1 text-xs font-mono">
+        <!-- Search suggestions injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- JAVASCRIPT APPLICATION CORE ENGINE                               -->
+  <!-- ================================================================= -->
   <script>
-    // 1. Mouse-Tracking Radial Spotlight on Cards
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-      });
-    });
-
-    // 2. Theme Toggle (Dark / Swiss Light Mode)
-    const htmlEl = document.documentElement;
-    const savedTheme = localStorage.getItem('at-theme');
-    if (savedTheme === 'light') {
-      htmlEl.classList.remove('dark');
-    }
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      htmlEl.classList.toggle('dark');
-      localStorage.setItem('at-theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
-    });
-
-    // 3. Interactive Hero Architecture Node Selector
-    const nodeData = {
-      central: {
-        bus: 'BUS: CAN 2.0B (SN65HVD230) · 87.5% SAMPLE',
-        badge: 'ID: 0x100 / 0x130',
-        fill: '68%',
-        desc: 'Central Master ECU arbitrates priority-grouped frames, generates the 500ms lockstep turn-signal synchronization tick, and bridges telemetry to the digital instrument cluster.',
-        line1: '<span class="text-ink-primary">#define</span> CAN_BAUDRATE_KBPS  500U',
-        line2: '/* 42 MHz APB1 / (6 * (1 + 11 + 2)) = 500 kbps */',
-        line3: '<span class="text-ink-primary">extern</span> CanFrame_t Tx_MasterSync_0x130;'
+    // ---------------------------------------------------------------
+    // 1. Technical Deep-Dive Knowledge Engine
+    // ---------------------------------------------------------------
+    const DEEP_DIVES = {
+      s32k144: {
+        category: "AUTOMOTIVE ECU ARCHITECTURE",
+        pillClass: "pill-mint",
+        title: "Deterministic Automotive ECU Firmware & Diagnostics (NXP S32K144)",
+        subtitle: "Bare-metal ARM Cortex-M4F implementation of inter-ECU communication protocols, physical layer noise filtering, and signal integrity validation using digital storage oscilloscopes.",
+        readTime: "7 min technical read",
+        repoTitle: "NXP S32K144 ECU Diagnostic Firmware",
+        repoUrl: "https://github.com/tumo07",
+        nextKey: "can",
+        nextTitle: "Multi-Node CAN Bus & Digital Instrument Cluster",
+        specs: [
+          { label: "TARGET MCU", val: "NXP S32K144 (ARM Cortex-M4F @ 80 MHz)" },
+          { label: "MEMORY", val: "512 KB Flash / 64 KB SRAM" },
+          { label: "BUS PROTOCOL", val: "Inter-ECU I2C Fast-Mode (400 kHz)" },
+          { label: "SAFETY / STANDARDS", val: "ASIL-B Capable · MISRA C:2012" }
+        ],
+        benchSpecs: [
+          { k: "Toolchain", v: "S32 Design Studio for ARM v3.5" },
+          { k: "Hardware SDK", v: "Bare-Metal Registers / MAAZ EDU" },
+          { k: "Oscilloscope", v: "Digital Storage Oscilloscope (DSO)" },
+          { k: "Physical Verification", v: "Rise/Fall time, Clock Stretch, Bus Noise" },
+          { k: "Packet Overhead", v: "CRC-8 Frame Check Sequence" },
+          { k: "Diagnostic Logging", v: "UART Telemetry Stream @ 115200 bps" }
+        ],
+        sections: [
+          {
+            id: "arch-dual-ecu",
+            title: "1. Dual-Board Automotive ECU Hardware Topology",
+            content: `
+              <p>In distributed automotive electrical architectures, electronic control units (ECUs) must exchange telemetry and actuator commands reliably across asynchronous board domains. This project implements a deterministic dual-board ECU communication system powered by the <strong>NXP S32K144</strong> microcontroller—an automotive-grade ARM Cortex-M4F processor widely utilized in body control and powertrain subsystems.</p>
+              <div class="my-4 p-4 rounded border border-[var(--line-default)] bg-[var(--surface-lowest)] font-mono text-xs space-y-1">
+                <div class="text-[var(--pastel-mint-text)] font-semibold">// Physical Hardware Topology</div>
+                <div>Master ECU [NXP S32K144] <---> I2C Bus (SDA/SCL + 4.7kΩ Pull-ups) <---> Secondary Diagnostic ECU [NXP S32K144]</div>
+                <div class="text-[var(--ink-muted)]">↳ Logic Analyzer & DSO probes placed at TP_SDA and TP_SCL test points for runtime signal inspection</div>
+              </div>
+              <p>Firmware was developed bare-metal without heavy third-party abstractions to achieve cycle-accurate execution times and maintain direct visibility over peripheral register states.</p>
+            `
+          },
+          {
+            id: "oscilloscope-analysis",
+            title: "2. Oscilloscope Physical Layer Signal Integrity & Noise Debugging",
+            content: `
+              <p>A core engineering requirement highlighted in the Overleaf CV is <strong>integration testing and physical layer verification using an oscilloscope</strong>. When communicating over long wire harnesses, capacitive loading and electromagnetic interference (EMI) cause edge degradation, ringing, and false bus arbitrations.</p>
+              <div class="my-4 p-4 rounded border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] text-xs space-y-2">
+                <div class="font-semibold text-[var(--pastel-mint-text)]">Verified Oscilloscope Test Metrics:</div>
+                <ul class="list-disc pl-5 space-y-1 text-[var(--ink-primary)]">
+                  <li><strong>Rise Time Verification (t<sub>r</sub>):</strong> Adjusted pull-up resistor networks to ensure t<sub>r</sub> &lt; 300 ns under 150 pF harness load, satisfying I2C Fast-Mode specifications.</li>
+                  <li><strong>Clock Stretch Detection:</strong> Identified secondary ECU clock stretching during flash write cycles and configured S32K144 master timeout registers to prevent bus lockup.</li>
+                  <li><strong>Noise Margin Testing:</strong> Evaluated ground bounce during inductive actuator switching; added ferrite beads and glitch filters inside the S32K144 pin configuration registers.</li>
+                </ul>
+              </div>
+            `
+          },
+          {
+            id: "firmware-protocol",
+            title: "3. Diagnostic Framing Protocol & Error Containment",
+            content: `
+              <p>To ensure robust inter-board messaging, communication packets are framed with a deterministic 8-byte structure containing a preamble byte (<code>0xAA</code>), message identifier, payload length, data payload, and a polynomial CRC-8 checksum. If an acknowledgment fails or the CRC check indicates bit corruption, the master invokes an automatic retransmission routine up to three attempts before flagging a DTC (Diagnostic Trouble Code).</p>
+            `
+          }
+        ]
       },
-      bcm: {
-        bus: 'BUS: CAN 2.0B SLAVE NODES · HARDWARE FILTERED',
-        badge: 'ID: 0x105 / 0x304',
-        fill: '45%',
-        desc: 'Front (STM32F411) and Rear (STM32F103) Body Control Modules execute lighting actuation, ultrasonic radar distance polling, and deterministic <10ms command acknowledgment.',
-        line1: '<span class="text-ink-primary">#define</span> CAN_ID_LIGHT_ACK   0x105U',
-        line2: '/* Deterministic <10ms hardware ACK response */',
-        line3: '<span class="text-ink-primary">void</span> BCM_ProcessMasterTick(uint8_t phase);'
+
+      can: {
+        category: "IN-VEHICLE NETWORKING",
+        pillClass: "pill-sky",
+        title: "Distributed Multi-Node CAN 2.0B Bus & Digital Instrument Cluster",
+        subtitle: "Architectural implementation of a 3-node automotive network running on STM32 microcontrollers with priority-grouped frame arbitration, zero drift synchronization, and a Qt 6 / QML dashboard.",
+        readTime: "8 min technical read",
+        repoTitle: "github.com/tumo07/vehicle-dashboard-cluster",
+        repoUrl: "https://github.com/tumo07/vehicle-dashboard-cluster",
+        nextKey: "rfid",
+        nextTitle: "RF Hardware Security & Protocol Analysis Tool",
+        specs: [
+          { label: "BUS TOPOLOGY", val: "CAN 2.0B Differential @ 500 kbps" },
+          { label: "CENTRAL ECU", val: "STM32F407VET6 (ARM Cortex-M4 @ 168 MHz)" },
+          { label: "BODY ECUS", val: "STM32F411CEU6 & STM32F103C8T6" },
+          { label: "DASHBOARD STACK", val: "Qt 6.7 / QML + Python PyCAN Analyzer" }
+        ],
+        benchSpecs: [
+          { k: "Transceivers", v: "Texas Instruments SN65HVD230 (3.3V)" },
+          { k: "Termination", v: "120Ω split termination at both bus ends" },
+          { k: "Arbitration Window", v: "11-bit / 29-bit CAN v3.0 identifier mask" },
+          { k: "Lockstep Blink Tick", v: "500 ms master broadcast sync" },
+          { k: "Round-Trip ACK", v: "< 10 ms from switch to cluster render" },
+          { k: "Telemetry Rate", v: "50 Hz RPM, Speed, Gear, Temperature" }
+        ],
+        sections: [
+          {
+            id: "can-architecture",
+            title: "1. 3-Node Distributed Hardware Architecture",
+            content: `
+              <p>Modern production vehicles isolate functionality across dedicated domain controllers to ensure fault containment. In this project, three distinct microcontrollers manage distinct vehicle domains:</p>
+              <div class="my-4 p-4 rounded border border-[var(--line-default)] bg-[var(--surface-lowest)] font-mono text-xs space-y-1">
+                <div>[Left Body ECU (STM32F411)]   --- CAN_H / CAN_L (500 kbps) ---+</div>
+                <div>[Right Body ECU (STM32F103)]  --- CAN_H / CAN_L (500 kbps) ---+---> [Central Gateway ECU (STM32F407)]</div>
+                <div>                                                                       |</div>
+                <div>                                                       USB VCP Virtual Serial @ 115200 bps</div>
+                <div>                                                                       ↓</div>
+                <div>                                                      [Qt 6 QML Cluster + PyCAN Injector]</div>
+              </div>
+            `
+          },
+          {
+            id: "can-lockstep",
+            title: "2. Lockstep Turn-Signal Phase Synchronization",
+            content: `
+              <p>When left and right indicators operate independently across distributed microcontrollers, internal RC oscillator drift causes left and right indicators to visibly fall out of phase within seconds. To eliminate this flaw, the Central ECU acts as the bus timekeeper, broadcasting a high-priority 500 ms lockstep sync tick (CAN ID <code>0x0F0</code>). Both body controllers synchronize their hardware timer counters to this tick upon reception.</p>
+            `
+          },
+          {
+            id: "can-cluster",
+            title: "3. Instrument Cluster Telemetry Pipeline",
+            content: `
+              <p>The Central ECU forwards validated CAN frames over a high-throughput USB Virtual COM Port (VCP) to a host running a Qt 6 / QML graphical instrument cluster. Hardware-accelerated gauge rendering guarantees a steady 60 FPS refresh rate for speed, RPM, battery SoC, and tire pressure diagnostics.</p>
+            `
+          }
+        ]
       },
-      hmi: {
-        bus: 'LINK: 115200 8N1 UART GATEWAY ↔ QT 6 / PYCAN',
-        badge: 'ID: 0x300 / 0x500',
-        fill: '82%',
-        desc: 'Qt 6 / QML digital instrument cluster and Python PyCAN diagnostic suite render real-time vehicle telemetry, node heartbeats (0x701), and Diagnostic Trouble Codes (0x500).',
-        line1: '<span class="text-ink-primary">struct</span> ClusterTelemetryPacket {',
-        line2: '  uint16_t rpm; uint8_t speed_kmh; uint8_t dtc_mask;',
-        line3: '} __attribute__((packed));'
+
+      rfid: {
+        category: "HARDWARE SECURITY RESEARCH",
+        pillClass: "pill-lavender",
+        title: "RF Hardware Interfacing & Protocol Analysis (RC522 / MIFARE Classic)",
+        subtitle: "Standalone embedded security research tool built on bare-metal STM32 for interrogating 13.56 MHz RFID transponders, auditing Crypto-1 sector keys, and analyzing RFID protocol layers.",
+        readTime: "6 min technical read",
+        repoTitle: "github.com/tumo07/bluepill-rfid-cloner",
+        repoUrl: "https://github.com/tumo07/bluepill-rfid-cloner",
+        nextKey: "bms",
+        nextTitle: "LiFePO4 Battery Management & Coulomb Counting",
+        specs: [
+          { label: "CARRIER FREQUENCY", val: "13.56 MHz (ISO/IEC 14443 Type A)" },
+          { label: "MCU CONTROLLER", val: "STM32F103C8T6 (Blue Pill @ 72 MHz)" },
+          { label: "RF FRONTEND", val: "NXP MFRC522 Transceiver over SPI" },
+          { label: "MEMORY AUDIT", val: "1 KB EEPROM (16 Sectors / 64 Blocks)" }
+        ],
+        benchSpecs: [
+          { k: "SPI Clock Rate", v: "4.5 MHz (Prescaler /16 from 72 MHz)" },
+          { k: "Flash Dictionary", v: "166 precompiled default manufacturer keys" },
+          { k: "Sector Scan Speed", v: "< 4.8 seconds for full 16 sectors" },
+          { k: "Backdoor Commands", v: "Gen1a Magic 0x40 / 0x43 support" },
+          { k: "Direct UID Rewrite", v: "Gen2 / CUID direct Block 0 write" },
+          { k: "On-Board UI", v: "128x64 I2C SSD1306 OLED + Rotary Encoder" }
+        ],
+        sections: [
+          {
+            id: "rfid-rf-frontend",
+            title: "1. 13.56 MHz RF Frontend & SPI Driver Architecture",
+            content: `
+              <p>The tool interfaces with an <strong>NXP MFRC522</strong> contactless reader IC over a high-speed hardware SPI bus. Bare-metal drivers configure the internal analog transmitter registers, carrier modulation depth, receiver antenna gain, and FIFO interrupt lines without runtime RTOS overhead.</p>
+            `
+          },
+          {
+            id: "rfid-crypto-1",
+            title: "2. Crypto-1 Key Recovery & Block 0 Operations",
+            content: `
+              <p>MIFARE Classic 1K cards partition 1024 bytes of EEPROM into 16 sectors, each guarded by dual 48-bit keys (Key A and Key B). The firmware executes an automated sector-by-sector dictionary search using 166 well-known transport keys, saving discovered sector keys into local flash memory to dump full memory cards.</p>
+            `
+          }
+        ]
+      },
+
+      bms: {
+        category: "BATTERY MANAGEMENT & POWER",
+        pillClass: "pill-peach",
+        title: "Embedded Battery Monitoring & Coulomb Counting System (STM32)",
+        subtitle: "Real-time battery state-of-charge (SoC) estimation and telemetry firmware on STM32 interfacing with the Maxim MAX17048 fuel gauge IC for 4S3P LiFePO4 battery packs.",
+        readTime: "5 min technical read",
+        repoTitle: "github.com/tumo07/stm32-battery-monitor",
+        repoUrl: "https://github.com/tumo07/stm32-battery-monitor",
+        nextKey: "cdp",
+        nextTitle: "Native Chrome CDP Automation Bridge",
+        specs: [
+          { label: "PACK CHEMISTRY", val: "4S3P Lithium Iron Phosphate (LiFePO4)" },
+          { label: "NOMINAL VOLTAGE", val: "12.8V (3.2V per cell, 14.6V full charge)" },
+          { label: "FUEL GAUGE IC", val: "Maxim MAX17048 over Fast-Mode I2C" },
+          { label: "CONTROLLER", val: "STM32F103 (Cortex-M3)" }
+        ],
+        benchSpecs: [
+          { k: "I2C Slave Address", v: "0x36 (7-bit address)" },
+          { k: "ADC Voltage Res", v: "12-bit, 1.25 mV/cell resolution" },
+          { k: "State-of-Charge", v: "0.1% resolution ModelGauge Algorithm" },
+          { k: "Hardware Alerts", v: "Under-voltage (<10.0V) & Over-temp pin interrupt" },
+          { k: "Sampling Frequency", v: "10 Hz voltage polling + IIR filter" },
+          { k: "Telemetry Output", v: "UART JSON streaming to host monitor" }
+        ],
+        sections: [
+          {
+            id: "bms-chemistry",
+            title: "1. Overcoming the Flat LiFePO4 Discharge Curve",
+            content: `
+              <p>Unlike standard Lithium Cobalt batteries whose voltage drops linearly from 4.2V down to 3.0V, LiFePO4 cells maintain an exceptionally flat 3.2V plateau across 80% of their discharge cycle. Traditional ADC voltage dividers produce massive SoC estimation errors when load currents fluctuate. To solve this, the firmware interfaces with the <strong>Maxim MAX17048</strong> fuel gauge IC, combining cell voltage tracking with dynamic Coulomb counting.</p>
+            `
+          },
+          {
+            id: "bms-fault",
+            title: "2. Fault Thresholding & Active Safety Alert Handling",
+            content: `
+              <p>The firmware continuously inspects MAX17048 status registers, triggering automated load disconnect relays whenever cell voltage drops below 2.5V or discharge rate exceeds thermal dissipation safety envelopes.</p>
+            `
+          }
+        ]
+      },
+
+      cdp: {
+        category: "AUTONOMOUS AGENT TOOLS",
+        pillClass: "pill-rose",
+        title: "Promptless Native Chrome CDP Browser Automation Bridge",
+        subtitle: "High-performance C# Native Messaging Host and Manifest V3 Chrome extension enabling agentic tools to execute Chrome DevTools Protocol commands without remote debugging flags.",
+        readTime: "6 min technical read",
+        repoTitle: "github.com/tumo07/antigravity-browser-bridge",
+        repoUrl: "https://github.com/tumo07/antigravity-browser-bridge",
+        nextKey: "autosar",
+        nextTitle: "AUTOSAR Classic & Dual-Track Engineering",
+        specs: [
+          { label: "HOST ARCHITECTURE", val: "C# .NET Native Messaging Pipe" },
+          { label: "EXTENSION SPEC", val: "Manifest V3 Service Worker + Offscreen" },
+          { label: "LOCAL IPC", val: "Loopback TCP on 127.0.0.1:18789" },
+          { label: "DEBUGGER API", val: "chrome.debugger (Protocol v1.3)" }
+        ],
+        benchSpecs: [
+          { k: "Latency Overhead", v: "< 2 ms round-trip for CDP commands" },
+          { k: "Promptless Control", v: "Bypasses Chrome remote debugging flag" },
+          { k: "Frame Framing", v: "4-byte little-endian length prefix" },
+          { k: "Viewport Capture", v: "CDP Page.captureScreenshot in base64" },
+          { k: "Session Continuity", v: "Operates inside user's active Profile 3" },
+          { k: "Fallback", v: "chrome.scripting executeScript fallback" }
+        ],
+        sections: [
+          {
+            id: "cdp-problem",
+            title: "1. Solving Chrome Remote Debugging Friction",
+            content: `
+              <p>Launching Chrome with <code>--remote-debugging-port</code> introduces security warning bars and prevents agents from interacting with active authenticated user profiles. This project establishes a persistent 4-byte length-prefixed Native Messaging pipe to a C# console host listening on <code>127.0.0.1:18789</code>, enabling prompt-free automation via <code>chrome.debugger</code>.</p>
+            `
+          }
+        ]
+      },
+
+      autosar: {
+        category: "AUTOMOTIVE ARCHITECTURE",
+        pillClass: "pill-lavender",
+        title: "AUTOSAR Classic Architecture & Dual-Track Engineering Foundation",
+        subtitle: "Deep-dive into layered automotive software design (BSW, MCAL, RTE, ASW) developed across FPT Software and FPT University / FPT Academy curriculum.",
+        readTime: "7 min technical read",
+        repoTitle: "FPT Software Automotive Division",
+        repoUrl: "https://github.com/tumo07",
+        nextKey: "s32k144",
+        nextTitle: "NXP S32K144 Automotive ECU Firmware",
+        specs: [
+          { label: "ARCHITECTURE", val: "AUTOSAR Classic Platform (R4.x)" },
+          { label: "LAYERS", val: "MCAL, BSW, RTE, Application SWC" },
+          { label: "BUS PROTOCOLS", val: "CAN, LIN, SPI, UART" },
+          { label: "TARGET MCU", val: "NXP S32K144 & ARM Cortex-M" }
+        ],
+        benchSpecs: [
+          { k: "MCAL Drivers", v: "DIO, PORT, MCU, CAN, SPI, WDG" },
+          { k: "Communication Stack", v: "CanIf, CanSM, PduR, Com" },
+          { k: "Diagnostic Stack", v: "Dcm, Dem (ISO 14229 UDS fundamentals)" },
+          { k: "Memory Stack", v: "MemIf, Fee, Fls" },
+          { k: "Training Framework", v: "MAAZ EDU & S32 Design Studio" },
+          { k: "Safety Standard", v: "ISO 26262 ASIL & MISRA C:2012" }
+        ],
+        sections: [
+          {
+            id: "autosar-layers",
+            title: "1. Layered Decomposition of Automotive Software",
+            content: `
+              <p>AUTOSAR Classic separates hardware-dependent drivers from high-level application code through standardized abstraction layers:</p>
+              <div class="my-4 p-4 rounded border border-[var(--line-default)] bg-[var(--surface-lowest)] font-mono text-xs space-y-1">
+                <div>[Application Software Components (SWCs)]</div>
+                <div class="text-[var(--pastel-lavender-text)]">========= Runtime Environment (RTE) =========</div>
+                <div>[Basic Software (BSW): Services & Diagnostics (Dcm, Dem)]</div>
+                <div>[ECU Abstraction Layer: CanIf, SpiIf]</div>
+                <div>[Microcontroller Abstraction Layer (MCAL): Can, Spi, Port, Mcu]</div>
+                <div class="text-[var(--pastel-mint-text)]">========= Silicon Hardware (NXP S32K144) =========</div>
+              </div>
+            `
+          }
+        ]
       }
     };
 
-    function selectNode(key) {
-      const d = nodeData[key];
-      if (!d) return;
-      document.getElementById('arch-bus-label').textContent = d.bus;
-      document.getElementById('arch-id-badge').textContent = d.badge;
-      document.getElementById('arch-bar-fill').style.width = d.fill;
-      document.getElementById('arch-node-desc').textContent = d.desc;
-      document.getElementById('arch-code-line1').innerHTML = d.line1;
-      document.getElementById('arch-code-line2').textContent = d.line2;
-      document.getElementById('arch-code-line3').innerHTML = d.line3;
+    // ---------------------------------------------------------------
+    // 2. View Switching Logic: Overview <-> Deep-Dive
+    // ---------------------------------------------------------------
+    function switchToOverview() {
+      document.getElementById('portfolio-main-view').classList.remove('hidden');
+      document.getElementById('deep-dive-view').classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.pushState(null, '', '#overview');
+    }
 
-      ['central', 'bcm', 'hmi'].forEach(k => {
-        const btn = document.getElementById('node-btn-' + k);
-        if (k === key) {
-          btn.className = 'node-tab text-left p-2.5 rounded border border-ink-primary bg-surface-container transition-all';
-        } else {
-          btn.className = 'node-tab text-left p-2.5 rounded border border-line bg-surface-lowest hover:border-line-strong transition-all';
+    function openDeepDive(topicKey) {
+      const topic = DEEP_DIVES[topicKey] || DEEP_DIVES['s32k144'];
+      
+      // Update Header
+      const pill = document.getElementById('dd-category-pill');
+      pill.className = `rounded px-2 py-0.5 text-[10px] font-mono ${topic.pillClass}`;
+      pill.textContent = topic.category;
+      document.getElementById('dd-read-time').textContent = topic.readTime;
+      document.getElementById('dd-title').textContent = topic.title;
+      document.getElementById('dd-subtitle').textContent = topic.subtitle;
+
+      // Update Specs Bar
+      const specsBar = document.getElementById('dd-specs-bar');
+      specsBar.innerHTML = topic.specs.map(s => `
+        <div class="p-3 rounded border border-[var(--line-default)] bg-[var(--surface-low)]">
+          <div class="text-[10px] text-[var(--ink-muted)]">${s.label}</div>
+          <div class="font-medium text-[var(--ink-primary)] mt-0.5">${s.val}</div>
+        </div>
+      `).join('');
+
+      // Update TOC
+      const toc = document.getElementById('dd-toc');
+      toc.innerHTML = topic.sections.map((sec, idx) => `
+        <a href="#${sec.id}" class="block py-1 hover:text-[var(--ink-primary)] transition-colors">
+          ${sec.title}
+        </a>
+      `).join('');
+
+      // Update Bench Specs
+      const benchSpecs = document.getElementById('dd-bench-specs');
+      benchSpecs.innerHTML = topic.benchSpecs.map(b => `
+        <div class="flex items-start justify-between py-1 border-b border-[var(--line-subtle)]">
+          <span class="text-[var(--ink-muted)]">${b.k}</span>
+          <span class="text-[var(--ink-primary)] text-right font-medium">${b.v}</span>
+        </div>
+      `).join('');
+
+      // Update Repo Box
+      document.getElementById('dd-repo-title').textContent = topic.repoTitle;
+      document.getElementById('dd-repo-link').href = topic.repoUrl;
+
+      // Update Article Body
+      const body = document.getElementById('dd-article-body');
+      body.innerHTML = topic.sections.map(sec => `
+        <section id="${sec.id}" class="space-y-4 pt-2">
+          <h2 class="text-xl font-semibold text-[var(--ink-primary)]">${sec.title}</h2>
+          <div class="space-y-3">${sec.content}</div>
+        </section>
+      `).join('');
+
+      // Update Next Button
+      const nextBtn = document.getElementById('dd-next-btn');
+      document.getElementById('dd-next-label').textContent = `Next: ${topic.nextTitle}`;
+      nextBtn.onclick = () => openDeepDive(topic.nextKey);
+
+      // Update Tab Buttons
+      Object.keys(DEEP_DIVES).forEach(k => {
+        const tab = document.getElementById(`tab-${k}`);
+        if (tab) {
+          if (k === topicKey) {
+            tab.className = `rounded px-2.5 py-1 transition-colors ${topic.pillClass}`;
+          } else {
+            tab.className = `rounded px-2.5 py-1 text-[var(--ink-muted)] hover:text-[var(--ink-primary)] transition-colors`;
+          }
         }
       });
+
+      // Show Deep Dive View
+      document.getElementById('portfolio-main-view').classList.add('hidden');
+      document.getElementById('deep-dive-view').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.pushState(null, '', `#deep-dive=${topicKey}`);
     }
 
-    // 4. Copy Email Helper
-    function copyEmail() {
-      navigator.clipboard.writeText('alextrinh1002@gmail.com');
-      const btn = document.getElementById('copy-email-btn');
-      const orig = btn.textContent;
-      btn.textContent = 'Copied';
-      setTimeout(() => { btn.textContent = orig; }, 1800);
-    }
+    // ---------------------------------------------------------------
+    // 3. Theme Toggle Engine
+    // ---------------------------------------------------------------
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const iconDark = document.getElementById('theme-icon-dark');
+    const iconLight = document.getElementById('theme-icon-light');
 
-    // 5. Command Palette (Ctrl+K / Cmd+K)
-    const cmdModal = document.getElementById('cmd-modal');
-    const cmdInput = document.getElementById('cmd-input');
-
-    function openCmdModal() {
-      cmdModal.classList.remove('hidden');
-      cmdModal.classList.add('flex');
-      cmdInput.value = '';
-      filterCmds('');
-      setTimeout(() => cmdInput.focus(), 20);
-    }
-
-    function closeCmdModal() {
-      cmdModal.classList.add('hidden');
-      cmdModal.classList.remove('flex');
-    }
-
-    document.getElementById('cmd-trigger').addEventListener('click', openCmdModal);
-    window.addEventListener('keydown', e => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        if (cmdModal.classList.contains('hidden')) openCmdModal();
-        else closeCmdModal();
-      } else if (e.key === 'Escape') {
-        closeCmdModal();
-        closePdfModal();
+    function applyTheme(isDark) {
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+        iconDark.classList.remove('hidden');
+        iconLight.classList.add('hidden');
+        localStorage.setItem('at-theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        iconDark.classList.add('hidden');
+        iconLight.classList.remove('hidden');
+        localStorage.setItem('at-theme', 'light');
       }
-    });
-
-    cmdModal.addEventListener('click', e => {
-      if (e.target === cmdModal) closeCmdModal();
-    });
-
-    function filterCmds(q) {
-      const term = q.trim().toLowerCase();
-      document.querySelectorAll('.cmd-item').forEach(item => {
-        const label = item.getAttribute('data-label') || '';
-        item.style.display = (!term || label.includes(term)) ? 'flex' : 'none';
-      });
     }
 
-    cmdInput.addEventListener('input', e => filterCmds(e.target.value));
+    const savedTheme = localStorage.getItem('at-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(savedTheme === 'light' ? false : (savedTheme === 'dark' ? true : prefersDark));
 
-    function runCmd(action) {
-      closeCmdModal();
-      if (action === 'work') location.hash = '#work';
-      else if (action === 'experience') location.hash = '#experience';
-      else if (action === 'cv') openPdfModal('assets/docs/Trinh_Dang_Khoa_CV.pdf', 'Trinh Dang Khoa — Engineering CV');
-      else if (action === 'trf') openPdfModal('assets/docs/IELTS_TRF_23VN509163TRID028A.pdf', 'British Council IELTS Academic eTRF — Band 7.0 (C1)');
-      else if (action === 'email') copyEmail();
-      else if (action === 'theme') document.getElementById('theme-toggle').click();
-      else if (action === 'github') window.open('https://github.com/tumo07', '_blank');
-      else if (action === 'linkedin') window.open('https://www.linkedin.com/in/trinh-alex/', '_blank');
-    }
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      applyTheme(!isDark);
+    });
 
-    // 6. PDF Preview Modal
+    // ---------------------------------------------------------------
+    // 4. PDF Modal Viewer (Resume & IELTS)
+    // ---------------------------------------------------------------
     const pdfModal = document.getElementById('pdf-modal');
-    const pdfFrame = document.getElementById('pdf-modal-frame');
-    const pdfTitle = document.getElementById('pdf-modal-title');
-    const pdfDownload = document.getElementById('pdf-modal-download');
+    const pdfFrame = document.getElementById('pdf-frame');
+    const modalTitle = document.getElementById('modal-doc-title');
+    const modalDownloadLink = document.getElementById('modal-download-link');
 
-    function openPdfModal(url, title) {
-      pdfTitle.textContent = title;
-      pdfDownload.href = url;
-      pdfFrame.src = url;
+    function openPdfModal(type) {
+      if (type === 'resume') {
+        modalTitle.textContent = "TRINH DANG KHOA (ALEX TRINH) — ENGINEERING CV (OVERLEAF)";
+        pdfFrame.src = "Trinh_Dang_Khoa_CV.pdf#toolbar=1";
+        modalDownloadLink.href = "Trinh_Dang_Khoa_CV.pdf";
+      } else if (type === 'ielts') {
+        modalTitle.textContent = "BRITISH COUNCIL — IELTS ACADEMIC OFFICIAL eTRF (BAND 7.0 / CEFR C1)";
+        pdfFrame.src = "IELTS_TRF_23VN509163TRID028A.pdf#toolbar=1";
+        modalDownloadLink.href = "IELTS_TRF_23VN509163TRID028A.pdf";
+      }
       pdfModal.classList.remove('hidden');
-      pdfModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
     }
 
     function closePdfModal() {
       pdfModal.classList.add('hidden');
-      pdfModal.classList.remove('flex');
-      pdfFrame.src = '';
+      pdfFrame.src = "";
+      document.body.style.overflow = 'auto';
     }
 
-    pdfModal.addEventListener('click', e => {
+    pdfModal.addEventListener('click', (e) => {
       if (e.target === pdfModal) closePdfModal();
+    });
+
+    // ---------------------------------------------------------------
+    // 5. Command Palette (Ctrl+K)
+    // ---------------------------------------------------------------
+    const cmdModal = document.getElementById('cmd-pal');
+    const cmdBtn = document.getElementById('cmd-pal-btn');
+    const cmdInput = document.getElementById('cmd-input');
+    const cmdResults = document.getElementById('cmd-results');
+
+    const SEARCH_ITEMS = [
+      { name: "Automotive ECU Firmware & Diagnostics (NXP S32K144)", type: "Case Study", act: () => openDeepDive('s32k144') },
+      { name: "Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus", type: "Case Study", act: () => openDeepDive('can') },
+      { name: "RF Hardware Interfacing & Protocol Analysis (RC522)", type: "Case Study", act: () => openDeepDive('rfid') },
+      { name: "Embedded Battery Monitoring & Coulomb Counting (STM32)", type: "Case Study", act: () => openDeepDive('bms') },
+      { name: "Native Chrome CDP Browser Automation Bridge", type: "Case Study", act: () => openDeepDive('cdp') },
+      { name: "AUTOSAR Classic Architecture & Curriculum", type: "Case Study", act: () => openDeepDive('autosar') },
+      { name: "View Resume (Overleaf CV PDF)", type: "Document", act: () => openPdfModal('resume') },
+      { name: "View IELTS Academic Band 7.0 eTRF", type: "Document", act: () => openPdfModal('ielts') },
+      { name: "Send Email (alextrinh1002@gmail.com)", type: "Contact", act: () => window.location.href = "mailto:alextrinh1002@gmail.com" },
+      { name: "Open LinkedIn Profile", type: "External", act: () => window.open("https://linkedin.com/in/trinh-alex/", "_blank") },
+      { name: "Open GitHub Profile", type: "External", act: () => window.open("https://github.com/tumo07", "_blank") },
+    ];
+
+    function renderCmdResults(query = "") {
+      const q = query.toLowerCase().trim();
+      const filtered = SEARCH_ITEMS.filter(it => it.name.toLowerCase().includes(q) || it.type.toLowerCase().includes(q));
+      
+      cmdResults.innerHTML = filtered.map((it, idx) => `
+        <div onclick="executeCmd(${idx})" class="flex items-center justify-between p-2 rounded hover:bg-[var(--surface-container)] cursor-pointer text-xs text-[var(--ink-primary)]">
+          <span>${it.name}</span>
+          <span class="text-[10px] text-[var(--ink-muted)] uppercase">${it.type}</span>
+        </div>
+      `).join('');
+    }
+
+    function executeCmd(idx) {
+      const q = cmdInput.value.toLowerCase().trim();
+      const filtered = SEARCH_ITEMS.filter(it => it.name.toLowerCase().includes(q) || it.type.toLowerCase().includes(q));
+      if (filtered[idx]) {
+        filtered[idx].act();
+        closeCmdPal();
+      }
+    }
+
+    function openCmdPal() {
+      cmdModal.classList.remove('hidden');
+      cmdInput.value = '';
+      renderCmdResults();
+      setTimeout(() => cmdInput.focus(), 50);
+    }
+
+    function closeCmdPal() {
+      cmdModal.classList.add('hidden');
+    }
+
+    cmdBtn.addEventListener('click', openCmdPal);
+    cmdInput.addEventListener('input', (e) => renderCmdResults(e.target.value));
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        cmdModal.classList.contains('hidden') ? openCmdPal() : closeCmdPal();
+      }
+      if (e.key === 'Escape') {
+        closeCmdPal();
+        closePdfModal();
+      }
+    });
+
+    cmdModal.addEventListener('click', (e) => {
+      if (e.target === cmdModal) closeCmdPal();
+    });
+
+    // ---------------------------------------------------------------
+    // 6. Hash Routing Initialization
+    // ---------------------------------------------------------------
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#deep-dive=')) {
+        const key = hash.replace('#deep-dive=', '');
+        openDeepDive(key);
+      }
     });
   </script>
 </body>
