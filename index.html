@@ -277,6 +277,13 @@
                 </div>
 
                 <div>
+                  <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">FLAGSHIP ARCHITECTURE &amp; LEADERSHIP</div>
+                  <div class="font-mono text-[11px] text-[var(--ink-primary)] font-medium mt-0.5">
+                    System Architect &amp; Tech Lead — Smart Vehicle Dashboard Cluster (5-Node CAN Bus)
+                  </div>
+                </div>
+
+                <div>
                   <div class="text-[10px] font-mono uppercase tracking-wider text-[var(--ink-muted)]">ACADEMIC FOUNDATION</div>
                   <div class="text-[11px] text-[var(--ink-secondary)] mt-0.5">
                     FPT University (B.Sc. Major in ASE) &amp; FAI Cranes (Automotive Diploma)
@@ -323,7 +330,56 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <!-- PROJECT 1: NXP S32K144 Automotive ECU -->
+          <!-- PROJECT 1: Smart Vehicle Dashboard Cluster (FLAGSHIP LEADERSHIP PROJECT) -->
+          <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between border-2 border-[var(--line-strong)] md:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-12">
+              <div class="h-56 md:h-full md:col-span-5 overflow-hidden bg-[var(--surface-lowest)] border-b md:border-b-0 md:border-r border-[var(--line-subtle)]">
+                <img src="assets/images/stm32_can_pcb.jpg" alt="STM32 CAN Bus Hardware" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
+              </div>
+              <div class="p-6 md:p-8 md:col-span-7 flex flex-col justify-between space-y-5">
+                <div class="space-y-3">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-[10px] font-mono text-[var(--ink-muted)]">IN-VEHICLE NETWORKING · 2025</span>
+                    <span class="rounded px-2.5 py-0.5 text-[10px] font-mono font-medium pill-mint border border-[var(--pastel-mint-border)]">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
+                    <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-sky">5-NODE MONOREPO · 500 KBPS CAN</span>
+                  </div>
+                  <h3 class="text-xl sm:text-2xl font-bold text-[var(--ink-primary)] tracking-tight">
+                    Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus
+                  </h3>
+                  <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[var(--surface-container)] border border-[var(--line-default)] text-xs font-mono text-[var(--ink-primary)]">
+                    <span class="text-[var(--pastel-mint-text)] font-semibold">● Lead of 5-Engineer Team</span>
+                    <span class="text-[var(--ink-muted)]">|</span>
+                    <span>Monorepo Architecture &amp; Protocol Arbitration</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
+                    Directed the end-to-end architecture and firmware development of a distributed 5-node automotive network. Designed modular subsystem contracts (Central Sensor MCU STM32F407, Front BCM STM32F103, Rear BCM STM32F103, CAN-to-UART Bridge, and a 60 FPS Qt 6 / QML digital instrument cluster). Enforced monorepo ownership boundaries via <code class="text-[11px] font-mono text-[var(--ink-primary)]">.github/CODEOWNERS</code>, engineered priority-based CAN 2.0B arbitration (<code class="text-[11px] font-mono text-[var(--ink-primary)]">0x100</code>–<code class="text-[11px] font-mono text-[var(--ink-primary)]">0x720</code>), and implemented a fail-safe 500ms master blink tick lockstep protocol to eliminate phase drift across independent nodes.
+                  </p>
+                  <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-muted)] pt-1">
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5 text-[var(--ink-primary)] font-medium">System Architect &amp; Tech Lead</span>
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">5-Node Monorepo</span>
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32F407 + Dual F103</span>
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Qt 6 / QML Cluster</span>
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">CAN 2.0B (500 kbps)</span>
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">500ms Lockstep Sync</span>
+                    <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">Fail-Safe DTCs</span>
+                  </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-[var(--line-subtle)]">
+                  <button onclick="openDeepDive('can')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-4 py-2 text-xs font-semibold text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
+                    Read Architecture Case Study →
+                  </button>
+                  <button onclick="openWorkbenchTab('dso', 'can')" class="text-xs font-mono font-medium text-[var(--pastel-sky-text)] hover:underline">
+                    Launch CAN DSO ↗
+                  </button>
+                  <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[var(--ink-muted)] hover:text-[var(--ink-primary)] ml-auto">
+                    github.com/tumo07/vehicle-dashboard-cluster ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: NXP S32K144 Automotive ECU -->
           <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between">
             <div class="h-48 w-full overflow-hidden bg-[var(--surface-lowest)] border-b border-[var(--line-subtle)]">
               <img src="assets/images/ecu_hero.jpg" alt="NXP S32K144 Hardware Bench" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
@@ -353,43 +409,6 @@
                 <button onclick="openWorkbenchTab('dso', 'i2c')" class="text-xs font-mono text-[var(--pastel-mint-text)] hover:underline">
                   Launch Waveform DSO ↗
                 </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- PROJECT 2: Distributed CAN 2.0B Bus Cluster -->
-          <div class="clean-card rounded-xl overflow-hidden flex flex-col justify-between">
-            <div class="h-48 w-full overflow-hidden bg-[var(--surface-lowest)] border-b border-[var(--line-subtle)]">
-              <img src="assets/images/stm32_can_pcb.jpg" alt="STM32 CAN Bus Hardware" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
-              <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-mono text-[var(--ink-muted)]">IN-VEHICLE NETWORKING · 2025</span>
-                  <span class="rounded px-2 py-0.5 text-[10px] font-mono pill-sky">CAN 2.0B · 3 ECUs</span>
-                </div>
-                <h3 class="text-lg font-semibold text-[var(--ink-primary)]">
-                  Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus
-                </h3>
-                <p class="text-xs text-[var(--ink-secondary)] leading-relaxed">
-                  Architected a distributed 3-node STM32 network communicating over a 500 kbps CAN 2.0B bus with 120Ω split terminations. Paired with a high-performance Qt 6 / QML digital instrument cluster and Python frame injector.
-                </p>
-                <div class="flex flex-wrap gap-1.5 font-mono text-[10px] text-[var(--ink-muted)] pt-1">
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">STM32F407 + F411</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">SN65HVD230</span>
-                  <span class="rounded bg-[var(--surface-container)] px-2 py-0.5">500 kbps Arbitration</span>
-                </div>
-              </div>
-              <div class="flex items-center gap-3 pt-4 border-t border-[var(--line-subtle)]">
-                <button onclick="openDeepDive('can')" class="rounded border border-[var(--line-strong)] bg-[var(--surface-container)] px-3 py-1.5 text-xs font-medium text-[var(--ink-primary)] hover:bg-[var(--surface-high)] transition-colors">
-                  Read Case Study →
-                </button>
-                <button onclick="openWorkbenchTab('dso', 'can')" class="text-xs font-mono text-[var(--pastel-sky-text)] hover:underline">
-                  Launch CAN DSO ↗
-                </button>
-                <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[var(--ink-muted)] hover:text-[var(--ink-primary)] ml-auto">
-                  GitHub ↗
-                </a>
               </div>
             </div>
           </div>
@@ -1058,26 +1077,61 @@
         `
       },
       can: {
-        title: "Distributed 3-Node CAN 2.0B Bus Cluster & Telemetry",
+        title: "Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus",
         content: `
-          <p>Architected a distributed automotive body network connecting three independent STM32 microcontrollers over a 500 kbps CAN 2.0B differential bus with SN65HVD230 transceivers and 120Ω split terminations.</p>
+          <div class="p-3 mb-4 rounded-lg border border-[var(--pastel-mint-border)] bg-[var(--pastel-mint-bg)] flex items-center justify-between text-xs">
+            <div>
+              <span class="font-bold text-[var(--pastel-mint-text)]">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
+              <span class="text-[var(--ink-secondary)] ml-2">(Leading a 5-Engineer Monorepo Architecture)</span>
+            </div>
+            <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="font-mono text-[var(--pastel-mint-text)] hover:underline">github.com/tumo07/vehicle-dashboard-cluster ↗</a>
+          </div>
+
+          <p>As <strong>System Architect &amp; Tech Lead</strong>, I directed the end-to-end architecture, network protocols, and firmware implementation for the Smart Vehicle Dashboard Cluster. The project was structured as an enterprise-grade monorepo composed of 5 distributed subsystems plus a shared CAN definitions library, with strict ownership boundaries enforced via <code class="font-mono text-xs">.github/CODEOWNERS</code> for automated pull request code reviews across the 5 sub-teams.</p>
+
           <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
             <img src="assets/images/stm32_can_pcb.jpg" alt="Distributed CAN Nodes" class="w-full object-cover max-h-72" />
             <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
-              Fig 2.1 — Distributed STM32 hardware nodes connected via differential CAN 2.0B bus.
+              Fig 2.1 — Multi-node STM32 hardware in the loop connected over a 500 kbps differential CAN 2.0B bus with SN65HVD230 transceivers and split 120Ω terminations.
             </figcaption>
           </figure>
+
+          <h4 class="font-semibold text-[var(--ink-primary)] mt-4">Distributed Monorepo Subsystems:</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 my-3 text-xs">
+            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
+              <div class="font-mono font-semibold text-[var(--ink-primary)]">1. main_mcu_firmware</div>
+              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F407VGT6 Discovery (168 MHz Cortex-M4F). Executes central vehicle state machine, analog ADC sensor acquisition, OBD-style DTC error aggregation (B1001–C1011), and master clock broadcast.</div>
+            </div>
+            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
+              <div class="font-mono font-semibold text-[var(--ink-primary)]">2. front_bcm_firmware</div>
+              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F103C8T6. Drives front lighting actuators, PWM headlight stepping, ambient light sensor evaluation, and left/right front turn indicators.</div>
+            </div>
+            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
+              <div class="font-mono font-semibold text-[var(--ink-primary)]">3. rear_bcm_firmware</div>
+              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F103C8T6. Controls tail light matrices, brake light priority interrupts, trunk servo actuator, and HC-SR04 ultrasonic parking obstacle radar.</div>
+            </div>
+            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)]">
+              <div class="font-mono font-semibold text-[var(--ink-primary)]">4. translator_firmware</div>
+              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">STM32F103C8T6. High-throughput non-blocking CAN-to-UART bridge converting 500 kbps differential bus frames into formatted serial telemetry streams with DMA ring buffers.</div>
+            </div>
+            <div class="p-3 rounded-lg border border-[var(--line-default)] bg-[var(--surface-low)] sm:col-span-2">
+              <div class="font-mono font-semibold text-[var(--ink-primary)]">5. qt_dashboard &amp; can_messages_shared</div>
+              <div class="text-[11px] text-[var(--ink-secondary)] mt-1">Qt 6 / QML / C++ application rendering real-time speedometer, tachometer, animated indicators, and diagnostic HUD at 60 FPS with SQLite logging and MQTT connectivity. The shared directory defines common CAN IDs, DLCs, and bitmasks.</div>
+            </div>
+          </div>
+
           <figure class="my-4 rounded-lg overflow-hidden border border-[var(--line-default)] bg-[var(--surface-lowest)]">
             <img src="assets/images/stm32_can_hud.jpg" alt="Qt 6 QML Cluster" class="w-full object-cover max-h-72" />
             <figcaption class="p-2.5 text-[11px] font-mono text-[var(--ink-muted)] bg-[var(--surface-low)]">
-              Fig 2.2 — High-performance Qt 6 / QML instrument cluster receiving 50 Hz real-time telemetry.
+              Fig 2.2 — High-performance Qt 6 / QML instrument cluster receiving 50 Hz real-time telemetry from the CAN network.
             </figcaption>
           </figure>
-          <h4 class="font-semibold text-[var(--ink-primary)] mt-3">System Architecture &amp; Solutions:</h4>
-          <ul class="list-disc list-inside space-y-1">
-            <li><strong>Central ECU (STM32F407VET6, 168 MHz):</strong> Coordinates vehicle state machine and bridges CAN frames to a Qt 6 / QML digital instrument cluster over high-speed USB VCP.</li>
-            <li><strong>Left &amp; Right BCMs (STM32F411 / F103):</strong> Monitor turn signals, headlight actuators, and ambient light sensors.</li>
-            <li><strong>Lockstep Synchronization:</strong> Implemented a 500ms master blink synchronization protocol to guarantee zero phase-drift between independent turn signals.</li>
+
+          <h4 class="font-semibold text-[var(--ink-primary)] mt-4">Key Protocol &amp; Systems Engineering Decisions:</h4>
+          <ul class="list-disc list-inside space-y-1.5 text-xs text-[var(--ink-secondary)] leading-relaxed">
+            <li><strong>CAN 2.0B Priority Arbitration Dictionary:</strong> Structured identifier space from critical safety alarms (<code class="font-mono text-[11px]">0x100</code>) down to vehicle dynamics (<code class="font-mono text-[11px]">0x200</code>), lighting states (<code class="font-mono text-[11px]">0x300</code>), and OBD-II diagnostics (<code class="font-mono text-[11px]">0x720</code>), ensuring high-priority safety frames win non-destructive bitwise arbitration.</li>
+            <li><strong>500ms Master Blink Tick Protocol (<code class="font-mono text-[11px]">0x130</code>):</strong> Solved distributed timer phase drift across independent MCUs by broadcasting a periodic master clock synchronization tick, guaranteeing 100% lockstep synchronization between front and rear turn signals.</li>
+            <li><strong>Fail-Safe Heartbeats &amp; Bus-Off Auto-Recovery:</strong> Implemented 1 Hz node heartbeat watchdogs; when an ECU experiences severe bus EMI or disconnects, the cluster logs diagnostic DTCs and safely recovers when hardware acknowledges.</li>
           </ul>
         `
       },
@@ -1755,6 +1809,8 @@
 
     // Command Palette Logic
     const CMD_ITEMS = [
+      { id: 'flagship-cluster', title: 'Smart Vehicle Dashboard Cluster (Role: System Architect & Tech Lead)', category: 'Flagship Project', action: () => { document.getElementById('projects').scrollIntoView({behavior: 'smooth'}); } },
+      { id: 'dd-cluster-lead', title: 'Case Study: Vehicle Dashboard Cluster & 5-Node CAN Monorepo', category: 'Technical Dossier', action: () => openDeepDive('can') },
       { id: 'can-dso', title: 'CAN 2.0B Digital Storage Oscilloscope (DSO)', category: 'Interactive Tool', action: () => { switchWorkbenchTab('dso'); setSignalPreset('can'); document.getElementById('workbench').scrollIntoView({behavior: 'smooth'}); } },
       { id: 'i2c-dso', title: 'I2C Fast-Mode Telemetry Waveform', category: 'Interactive Tool', action: () => { switchWorkbenchTab('dso'); setSignalPreset('i2c'); document.getElementById('workbench').scrollIntoView({behavior: 'smooth'}); } },
       { id: 'spi-dso', title: 'SPI 10 MHz Transceive Waveform', category: 'Interactive Tool', action: () => { switchWorkbenchTab('dso'); setSignalPreset('spi'); document.getElementById('workbench').scrollIntoView({behavior: 'smooth'}); } },
