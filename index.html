@@ -23,14 +23,36 @@
         extend: {
           fontFamily: {
             sans: ["Host Grotesk", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-            mono: ["Atkinson Hyperlegible Mono", "monospace"],
+            mono: ["Atkinson Hyperlegible Mono", "JetBrains Mono", "monospace"],
+          },
+          colors: {
+            paper: "var(--color-paper)",
+            "paper-2": "var(--color-paper-2)",
+            "paper-3": "var(--color-paper-3)",
+            ink: "var(--color-ink)",
+            "ink-2": "var(--color-ink-2)",
+            muted: "var(--color-muted)",
+            faint: "var(--color-faint)",
+            rule: "var(--color-rule)",
+            "rule-light": "var(--color-rule-light)",
+            accent: "var(--color-accent)",
+            "accent-soft": "var(--color-accent-soft)",
+            "accent-ink": "var(--color-accent-ink)",
+            cool: "var(--color-cool)",
+            "cool-soft": "var(--color-cool-soft)",
+            ok: "var(--color-ok)",
+            "ok-soft": "var(--color-ok-soft)",
+            bad: "var(--color-bad)",
+            "bad-soft": "var(--color-bad-soft)",
+            purple: "var(--color-purple)",
+            "purple-soft": "var(--color-purple-soft)",
           }
         }
       }
     };
   </script>
 </head>
-<body class="min-h-screen text-[var(--color-ink)] bg-[var(--color-paper)] relative selection:bg-emerald-500/25 selection:text-white">
+<body class="min-h-screen text-[var(--color-ink)] bg-[var(--color-paper)] relative selection:bg-ok-soft selection:text-ink">
 
   <!-- Ambient Atmospheric Backdrop -->
   <div class="bg-ambient"></div>
@@ -44,9 +66,9 @@
       <!-- Brand & Status -->
       <a href="#overview" class="flex items-center gap-2.5 group shrink-0 no-underline text-inherit">
         <span class="font-bold text-sm tracking-tight text-[var(--color-ink)] group-hover:opacity-80 transition-opacity">
-          ALEX<span class="text-emerald-400">TRINH</span>
+          ALEX<span class="text-ok">TRINH</span>
         </span>
-        <div class="hidden md:flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-medium text-[var(--color-ink)]">
+        <div class="hidden md:flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-ok-soft border border-ok/30 text-[11px] font-medium text-ink">
           <div class="pulse-dot"></div>
           <span>Available for roles</span>
         </div>
@@ -101,7 +123,7 @@
           <!-- Left: Hero Headline & Summary (7 Cols) -->
           <div class="lg:col-span-7 space-y-6">
             
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ok-soft border border-ok/30 text-xs font-medium text-ok">
               <div class="pulse-dot"></div>
               <span>Open for roles: Sep 7 to Dec 14, 2026</span>
             </div>
@@ -115,9 +137,9 @@
             </p>
 
             <!-- Role & Qualifications Card -->
-            <div class="glass-panel p-5 space-y-2 border border-emerald-500/20 bg-emerald-950/10">
+            <div class="glass-panel p-5 space-y-2 border border-ok/25 bg-ok-soft">
               <div class="flex items-center gap-2 font-mono text-xs font-semibold text-[var(--color-ink)]">
-                <span class="text-emerald-400">●</span>
+                <span class="text-ok">●</span>
                 <span>Automotive Software Engineer Intern at FPT Software (Automotive Division)</span>
               </div>
               <p class="text-xs text-[var(--color-muted)] leading-relaxed">
@@ -130,7 +152,7 @@
               <a href="#projects" class="btn-action btn-action-primary text-xs">
                 View Flagship Projects ↓
               </a>
-              <button onclick="openDeepDive('can')" class="btn-action text-xs">
+              <button onclick="openDeepDive('can')" class="btn-action text-xs hover:border-[var(--color-cool)]">
                 Explore Technical Dossiers
               </button>
               <button onclick="openPdfModal('resume')" class="btn-action text-xs text-[var(--color-muted)] hover:text-white">
@@ -152,8 +174,8 @@
                   <h2 class="text-lg font-bold text-[var(--color-ink)] leading-snug">Trinh Dang Khoa</h2>
                   <p class="text-xs text-[var(--color-muted)]">Alex Trinh · Ho Chi Minh City, Vietnam</p>
                   <div class="flex items-center gap-2 mt-2 font-mono text-[10px]">
-                    <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">IELTS 7.0 (C1)</span>
-                    <span class="px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 font-medium">NXP S32K144</span>
+                    <span class="px-2 py-0.5 rounded-full bg-ok-soft text-ok border border-ok/30 font-medium">IELTS 7.0 (C1)</span>
+                    <span class="px-2 py-0.5 rounded-full bg-cool-soft text-cool border border-cool/30 font-medium">NXP S32K144</span>
                   </div>
                 </div>
               </div>
@@ -225,8 +247,8 @@
               <div class="p-6 md:p-8 md:col-span-7 flex flex-col justify-between space-y-5">
                 <div class="space-y-3">
                   <div class="flex flex-wrap items-center gap-2 font-mono text-[11px]">
-                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">System Architect &amp; Tech Lead</span>
-                    <span class="px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">5-Node Monorepo, 500 kbps CAN</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-ok border border-ok/30 font-semibold">System Architect &amp; Tech Lead</span>
+                    <span class="px-2 py-0.5 rounded-full bg-cool-soft text-cool border border-cool/30">5-Node Monorepo, 500 kbps CAN</span>
                   </div>
                   <h3 class="text-xl sm:text-2xl font-bold text-[var(--color-ink)] tracking-tight">
                     Smart Vehicle Dashboard Cluster with Multi-Node CAN Bus
@@ -253,7 +275,7 @@
                   <button onclick="openDeepDive('can')" class="btn-action btn-action-primary text-xs">
                     Read Architecture Case Study
                   </button>
-                  <button onclick="openWorkbenchTab('dso', 'can')" class="btn-action text-xs text-sky-400 border-sky-500/30">
+                  <button onclick="openWorkbenchTab('dso', 'can')" class="btn-action text-xs text-cool border-cool/30">
                     Launch CAN Oscilloscope ↗
                   </button>
                   <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[var(--color-muted)] hover:text-[var(--color-ink)] ml-auto no-underline">
@@ -273,7 +295,7 @@
               <div class="space-y-3">
                 <div class="flex items-center justify-between font-mono text-[10px]">
                   <span class="text-[var(--color-faint)]">Automotive ECU (2025)</span>
-                  <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">NXP S32K144, I2C</span>
+                  <span class="px-2 py-0.5 rounded-full bg-ok-soft text-ok border border-ok/30 font-medium">NXP S32K144, I2C</span>
                 </div>
                 <h3 class="text-lg font-bold text-[var(--color-ink)]">
                   Automotive ECU Firmware &amp; Diagnostics (NXP S32K144)
@@ -289,7 +311,7 @@
                 <button onclick="openDeepDive('s32k144')" class="btn-action text-xs">
                   Read Case Study
                 </button>
-                <button onclick="openWorkbenchTab('dso', 'i2c')" class="text-xs font-mono text-emerald-400 hover:underline border-0 bg-transparent cursor-pointer">
+                <button onclick="openWorkbenchTab('dso', 'i2c')" class="text-xs font-mono text-ok hover:underline border-0 bg-transparent cursor-pointer">
                   Launch Waveform DSO ↗
                 </button>
               </div>
@@ -305,7 +327,7 @@
               <div class="space-y-3">
                 <div class="flex items-center justify-between font-mono text-[10px]">
                   <span class="text-[var(--color-faint)]">Hardware Security (2024)</span>
-                  <span class="px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 font-medium">13.56 MHz, SPI</span>
+                  <span class="px-2 py-0.5 rounded-full bg-purple-soft text-purple border border-purple/30 font-medium">13.56 MHz, SPI</span>
                 </div>
                 <h3 class="text-lg font-bold text-[var(--color-ink)]">
                   Portable MIFARE Classic 1K RFID Security &amp; Cloner Tool
@@ -321,7 +343,7 @@
                 <button onclick="openDeepDive('rfid')" class="btn-action text-xs">
                   Read Case Study
                 </button>
-                <button onclick="openWorkbenchTab('rfid')" class="text-xs font-mono text-purple-400 hover:underline border-0 bg-transparent cursor-pointer">
+                <button onclick="openWorkbenchTab('rfid')" class="text-xs font-mono text-purple hover:underline border-0 bg-transparent cursor-pointer">
                   Inspect Hex Matrix ↗
                 </button>
               </div>
@@ -337,7 +359,7 @@
               <div class="space-y-3">
                 <div class="flex items-center justify-between font-mono text-[10px]">
                   <span class="text-[var(--color-faint)]">Battery Management (2025)</span>
-                  <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">MAX17048, I2C</span>
+                  <span class="px-2 py-0.5 rounded-full bg-accent-soft text-accent border border-accent/30 font-medium">MAX17048, I2C</span>
                 </div>
                 <h3 class="text-lg font-bold text-[var(--color-ink)]">
                   LiFePO4 Battery Monitor &amp; Coulomb Counting Telemetry
@@ -353,7 +375,7 @@
                 <button onclick="openDeepDive('bms')" class="btn-action text-xs">
                   Read Case Study
                 </button>
-                <button onclick="openWorkbenchTab('bms')" class="text-xs font-mono text-amber-400 hover:underline border-0 bg-transparent cursor-pointer">
+                <button onclick="openWorkbenchTab('bms')" class="text-xs font-mono text-accent hover:underline border-0 bg-transparent cursor-pointer">
                   Simulate Battery Model ↗
                 </button>
               </div>
@@ -405,7 +427,7 @@
             <div class="lg:col-span-8 glass-panel p-5 space-y-3">
               <div class="flex items-center justify-between text-[11px] font-mono text-[var(--color-muted)] border-b border-[var(--color-rule)] pb-2.5">
                 <div class="flex items-center gap-2">
-                  <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+                  <span class="inline-block h-2 w-2 rounded-full bg-ok"></span>
                   <span id="dso-status">Acquiring (2.0 GSa/s)</span>
                   <span class="text-[var(--color-faint)]">|</span>
                   <span id="dso-timebase-display">1.0 µs / div</span>
@@ -428,7 +450,7 @@
 
               <!-- Measurement Strip -->
               <div class="flex flex-wrap items-center justify-between gap-2 pt-2 text-[11px] font-mono text-[var(--color-muted)]">
-                <div>X1: <span id="dso-x1" class="text-[var(--color-ink)]">1.20 µs</span> | X2: <span id="dso-x2" class="text-[var(--color-ink)]">3.20 µs</span> | Δt: <span id="dso-dt" class="text-emerald-400 font-semibold">2.00 µs</span></div>
+                <div>X1: <span id="dso-x1" class="text-[var(--color-ink)]">1.20 µs</span> | X2: <span id="dso-x2" class="text-[var(--color-ink)]">3.20 µs</span> | Δt: <span id="dso-dt" class="text-ok font-semibold">2.00 µs</span></div>
                 <div>Rate: <span id="dso-baud" class="text-[var(--color-ink)]">500.0 kbps</span> | Slew tr: <span id="dso-slew" class="text-[var(--color-ink)]">42 ns</span></div>
               </div>
             </div>
@@ -443,7 +465,7 @@
                   <button id="preset-can" onclick="setSignalPreset('can')" class="w-full text-left p-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-[var(--color-ink)] text-xs transition-colors cursor-pointer">
                     <div class="flex items-center justify-between font-semibold">
                       <span>CAN 2.0B Differential Bus</span>
-                      <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">500 kbps</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-ok-soft text-ok border border-ok/30">500 kbps</span>
                     </div>
                     <div class="text-[11px] text-[var(--color-muted)] mt-1">Recessive 2.5V, Dominant CAN_H 3.5V / CAN_L 1.5V with 120Ω split terminations.</div>
                   </button>
@@ -567,9 +589,9 @@
                     <span class="text-[10px] text-[var(--color-faint)] ml-2">Raw EEPROM bytes</span>
                   </div>
                   <div class="flex items-center gap-1.5 text-[10px]">
-                    <span class="px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">Key A</span>
-                    <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Access Bits</span>
-                    <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">Key B</span>
+                    <span class="px-2 py-0.5 rounded-full bg-cool-soft text-cool border border-cool/30">Key A</span>
+                    <span class="px-2 py-0.5 rounded-full bg-ok-soft text-ok border border-ok/30">Access Bits</span>
+                    <span class="px-2 py-0.5 rounded-full bg-accent-soft text-accent border border-accent/30">Key B</span>
                   </div>
                 </div>
 
@@ -582,7 +604,7 @@
               <div class="glass-panel p-4 font-mono text-xs space-y-2">
                 <div class="flex items-center justify-between text-[11px] text-[var(--color-faint)] border-b border-[var(--color-rule)] pb-1.5">
                   <span>MFRC522 SPI Transaction Log</span>
-                  <span id="rfid-log-status" class="text-emerald-400 font-semibold">READY</span>
+                  <span id="rfid-log-status" class="text-ok font-semibold">READY</span>
                 </div>
                 <div id="rfid-spi-log" class="text-[11px] text-[var(--color-muted)] space-y-1 max-h-40 overflow-y-auto pr-2">
                   <div>// STM32F103 MFRC522 Bare-Metal SPI Console initialized. Ready for command injection.</div>
@@ -615,7 +637,7 @@
                 <div class="absolute right-4 top-4 p-3 rounded-xl glass-panel border border-white/15 text-xs font-mono space-y-1">
                   <div>Loaded Terminal V: <span id="bms-hud-vterm" class="text-white font-bold">12.85 V</span></div>
                   <div>Resting OCV: <span id="bms-hud-ocv" class="text-zinc-400">13.10 V</span></div>
-                  <div>Coulomb Count SoC: <span id="bms-hud-soc" class="text-emerald-400 font-bold">55.0 %</span></div>
+                  <div>Coulomb Count SoC: <span id="bms-hud-soc" class="text-ok font-bold">55.0 %</span></div>
                 </div>
               </div>
 
@@ -635,7 +657,7 @@
                   <span class="text-[var(--color-muted)]">Pack State of Charge (SoC):</span>
                   <span id="bms-val-soc" class="text-[var(--color-ink)] font-semibold">55 %</span>
                 </div>
-                <input id="bms-slider-soc" type="range" min="0" max="100" value="55" oninput="updateBmsPhysics()" class="w-full accent-emerald-500 h-1.5 bg-white/10 rounded-lg cursor-pointer" />
+                <input id="bms-slider-soc" type="range" min="0" max="100" value="55" oninput="updateBmsPhysics()" class="w-full accent-[var(--color-ok)] h-1.5 bg-white/10 rounded-lg cursor-pointer" />
               </div>
 
               <!-- Load Current Slider -->
@@ -644,7 +666,7 @@
                   <span class="text-[var(--color-muted)]">Discharge Load Current:</span>
                   <span id="bms-val-load" class="text-[var(--color-ink)] font-semibold">4.5 A</span>
                 </div>
-                <input id="bms-slider-load" type="range" min="0" max="15" step="0.5" value="4.5" oninput="updateBmsPhysics()" class="w-full accent-emerald-500 h-1.5 bg-white/10 rounded-lg cursor-pointer" />
+                <input id="bms-slider-load" type="range" min="0" max="15" step="0.5" value="4.5" oninput="updateBmsPhysics()" class="w-full accent-[var(--color-ok)] h-1.5 bg-white/10 rounded-lg cursor-pointer" />
               </div>
 
               <!-- Temperature Slider -->
@@ -653,7 +675,7 @@
                   <span class="text-[var(--color-muted)]">Cell Temperature:</span>
                   <span id="bms-val-temp" class="text-[var(--color-ink)] font-semibold">25 °C</span>
                 </div>
-                <input id="bms-slider-temp" type="range" min="-10" max="55" value="25" oninput="updateBmsPhysics()" class="w-full accent-emerald-500 h-1.5 bg-white/10 rounded-lg cursor-pointer" />
+                <input id="bms-slider-temp" type="range" min="-10" max="55" value="25" oninput="updateBmsPhysics()" class="w-full accent-[var(--color-ok)] h-1.5 bg-white/10 rounded-lg cursor-pointer" />
               </div>
 
               <!-- Real Calculated Metrics -->
@@ -703,7 +725,7 @@
                   <div class="text-xs font-medium text-[var(--color-ink)] mt-0.5">Automotive Software Engineer Intern</div>
                   <div class="text-[11px] text-[var(--color-muted)] mt-1">FPT Automotive Division · Ho Chi Minh City</div>
                 </div>
-                <span class="rounded-full px-2.5 py-0.5 text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0 font-medium">
+                <span class="rounded-full px-2.5 py-0.5 text-[10px] font-mono bg-ok-soft text-ok border border-ok/30 shrink-0 font-medium">
                   Sep 2026 to Dec 2026
                 </span>
               </div>
@@ -746,7 +768,7 @@
               <div class="space-y-2.5 text-xs">
                 <div class="flex items-center justify-between">
                   <div class="font-medium text-[var(--color-ink)]">IELTS Academic (Band 7.0, CEFR C1)</div>
-                  <button onclick="openPdfModal('ielts')" class="text-[11px] font-mono text-sky-400 hover:underline border-0 bg-transparent cursor-pointer">
+                  <button onclick="openPdfModal('ielts')" class="text-[11px] font-mono text-cool hover:underline border-0 bg-transparent cursor-pointer">
                     Verify TRF ↗
                   </button>
                 </div>
@@ -961,10 +983,10 @@
         content: `
           <div class="p-3 mb-4 rounded-xl glass-panel border border-emerald-500/20 flex items-center justify-between text-xs">
             <div>
-              <span class="font-bold text-emerald-400">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
+              <span class="font-bold text-ok">ROLE: SYSTEM ARCHITECT &amp; TECH LEAD</span>
               <span class="text-[var(--color-muted)] ml-2">(Leading a 5-Engineer Monorepo Architecture)</span>
             </div>
-            <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="font-mono text-emerald-400 hover:underline">github.com/tumo07/vehicle-dashboard-cluster ↗</a>
+            <a href="https://github.com/tumo07/vehicle-dashboard-cluster" target="_blank" rel="noopener noreferrer" class="font-mono text-ok hover:underline">github.com/tumo07/vehicle-dashboard-cluster ↗</a>
           </div>
 
           <p>As <strong>System Architect &amp; Tech Lead</strong>, I directed the end-to-end architecture, network protocols, and firmware implementation for the Smart Vehicle Dashboard Cluster. The project was structured as an enterprise-grade monorepo composed of 5 distributed subsystems plus a shared CAN definitions library, with strict ownership boundaries enforced via <code class="font-mono text-xs">.github/CODEOWNERS</code> for automated pull request code reviews across the 5 sub-teams.</p>
@@ -1517,7 +1539,7 @@
       log.scrollTop = log.scrollHeight;
       setTimeout(() => {
         st.innerText = "READY";
-        st.className = "text-emerald-400 font-semibold";
+        st.className = "text-ok font-semibold";
       }, 1000);
     }
 

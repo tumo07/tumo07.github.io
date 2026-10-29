@@ -47,71 +47,84 @@
   --z-toast: 500;
   --z-tooltip: 600;
 
-  /* Theme tokens - Dark Mode */
-  --color-paper: #090a0e;
-  --color-paper-surface: rgba(18, 20, 28, 0.75);
-  --color-paper-card: rgba(22, 25, 36, 0.6);
-  --color-paper-card-hover: rgba(30, 34, 48, 0.75);
-  --color-paper-deep: #06070a;
-  --color-scope-bg: #07080a;
+  /* Theme tokens - Console (Graphite) */
+  --color-paper: oklch(17% 0.008 250);
+  --color-paper-2: oklch(21% 0.009 250);
+  --color-paper-3: oklch(13.5% 0.007 250);
+  --color-paper-surface: oklch(20% 0.01 250 / 0.75);
+  --color-paper-card: oklch(21% 0.009 250 / 0.65);
+  --color-paper-card-hover: oklch(26% 0.012 250 / 0.82);
+  --color-paper-deep: oklch(12% 0.006 250);
+  --color-scope-bg: oklch(10% 0.006 250);
 
-  --color-ink: #f8fafc;
-  --color-ink-2: #cbd5e1;
-  --color-muted: #94a3b8;
-  --color-faint: #475569;
+  --color-ink: oklch(95% 0.005 250);
+  --color-ink-2: oklch(84% 0.008 250);
+  --color-muted: oklch(71% 0.01 250);
+  --color-faint: oklch(52% 0.012 250);
 
-  --color-rule: rgba(255, 255, 255, 0.08);
-  --color-rule-light: rgba(255, 255, 255, 0.16);
-  --color-rule-focus: rgba(255, 255, 255, 0.35);
+  --color-rule: oklch(31% 0.01 250);
+  --color-rule-light: oklch(42% 0.012 250);
+  --color-rule-focus: oklch(65% 0.015 250);
 
-  --color-accent: #10b981;
-  --color-accent-soft: rgba(16, 185, 129, 0.12);
-  --color-accent-border: rgba(16, 185, 129, 0.3);
+  /* Console chromatic semantics: amber for person, cool for instruments, ok for verified */
+  --color-accent: oklch(82% 0.15 80);
+  --color-accent-ink: oklch(18% 0.04 75);
+  --color-accent-soft: oklch(29% 0.05 80 / 0.25);
+  --color-accent-border: oklch(82% 0.15 80 / 0.35);
 
-  --color-cyan: #38bdf8;
-  --color-cyan-soft: rgba(56, 189, 248, 0.12);
-  --color-cyan-border: rgba(56, 189, 248, 0.3);
+  --color-cool: oklch(77% 0.12 245);
+  --color-cool-soft: oklch(29% 0.05 245 / 0.25);
+  --color-cool-border: oklch(77% 0.12 245 / 0.35);
 
-  --color-amber: #f59e0b;
-  --color-amber-soft: rgba(245, 158, 11, 0.12);
-  --color-amber-border: rgba(245, 158, 11, 0.3);
+  --color-ok: oklch(76% 0.15 150);
+  --color-ok-soft: oklch(24.5% 0.03 150 / 0.25);
+  --color-ok-border: oklch(76% 0.15 150 / 0.35);
 
-  --color-purple: #c084fc;
-  --color-purple-soft: rgba(192, 132, 252, 0.12);
+  --color-bad: oklch(70% 0.17 25);
+  --color-bad-soft: oklch(24.5% 0.035 25 / 0.25);
+  --color-bad-border: oklch(70% 0.17 25 / 0.35);
+
+  --color-purple: oklch(74% 0.14 310);
+  --color-purple-soft: oklch(27% 0.05 310 / 0.25);
+  --color-purple-border: oklch(74% 0.14 310 / 0.35);
 
   /* Glassmorphism specular & shadow tokens */
-  --color-ambient-grad-1: rgba(30, 41, 59, 0.45);
-  --color-ambient-grad-2: rgba(9, 10, 14, 0.95);
-  --color-ambient-grad-3: rgba(9, 10, 14, 0.4);
-  --color-ambient-grad-4: #090a0e;
+  --color-ambient-grad-1: oklch(24% 0.02 250 / 0.5);
+  --color-ambient-grad-2: oklch(17% 0.008 250 / 0.95);
+  --color-ambient-grad-3: oklch(17% 0.008 250 / 0.4);
+  --color-ambient-grad-4: oklch(15% 0.008 250);
 
-  --color-nav-shadow-spec: rgba(255, 255, 255, 0.12);
-  --color-nav-shadow-drop: rgba(0, 0, 0, 0.35);
+  --color-nav-shadow-spec: oklch(100% 0 0 / 0.12);
+  --color-nav-shadow-drop: oklch(0% 0 0 / 0.35);
 
-  --color-panel-shadow-spec: rgba(255, 255, 255, 0.08);
-  --color-panel-shadow-drop: rgba(0, 0, 0, 0.2);
+  --color-panel-shadow-spec: oklch(100% 0 0 / 0.08);
+  --color-panel-shadow-drop: oklch(0% 0 0 / 0.2);
 
-  --color-btn-bg: rgba(255, 255, 255, 0.05);
-  --color-btn-bg-hover: rgba(255, 255, 255, 0.12);
-  --color-btn-border-hover: rgba(255, 255, 255, 0.28);
-  --color-btn-text-hover: #ffffff;
+  --color-btn-bg: oklch(100% 0 0 / 0.06);
+  --color-btn-bg-hover: oklch(100% 0 0 / 0.14);
+  --color-btn-border-hover: oklch(100% 0 0 / 0.3);
+  --color-btn-text-hover: oklch(100% 0 0);
 
-  --color-btn-pri-bg: #ffffff;
-  --color-btn-pri-border: #ffffff;
-  --color-btn-pri-text: #090a0e;
-  --color-btn-pri-shadow: rgba(255, 255, 255, 0.15);
-  --color-btn-pri-hover-bg: #e2e8f0;
-  --color-btn-pri-hover-border: #e2e8f0;
+  --color-btn-pri-bg: oklch(82% 0.15 80);
+  --color-btn-pri-border: oklch(82% 0.15 80);
+  --color-btn-pri-text: oklch(18% 0.04 75);
+  --color-btn-pri-shadow: oklch(82% 0.15 80 / 0.25);
+  --color-btn-pri-hover-bg: oklch(88% 0.16 80);
+  --color-btn-pri-hover-border: oklch(88% 0.16 80);
 
-  --color-scroll-thumb: rgba(255, 255, 255, 0.14);
+  --color-scroll-thumb: oklch(100% 0 0 / 0.15);
 
   --font-display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: var(--font-display);
-  --font-mono: "Atkinson Hyperlegible Mono", "JetBrains Mono", monospace;
+  --font-outlier: "Atkinson Hyperlegible Mono", "JetBrains Mono", monospace;
+  --font-mono: var(--font-outlier);
 
-  --radius-card: 16px;
+  --radius-card: 12px;
   --radius-pill: 9999px;
-  --radius-sm: 8px;
+  --radius-sm: 6px;
+
+  --tracking-display: -0.03em;
+  --display-weight: 500;
 
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 180ms;
@@ -120,52 +133,59 @@
 
 html:not(.dark) {
   color-scheme: light;
-  --color-paper: #f8fafc;
-  --color-paper-surface: rgba(255, 255, 255, 0.85);
-  --color-paper-card: rgba(255, 255, 255, 0.7);
-  --color-paper-card-hover: rgba(255, 255, 255, 0.95);
-  --color-paper-deep: #f1f5f9;
-  --color-scope-bg: #0c1017;
+  --color-paper: oklch(98% 0.006 85);
+  --color-paper-2: oklch(100% 0 0);
+  --color-paper-3: oklch(95% 0.008 85);
+  --color-paper-surface: oklch(100% 0 0 / 0.85);
+  --color-paper-card: oklch(100% 0 0 / 0.75);
+  --color-paper-card-hover: oklch(100% 0 0 / 0.95);
+  --color-paper-deep: oklch(94% 0.008 85);
+  --color-scope-bg: oklch(12% 0.008 250);
 
-  --color-ink: #0f172a;
-  --color-ink-2: #334155;
-  --color-muted: #64748b;
-  --color-faint: #94a3b8;
+  --color-ink: oklch(19% 0.010 60);
+  --color-ink-2: oklch(34% 0.012 60);
+  --color-muted: oklch(52% 0.012 60);
+  --color-faint: oklch(68% 0.010 60);
 
-  --color-rule: rgba(0, 0, 0, 0.08);
-  --color-rule-light: rgba(0, 0, 0, 0.16);
-  --color-rule-focus: rgba(0, 0, 0, 0.3);
+  --color-rule: oklch(88% 0.008 85);
+  --color-rule-light: oklch(78% 0.010 85);
+  --color-rule-focus: oklch(45% 0.015 60);
 
-  --color-accent: #059669;
-  --color-accent-soft: rgba(5, 150, 105, 0.1);
-  --color-accent-border: rgba(5, 150, 105, 0.25);
+  --color-accent: oklch(54% 0.14 70);
+  --color-accent-ink: oklch(100% 0 0);
+  --color-accent-soft: oklch(54% 0.14 70 / 0.12);
+  --color-accent-border: oklch(54% 0.14 70 / 0.3);
 
-  --color-cyan: #0284c7;
-  --color-cyan-soft: rgba(2, 132, 199, 0.1);
-  --color-cyan-border: rgba(2, 132, 199, 0.25);
+  --color-cool: oklch(52% 0.14 250);
+  --color-cool-soft: oklch(52% 0.14 250 / 0.12);
+  --color-cool-border: oklch(52% 0.14 250 / 0.3);
 
-  --color-ambient-grad-1: rgba(219, 234, 254, 0.7);
-  --color-ambient-grad-2: rgba(248, 250, 252, 0.95);
-  --color-ambient-grad-3: rgba(255, 255, 255, 0.5);
-  --color-ambient-grad-4: #f8fafc;
+  --color-ok: oklch(52% 0.15 150);
+  --color-ok-soft: oklch(52% 0.15 150 / 0.12);
+  --color-ok-border: oklch(52% 0.15 150 / 0.3);
 
-  --color-nav-shadow-spec: rgba(255, 255, 255, 0.8);
-  --color-nav-shadow-drop: rgba(0, 0, 0, 0.06);
+  --color-ambient-grad-1: oklch(93% 0.02 240 / 0.7);
+  --color-ambient-grad-2: oklch(98% 0.006 85 / 0.95);
+  --color-ambient-grad-3: oklch(100% 0 0 / 0.5);
+  --color-ambient-grad-4: oklch(98% 0.006 85);
 
-  --color-panel-shadow-spec: rgba(255, 255, 255, 0.9);
-  --color-panel-shadow-drop: rgba(0, 0, 0, 0.04);
+  --color-nav-shadow-spec: oklch(100% 0 0 / 0.8);
+  --color-nav-shadow-drop: oklch(0% 0 0 / 0.06);
 
-  --color-btn-bg: rgba(0, 0, 0, 0.04);
-  --color-btn-bg-hover: rgba(0, 0, 0, 0.08);
-  --color-btn-border-hover: rgba(0, 0, 0, 0.2);
-  --color-btn-text-hover: #0f172a;
+  --color-panel-shadow-spec: oklch(100% 0 0 / 0.9);
+  --color-panel-shadow-drop: oklch(0% 0 0 / 0.04);
 
-  --color-btn-pri-bg: #0f172a;
-  --color-btn-pri-border: #0f172a;
-  --color-btn-pri-text: #ffffff;
-  --color-btn-pri-shadow: rgba(0, 0, 0, 0.1);
-  --color-btn-pri-hover-bg: #1e293b;
-  --color-btn-pri-hover-border: #1e293b;
+  --color-btn-bg: oklch(0% 0 0 / 0.04);
+  --color-btn-bg-hover: oklch(0% 0 0 / 0.08);
+  --color-btn-border-hover: oklch(0% 0 0 / 0.2);
+  --color-btn-text-hover: oklch(19% 0.010 60);
 
-  --color-scroll-thumb: rgba(0, 0, 0, 0.15);
+  --color-btn-pri-bg: oklch(19% 0.010 60);
+  --color-btn-pri-border: oklch(19% 0.010 60);
+  --color-btn-pri-text: oklch(100% 0 0);
+  --color-btn-pri-shadow: oklch(0% 0 0 / 0.1);
+  --color-btn-pri-hover-bg: oklch(30% 0.012 60);
+  --color-btn-pri-hover-border: oklch(30% 0.012 60);
+
+  --color-scroll-thumb: oklch(0% 0 0 / 0.15);
 }
