@@ -1,0 +1,286 @@
+/* Hallmark · shape: settled · genre: modern-minimal · theme: Console (by request) · redesign: full
+ * hero: Stage · nav: settled · footer: minimal · imagery: the product · signature: instrument-split · console: graphite
+ * axes: dark/grotesk-sans/chromatic-amber · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E5 S4 R4 V4 · weakest: E, tightened copy against buzzwords */
+@import url("./tokens.css");
+@import url("./base.css");
+
+/* -------------------------------------------------------------------------- */
+/* THEME ROOTS & HIGH LEVEL STRUCTURE                                        */
+/* -------------------------------------------------------------------------- */
+:root {
+  --color-paper: oklch(17% 0.008 250);
+  --color-paper-2: oklch(21% 0.009 250);
+  --color-paper-3: oklch(13.5% 0.007 250);
+  --color-ink: oklch(95% 0.005 250);
+  --color-ink-2: oklch(83% 0.008 250);
+  --color-muted: oklch(71% 0.01 250);
+  --color-rule: oklch(31% 0.01 250);
+  --color-rule-2: oklch(42% 0.012 250);
+  --color-accent: oklch(88% 0.16 80);
+  --color-accent-ink: oklch(14% 0.04 75);
+  --color-accent-soft: oklch(22% 0.05 80);
+  --color-focus: oklch(84% 0.16 80);
+  --color-cool: oklch(82% 0.14 245);
+  --color-cool-soft: oklch(28% 0.05 245);
+  --color-ok: oklch(80% 0.15 150);
+  --color-ok-soft: oklch(24% 0.03 150);
+  --color-bad: oklch(72% 0.17 25);
+  --color-bad-soft: oklch(24% 0.035 25);
+  --font-display: "Host Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-display);
+  --font-outlier: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
+  --radius-card: 10px;
+  --radius-pill: 6px;
+  --rule-hair: 1px;
+  --shadow-card: none;
+  --tracking-display: -0.03em;
+  --display-weight: 500;
+}
+
+html:not(.dark) {
+  --color-paper: oklch(98% 0.006 85);
+  --color-paper-2: oklch(95% 0.008 85);
+  --color-paper-3: oklch(91% 0.01 85);
+  --color-ink: oklch(19% 0.01 60);
+  --color-ink-2: oklch(32% 0.01 60);
+  --color-muted: oklch(46% 0.012 60);
+  --color-rule: oklch(84% 0.01 85);
+  --color-rule-2: oklch(72% 0.012 85);
+  --color-accent: oklch(54% 0.14 70);
+  --color-accent-ink: oklch(98% 0.005 70);
+  --color-accent-soft: oklch(92% 0.04 70);
+  --color-focus: oklch(54% 0.14 70);
+  --color-cool: oklch(50% 0.14 250);
+  --color-cool-soft: oklch(92% 0.03 250);
+  --color-ok: oklch(46% 0.14 150);
+  --color-ok-soft: oklch(92% 0.03 150);
+  --color-bad: oklch(48% 0.15 25);
+  --color-bad-soft: oklch(92% 0.035 25);
+}
+
+/* -------------------------------------------------------------------------- */
+/* BASE ELEMENTS & TYPOGRAPHY                                                 */
+/* -------------------------------------------------------------------------- */
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: 1.55;
+  overflow-x: clip;
+}
+
+html {
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  color: var(--color-ink);
+}
+
+.measured {
+  font-family: var(--font-outlier);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.reading {
+  font-family: var(--font-outlier);
+  font-size: var(--text-display);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+/* -------------------------------------------------------------------------- */
+/* CONSOLE THEME PANELS & SURFACES                                            */
+/* -------------------------------------------------------------------------- */
+.console-seam-grid {
+  display: grid;
+  gap: var(--rule-hair);
+  background: var(--color-rule);
+  border: var(--rule-hair) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.console-panel {
+  background: var(--color-paper-2);
+  padding: 1.25rem;
+  position: relative;
+}
+
+.console-panel-deep {
+  background: var(--color-paper-3);
+  padding: 1.25rem;
+}
+
+.console-panel-interactive {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-card);
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+}
+
+.console-panel-interactive:hover {
+  background: color-mix(in oklab, var(--color-paper-2) 92%, var(--color-ink));
+  border-color: var(--color-rule-2);
+}
+
+/* -------------------------------------------------------------------------- */
+/* BUTTONS & CONTROLS (Console Specification)                                 */
+/* -------------------------------------------------------------------------- */
+.btn-console {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  border: var(--rule-hair) solid var(--color-rule-2);
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+}
+
+.btn-console:hover {
+  background: var(--color-paper-3);
+  border-color: var(--color-ink);
+}
+
+.btn-console:active {
+  background: var(--color-paper-3);
+  opacity: 0.9;
+}
+
+.btn-console:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-console-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 600;
+}
+
+.btn-console-primary:hover {
+  background: color-mix(in oklab, var(--color-accent) 88%, black);
+  border-color: color-mix(in oklab, var(--color-accent) 88%, black);
+  color: var(--color-accent-ink);
+}
+
+.btn-console-primary:active {
+  opacity: 0.9;
+}
+
+.btn-console-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Chips carrying state */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  font-size: var(--text-xs);
+  border-radius: 4px;
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper-3);
+  color: var(--color-muted);
+}
+
+.chip-person {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.chip-instrument {
+  border-color: var(--color-cool);
+  background: var(--color-cool-soft);
+  color: var(--color-cool);
+  font-weight: 500;
+}
+
+.chip-ok {
+  border-color: var(--color-ok);
+  background: var(--color-ok-soft);
+  color: var(--color-ok);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------- */
+/* NAVIGATION BAR                                                             */
+/* -------------------------------------------------------------------------- */
+.console-nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-nav);
+  background: var(--color-paper-2);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  width: 100%;
+}
+
+.nav-link {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  text-decoration: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-pill);
+  transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+.nav-link:hover {
+  color: var(--color-ink);
+  background: var(--color-paper-3);
+}
+
+.nav-link:active {
+  background: var(--color-paper-3);
+}
+
+/* -------------------------------------------------------------------------- */
+/* ACCESSIBILITY & FOCUS                                                      */
+/* -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule-2);
+  border-radius: 3px;
+}
+
+/* Table diffs & rows */
+.row--minus {
+  background: var(--color-bad-soft);
+}
+.row--plus {
+  background: var(--color-ok-soft);
+}
